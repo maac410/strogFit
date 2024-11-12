@@ -1,0 +1,92 @@
+body{
+    background-color: black;
+}
+
+.buttonCont{
+    position: absolute;
+    top: 0; /* Position at the top of the viewport */
+    right: 0; /* Align the container to the right side of the screen */
+}
+button:hover{
+    opacity: 0.8;
+}
+
+.logIn:hover{
+    background-color: white;
+    color: black;
+}
+.logIn{
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    width: 120px;
+    height: 30px;
+
+}
+.suscribe:hover{
+    background-color:#29ff62;
+    color: black;
+}
+
+.suscribe{
+    border: 1px solid#29ff62;
+    color:#29ff62;
+    background-color: transparent;
+    width: 120px;
+    height: 30px;
+}
+
+/* Image container */
+.imgContMain {
+    width: 50%; /* 50% of the screen width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide anything outside the container (crop) */
+    position: absolute;
+    top: 0; /* Position at the top of the viewport */
+    right: 0; /* Align the container to the right side of the screen */
+}
+
+/* Image styling */
+.imgContMain img {
+    width: 100%; /* Image will scale to fill the container width */
+    height: 90%; /* Ensure the image spans the full container height */
+    margin-top: 0;
+    object-fit: cover; /* Crops and scales the image to cover the container */
+    object-position: center; /* Optional: centers the image */
+    max-width: 100%; /* Prevent the image from stretching beyond its natural size */
+    min-width: 200px; /* Prevent the image from becoming too small */
+}
+
+
+/* Ensure the layout is responsive */
+@media (max-width: 768px) {
+    .buttonCont {
+        flex-direction: column; /* Stack the buttons on smaller screens */
+    }
+    button {
+        width: 100%; /* Full-width buttons on small screens */
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
+}
+.dropArrow {
+    background-image: url(/images/homeDropArrow.png); /* Set the background image */
+    background-size: contain; /* Ensure the image scales to fit the button */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-position: center; /* Center the background image */
+    
+    width: 100%; /* Adjust width to fit the image size (you can change this) */
+    height: 50px; /* Adjust height to fit the image size (you can change this) */
+    
+    border: none; /* Remove default button border */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Make the button interactive */
+    
+    position: fixed; /* Fix the button at the bottom of the page */
+    bottom: 20px; /* Position 20px from the bottom of the page */
+    left: 50%; /* Position at the center horizontally */
+    transform: translateX(-50%); /* Offset to perfectly center it */
+    
+    background-color: gray; /* Set the background to gray */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
