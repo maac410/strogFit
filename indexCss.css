@@ -1,16 +1,18 @@
 body{
     background-color: black;
+    font-family: "Poppins";
 }
-
 .buttonCont{
     position: absolute;
     top: 0; /* Position at the top of the viewport */
     right: 0; /* Align the container to the right side of the screen */
+    display: flex; /* Add this line */
+    flex-direction: row; /* Default direction */
+    z-index: 2; /* Add this line */
 }
 button:hover{
     opacity: 0.8;
 }
-
 .logIn:hover{
     background-color: white;
     color: black;
@@ -18,33 +20,33 @@ button:hover{
 .logIn {
     border: 1px solid white;
     color: white;
-    background-color: rgba(0, 0, 0, 0.2); /* Black background with 50% opacity */
-    width: 120px;
-    height: 30px;
+    background-color: rgba(0, 0, 0, 0.05); /* Black background with 50% opacity */
+    width: 20vh;
+    height: 5vh;
     backdrop-filter: blur(8px); /* This applies the blur effect */
     -webkit-backdrop-filter: blur(8px); /* For Safari support */
     margin-right: 5vh; /* Fixed margin */
     margin-top: 2.5vh;
+    font-size: 2.5vh;
+    cursor: pointer; /* Make the button interactive */
 }
-
 .suscribe:hover{
     background-color:#29ff62;
     color: black;
 }
-
 .suscribe {
     border: 1px solid #29ff62;
     color: #29ff62;
-    background-color: rgba(0, 0, 0, 0.2); /* Black background with 50% opacity */
-    width: 120px;
-    height: 30px;
+    background-color: rgba(0, 0, 0, 0.05); /* Black background with 50% opacity */
+    width: 20vh;
+    height: 5vh;
     backdrop-filter: blur(8px); /* Apply the blur effect */
     -webkit-backdrop-filter: blur(8px); /* For Safari support */
     margin-right: 5vh; /* Fixed margin */
     margin-top: 2.5vh;
+    font-size: 2.5vh;
+    cursor: pointer; /* Make the button interactive */
 }
-
-
 /* Image container */
 .imgContMain {
     width: 50%; /* 50% of the screen width */
@@ -54,7 +56,6 @@ button:hover{
     top: 0; /* Position at the top of the viewport */
     right: 0; /* Align the container to the right side of the screen */
 }
-
 /* Image styling */
 .imgContMain img {
     width: 100%; /* Image will scale to fill the container width */
@@ -72,16 +73,12 @@ button:hover{
     
     /* Create a smoother, more natural gradient */
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)); 
-    
-    
+       
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1; /* Ensure it stays on top of the background */
 }
-
-
-
 /* Ensure the layout is responsive */
 @media (max-width: 768px) {
     .buttonCont {
@@ -99,7 +96,7 @@ button:hover{
     background-position: center; /* Center the background image */
     
     width: 100%; /* Adjust width to fit the image size (you can change this) */
-    height: 50px; /* Adjust height to fit the image size (you can change this) */
+    height: 5%; /* Adjust height to fit the image size (you can change this) */
     
     border: none; /* Remove default button border */
     padding: 0; /* Remove padding */
@@ -110,10 +107,9 @@ button:hover{
     left: 50%; /* Position at the center horizontally */
     transform: translateX(-50%); /* Offset to perfectly center it */
     
-    background-color: rgba(163, 163, 163, 0.2); /* Black background with 50% opacity */
+    background-color: rgba(255, 255, 255, 0.2); /* Black background with 50% opacity */
     backdrop-filter: blur(8px); /* Apply the blur effect */
     -webkit-backdrop-filter: blur(8px); /* For Safari support */
     z-index: 1000; /* Ensure it stays on top of other content */
   
 }
-
