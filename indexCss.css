@@ -1,6 +1,25 @@
 body{
     background-color: black;
-    font-family: "Poppins";
+ font-family: "Poppins";
+    color: white;
+}
+.contTitle{
+    margin-left: 5%;
+    
+}
+.mainTitle{
+
+    font-size: 20vh;
+    margin-bottom: 0px;
+}
+.subTitle{
+    font-size: 11vh;
+    margin-top: 0px;
+}
+.Linea{
+    width: 40%;
+    position: absolute;
+left: 5%;  
 }
 .buttonCont{
     position: absolute;
