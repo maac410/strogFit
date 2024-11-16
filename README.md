@@ -1,3 +1,3 @@
 # strogFit
-Hola migue
+Hola miguel
 Hello this is a test
