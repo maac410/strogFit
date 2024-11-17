@@ -1,207 +1,209 @@
-body{
-    background-color: black;
- font-family: "Poppins";
+body {
+    background-color: rgb(23, 23, 23);
+    font-family: "Poppins";
     color: white;
 }
-.navBar{
+.navBar {
     position: relative;
     margin-top: 10vh;
-    margin-left: 4%;
+    margin-left: 2%;
     display: flex;
-    gap: 1rem; /* Espacio entre los botones */
-    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    gap: 1rem;
+    width: 45%;
+    z-index: 2;
 }
-.search{
+.search {
     appearance: none;
     background-color: #ffffff;
     border-radius: 24px;
-    border-style: none;
-    box-shadow: rgba(249, 247, 247, 0.2) 0 3px 5px -1px,rgba(251, 250, 250, 0.14) 0 6px 10px 0,rgba(249, 247, 247, 0.12) 0 1px 18px 0;
+    box-shadow: rgba(249, 247, 247, 0.2) 0 3px 5px -1px, rgba(251, 250, 250, 0.14) 0 6px 10px 0, rgba(249, 247, 247, 0.12) 0 1px 18px 0;
     box-sizing: border-box;
-    color: #3c4043;
+    color: rgb(23, 23, 23);
     cursor: pointer;
     display: inline-flex;
-    fill: currentcolor;
-    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
-    height: 5vh;
     letter-spacing: .25px;
     line-height: normal;
-    max-width: 100%;
-    overflow: visible;
     padding: 2px 24px;
-    position: relative;
-    text-transform: none;
-    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    width: 100%;
+    flex-grow: 1;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1);
     user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
-    width: auto;
-    will-change: transform,opacity;
-    z-index: 0;
-
 }
 .home, .Informacion, .acerca {
-    align-items: center;
-    appearance: none;
-    background-color: #c7fdff;
+    background-color: #8bffcf;
     border-radius: 24px;
-    border-style: none;
-    box-shadow: rgba(249, 247, 247, 0.2) 0 3px 5px -1px,rgba(251, 250, 250, 0.14) 0 6px 10px 0,rgba(249, 247, 247, 0.12) 0 1px 18px 0;
-    box-sizing: border-box;
-    color: #3c4043;
+    box-shadow: rgba(199, 253, 255, 0.1) 0 3px 5px -1px, rgba(199, 253, 255, 0.07) 0 6px 10px 0, rgba(199, 253, 255, 0.06) 0 1px 18px 0;
+    color: rgb(23, 23, 23);
+    border: 1px solid rgb(23, 23, 23);
     cursor: pointer;
-    display: inline-flex;
-    fill: currentcolor;
-    font-family: "Google Sans",Roboto,Arial,sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    height: 5vh;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    letter-spacing: .25px;
-    line-height: normal;
-    max-width: 100%;
-    overflow: visible;
-    padding: 2px 24px;
-    position: relative;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.5em 1.5em;
+    line-height: 1.5;
     text-align: center;
-    text-transform: none;
-    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1);
     width: auto;
-    will-change: transform,opacity;
-    z-index: 0;
 }
-.contTitle{
-    margin-left: 4%;
-    position:absolute;
-    top: 6vh;
-    
-}
-.mainTitle{
-
-    font-size: 18vh;
-    margin-bottom: 0px;
-}
-.subTitle{
-    font-size: 9vh;
-    margin-top: 0px;
-}
-.Linea{
-    width: 100%;
-    position: absolute;  
-}
-.buttonCont{
-    position: absolute;
-    top: 0; /* Position at the top of the viewport */
-    right: 0; /* Align the container to the right side of the screen */
-    display: flex; /* Add this line */
-    flex-direction: row; /* Default direction */
-    z-index: 2; /* Add this line */
-}
-button:hover{
-    opacity: 0.8;
-}
-.logIn:hover{
+.home:hover, .Informacion:hover, .acerca:hover {
     background-color: white;
-    color: black;
+    color: rgb(23, 23, 23);
+    box-shadow: rgba(0, 0, 0, 0.2) 0 6px 12px -1px, rgba(0, 0, 0, 0.14) 0 12px 24px 0, rgba(0, 0, 0, 0.12) 0 2px 36px 0;
+}
+.contTitle {
+    margin-left: 2%;
+    width: 45%;
+    position: absolute;
+    top: 10vh;
+}
+.mainTitle {
+    font-size: calc(5.5vw + 5.5vh + 2vmin);
+    margin-bottom: -2vh;
+    width: 100%;
+}
+.subTitle {
+    font-size: calc(2.5vw + 2.5vh + 1vmin);
+    margin-top: 0;
+    margin-bottom: -2vh;
+    width: 100%;
+}
+.text {
+    font-size: calc(0.8vw + 0.8vh + 0.5vmin);
+    text-align: justify;
+    margin-top: 0;
+}
+.Linea {
+    width: 100%;
+    position: absolute;
+}
+.buttonCont {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+}
+.logIn:hover {
+    background-color: white;
+    color: rgb(23, 23, 23);
 }
 .logIn {
     border: 1px solid white;
     color: white;
-    background-color: rgba(0, 0, 0, 0.05); /* Black background with 50% opacity */
-    width: 20vh;
+    background-color: rgb(23, 23, 23);
+    width: auto;
     height: 5vh;
-    backdrop-filter: blur(8px); /* This applies the blur effect */
-    -webkit-backdrop-filter: blur(8px); /* For Safari support */
-    margin-right: 5vh; /* Fixed margin */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin-right: 5vh;
     margin-top: 2.5vh;
     font-size: 2.5vh;
-    cursor: pointer; /* Make the button interactive */
+    cursor: pointer;
+    border-radius: 24px;
+    box-shadow: rgba(249, 247, 247, 0.1) 0 3px 5px -1px, rgba(251, 250, 250, 0.07) 0 6px 10px 0, rgba(249, 247, 247, 0.06) 0 1px 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1);
+    padding: 2px 24px;
 }
-.suscribe:hover{
-    background-color:#29ff62;
-    color: black;
+
+.suscribe:hover {
+    background-color: #29ff62;
+    color: rgb(23, 23, 23);
 }
 .suscribe {
-    border: 1px solid #29ff62;
-    color: #29ff62;
-    background-color: rgba(0, 0, 0, 0.05); /* Black background with 50% opacity */
-    width: 20vh;
+    border: 1px solid rgb(68, 255, 0);
+    color: rgb(68, 255, 0);
+    background-color: rgb(23, 23, 23);
+    width: auto;
     height: 5vh;
-    backdrop-filter: blur(8px); /* Apply the blur effect */
-    -webkit-backdrop-filter: blur(8px); /* For Safari support */
-    margin-right: 5vh; /* Fixed margin */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin-right: 5vh;
     margin-top: 2.5vh;
     font-size: 2.5vh;
-    cursor: pointer; /* Make the button interactive */
+    cursor: pointer;
+    border-radius: 24px;
+    box-shadow: rgba(68, 255, 0, 0.2) 0 3px 5px -1px, rgba(68, 255, 0, 0.14) 0 6px 10px 0, rgba(68, 255, 0, 0.12) 0 1px 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1);
+    padding: 2px 24px;
 }
-/* Image container */
-.imgContMain {
-    width: 50%; /* 50% of the screen width */
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide anything outside the container (crop) */
-    position: absolute;
-    top: 0; /* Position at the top of the viewport */
-    right: 0; /* Align the container to the right side of the screen */
-}
-/* Image styling */
-.imgContMain img {
-    width: 100%; /* Image will scale to fill the container width */
-    height: 100%; /* Ensure the image spans the full container height */
-    margin-top: 0;
-    object-fit: cover; /* Crops and scales the image to cover the container */
-    object-position: center; /* Optional: centers the image */
-    max-width: 100%; /* Prevent the image from stretching beyond its natural size */
-    min-width: 200px; /* Prevent the image from becoming too small */
 
+.imgContMain {
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.imgContMain img {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+    min-width: 200px;
 }
 .border {
     height: 100%;
-    width: 10%; /* The width of the border can be adjusted */
-    
-    /* Create a smoother, more natural gradient */
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)); 
-       
+    width: 10%;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(23, 23, 23, 0.9));
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1; /* Ensure it stays on top of the background */
+    z-index: 1;
 }
-/* Ensure the layout is responsive */
 @media (max-width: 768px) {
-    .buttonCont {
-        flex-direction: column; /* Stack the buttons on smaller screens */
+    .buttonCont, .navBar {
+        flex-direction: column;
+    }
+    .home, .Informacion, .acerca { 
+        font-size: 0.8em;
+        height: 2em;
+    }
+    .contTitle {
+        margin-top: 15vh;
     }
     button {
-        width: 100%; /* Full-width buttons on small screens */
-        margin-bottom: 10px; /* Space between stacked buttons */
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
+.dropArrow:hover {
+    opacity: 0.8;
+}
 .dropArrow {
-    background-image: url(images/homeDropArrow.png); /* Set the background image */
-    background-size: contain; /* Ensure the image scales to fit the button */
-    background-repeat: no-repeat; /* Prevent the background from repeating */
-    background-position: center; /* Center the background image */
-    
-    width: 100%; /* Adjust width to fit the image size (you can change this) */
-    height: 5%; /* Adjust height to fit the image size (you can change this) */
-    
-    border: none; /* Remove default button border */
-    padding: 0; /* Remove padding */
-    cursor: pointer; /* Make the button interactive */
-    
-    position: fixed; /* Fix the button at the bottom of the page */
-    bottom: 0px; /* Position 20px from the bottom of the page */
-    left: 50%; /* Position at the center horizontally */
-    transform: translateX(-50%); /* Offset to perfectly center it */
-    
-    background-color: rgba(255, 255, 255, 0.2); /* Black background with 50% opacity */
-    backdrop-filter: blur(8px); /* Apply the blur effect */
-    -webkit-backdrop-filter: blur(8px); /* For Safari support */
-    z-index: 1000; /* Ensure it stays on top of other content */
-  
+    background-image: url(images/homeDropArrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 5%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
 }
