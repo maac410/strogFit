@@ -27,17 +27,22 @@
              <div class="border"></div>
         </div>
         <div class="buttonCont">
-             <button class="logIn"> Iniciar Secion </button>
+             <button class="logInBtn"> Iniciar Secion </button>
              <button class="suscribe"> Suscribirse </button>
          </div>
+
+       
         <div class="imgContMain">
             <img src="images/homeImg1.jpg" alt="">
             <div class="border"></div>
         </div>
-        <div class="buttonCont">
-            <button class="logIn"> Iniciar Secion </button>
-            <button class="suscribe"> Suscribirse </button>
+
+        <div class="logInCont">
+            <p>Usuario </p><input type="search" class="text">
+            <p>Contrase;a</p> <input type="search" class="text">
+            <button class="home">Confirmar</button>
         </div>
+
 
             <button class="dropArrow"></button>
         </body>
