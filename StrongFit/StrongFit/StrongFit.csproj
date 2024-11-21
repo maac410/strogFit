@@ -68,8 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\homeCss.css" />
+    <Content Include="Resources\images\homeDropArrow.png" />
+    <Content Include="Resources\images\homeImg1.jpg" />
     <Content Include="Web.config" />
     <Content Include="homePage.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="inicio.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +83,20 @@
     </Compile>
     <Compile Include="homePage.aspx.designer.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inicio.aspx.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inicio.aspx.designer.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

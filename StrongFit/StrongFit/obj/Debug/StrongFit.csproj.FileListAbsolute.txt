@@ -57,3 +57,7 @@ C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.cs
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.Up2Date
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.AssemblyReference.cache
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.CoreCompileInputs.cache
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
