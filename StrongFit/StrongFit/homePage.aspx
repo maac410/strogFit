@@ -37,11 +37,44 @@
             <div class="border"></div>
         </div>
 
-        <div class="logInCont">
-            <p>Usuario </p><input type="search" class="text">
-            <p>Contrase;a</p> <input type="search" class="text">
-            <button class="home">Confirmar</button>
-        </div>
+      <h1>Iniciar Sesión</h1>
+<form id="form1" runat="server" class:"logInCont">
+    <table>
+        <tr>
+            <td><asp:Label ID="lblUsuario" runat="server" Text="Id Usuario"></asp:Label></td>
+            <td><asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled"></asp:TextBox></td>
+            <td><asp:RequiredFieldValidator
+                runat="server"
+                ID="rfvUsuario"
+                ControlToValidate="txtUsuario"
+                ErrorMessage="El campo usuario es obligatorio"
+                ForeColor="Red"
+                Display="Dynamic"
+                />
+            </td>
+        </tr>
+        <tr>
+            <td><asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label></td>
+            <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password"></asp:TextBox></td>
+            <td><asp:RequiredFieldValidator
+                runat="server"
+                ID="rfvContraseña"
+                ControlToValidate="txtContraseña"
+                ErrorMessage="El campo contraseña es obligatorio"
+                ForeColor="Red"
+                Display="Dynamic"
+                />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center"><asp:Label ID="lblEstado" runat="server" ForeColor="Red"></asp:Label></td>
+        </tr>
+    </table>
+
+</form>
             <button class="dropArrow"></button>
         </body>
 </html>
