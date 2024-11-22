@@ -38,7 +38,6 @@
             <div class="border"></div>
         </div>
 
-      <h1>Iniciar Sesión</h1>
 <form id="form1" runat="server" class="logInCont">
     <table>
         <tr>
@@ -68,10 +67,10 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" style="text-align:center"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" /></td>
+            <td colspan="2"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" /></td>
         </tr>
         <tr>
-            <td colspan="2" style="text-align:center"><asp:Label ID="lblEstado" runat="server" ForeColor="Red"></asp:Label></td>
+            <td colspan="2"><asp:Label ID="lblEstado" runat="server" ForeColor="Red"></asp:Label></td>
         </tr>
     </table>
 
