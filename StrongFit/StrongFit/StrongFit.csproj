@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\homeCss.css" />
+    <Content Include="Resources\images\homeDropArrow.png" />
+    <Content Include="Resources\images\homeImg1.jpg" />
     <Content Include="Web.config" />
     <Content Include="homePage.aspx" />
   </ItemGroup>

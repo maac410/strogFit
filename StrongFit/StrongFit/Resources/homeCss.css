@@ -95,8 +95,8 @@
     color: rgb(23, 23, 23);
 }
 .logInBtn {
-    border: 1px solid  #8bffcf;
-    color:  #8bffcf;
+    border: 1px solid #8bffcf;
+    color: #8bffcf;
     background-color: rgb(23, 23, 23);
     width: auto;
     height: 5vh;
@@ -143,7 +143,7 @@
 }
 
 .logInCont {
-    display:;
+    display:none;
     color: rgb(23, 23, 23);
     flex-direction: column;
     background-color: white;
