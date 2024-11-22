@@ -57,6 +57,7 @@ C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.cs
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.Up2Date
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
+<<<<<<< HEAD
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.dll.config
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.pdb
@@ -116,3 +117,9 @@ C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csp
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.Up2Date
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
+=======
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.AssemblyReference.cache
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.CoreCompileInputs.cache
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
+>>>>>>> a820488dba51a8800c0bf97244f337d1153b0e9c

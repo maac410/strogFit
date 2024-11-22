@@ -42,8 +42,6 @@
             <p>Contrase;a</p> <input type="search" class="text">
             <button class="home">Confirmar</button>
         </div>
-
-
             <button class="dropArrow"></button>
         </body>
 </html>
