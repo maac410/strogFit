@@ -11,6 +11,7 @@
     <title>StrongFit</title>
 </head>
     <body>
+
         <div class="navBar">
             <button class="home">Home</button>
             <button class="Informacion">Informacion</button>
