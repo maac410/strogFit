@@ -142,7 +142,7 @@
     padding: 2px 24px;
 }
 .logInCont {
-    display: flex;
+    display: none;
     color: rgb(23, 23, 23);
     flex-direction: column;
     background-color: white;
