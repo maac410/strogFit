@@ -155,7 +155,6 @@ C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Memory.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Numerics.Vectors.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Threading.Tasks.Extensions.xml
-<<<<<<< HEAD
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\bin\BouncyCastle.Cryptography.dll
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\bin\Google.Protobuf.dll
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\bin\K4os.Compression.LZ4.dll
@@ -188,7 +187,6 @@ C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\bin\System.Memory.xml
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\bin\System.Numerics.Vectors.xml
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\bin\System.Threading.Tasks.Extensions.xml
-=======
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.dll.config
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.dll
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.pdb
