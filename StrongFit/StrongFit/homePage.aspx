@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Resources\homeCss.css">
-    <script src="Resources\Js.js"></script> <!-- Corrected to use <script> for JS file -->
+    <script src="Resources\Js.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <title>StrongFit</title>
 </head>
