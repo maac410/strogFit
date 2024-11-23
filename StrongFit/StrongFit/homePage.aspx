@@ -41,26 +41,26 @@
 <form id="form1" runat="server" class="logInCont">
     <table>
         <tr>
-            <td><asp:Label ID="lblUsuario" runat="server" Text="Id Usuario"></asp:Label></td>
-            <td><asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled"></asp:TextBox></td>
+            <td><asp:Label ID="lblUsuario" runat="server" Text="Id Usuario"></asp:Label></td></tr>
+            <tr><td><asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled" Style="width:90%"></asp:TextBox></td>
             <td><asp:RequiredFieldValidator
                 runat="server"
                 ID="rfvUsuario"
                 ControlToValidate="txtUsuario"
-                ErrorMessage="El campo usuario es obligatorio"
+                ErrorMessage="*"
                 ForeColor="Red"
                 Display="Dynamic"
                 />
             </td>
         </tr>
         <tr>
-            <td><asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label></td>
-            <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password"></asp:TextBox></td>
+            <tr><td><asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label></td></tr>
+            <tr><td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Style="width:90%"></asp:TextBox></td>
             <td><asp:RequiredFieldValidator
                 runat="server"
                 ID="rfvContraseña"
                 ControlToValidate="txtContraseña"
-                ErrorMessage="El campo contraseña es obligatorio"
+                ErrorMessage="*"
                 ForeColor="Red"
                 Display="Dynamic"
                 />
