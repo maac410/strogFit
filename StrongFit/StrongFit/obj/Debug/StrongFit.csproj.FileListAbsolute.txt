@@ -91,7 +91,6 @@ C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dl
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
 <<<<<<< HEAD
 <<<<<<< Updated upstream
-<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.dll.config
@@ -146,7 +145,6 @@ C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\roslyn\vbc.exe.conf
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\roslyn\vbc.rsp
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\roslyn\VBCSCompiler.exe
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\roslyn\VBCSCompiler.exe.config
-<<<<<<< Updated upstream
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.AssemblyReference.cache
@@ -154,24 +152,17 @@ C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csp
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.Up2Date
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
-=======
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.AssemblyReference.cache
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.CoreCompileInputs.cache
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
 >>>>>>> a820488dba51a8800c0bf97244f337d1153b0e9c
-=======
->>>>>>> Stashed changes
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\BouncyCastle.Cryptography.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\Google.Protobuf.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\K4os.Compression.LZ4.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\K4os.Compression.LZ4.Streams.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\K4os.Hash.xxHash.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\Microsoft.Bcl.AsyncInterfaces.dll
-<<<<<<< Updated upstream
-=======
-C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
->>>>>>> Stashed changes
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\MySql.Data.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Buffers.dll
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Configuration.ConfigurationManager.dll
@@ -198,14 +189,4 @@ C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Memory.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Numerics.Vectors.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Threading.Tasks.Extensions.xml
-<<<<<<< Updated upstream
-=======
-C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.AssemblyReference.cache
-C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.CoreCompileInputs.cache
-C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.Up2Date
-C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
-C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
->>>>>>> Stashed changes
-=======
 >>>>>>> eeeb5eba1e8e55c6616f232126b7e463a855d47c
