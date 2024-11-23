@@ -39,7 +39,7 @@
         </div>
 
       <h1>Iniciar Sesión</h1>
-<form id="form1" runat="server" class:"logInCont">
+<form id="form1" runat="server" class="logInCont">
     <table>
         <tr>
             <td><asp:Label ID="lblUsuario" runat="server" Text="Id Usuario"></asp:Label></td>
