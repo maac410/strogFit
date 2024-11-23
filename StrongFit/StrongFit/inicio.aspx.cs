@@ -21,7 +21,7 @@ namespace WebApplication1_StrongFit
         protected void btnSalir_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("login.aspx", false);
+            Response.Redirect("homePage.aspx", false);
             Context.ApplicationInstance.CompleteRequest();
         }
     }
