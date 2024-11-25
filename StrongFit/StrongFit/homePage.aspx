@@ -27,11 +27,11 @@
         <p class="text">Controla, optimiza tu alimentación y ejercicio con información precisa y herramientas tecnológicas avanzadas. Ideal para personas modernas y ocupadas que buscan mejorar su bienestar físico y mental. ¡Empieza a cuidar de ti mismo hoy!</p>
     </div>
 
-    <!-- Image Container -->
-    <div class="imgContMain">
-        <img src="Resources\images\homeImg1.jpg" alt="">
-        <div class="border"></div>
-    </div>
+ <!-- Image Container -->
+<div class="imgContMain">
+    <img id="mainImage" src="Resources/images/homeImg1.jpg" alt="">
+    <div class="border"></div>
+</div>
 
     <!-- Button Container -->
     <div class="buttonCont">

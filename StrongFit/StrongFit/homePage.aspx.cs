@@ -53,7 +53,7 @@ namespace StrongFit
                         Session["usuario"] = Usuario;
 
                         // Redirect the user to the homepage (Inicio.aspx)
-                        Response.Redirect("Inicio.aspx", false);
+                        Response.Redirect("Index.aspx", false);
                     }
                     else
                     {
