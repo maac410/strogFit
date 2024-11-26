@@ -1,6 +1,4 @@
-﻿
-
-// Function to toggle the login form visibility
+﻿// Function to toggle the login form visibility
 function toggleLoginForm() {
     var loginForm = document.getElementById('form1');  // Get the login form by its ID
 
@@ -11,23 +9,23 @@ function toggleLoginForm() {
         loginForm.style.display = 'flex';  // Show the login form
     }
 }
-    // Array of image sources
-    const images = [
-        'Resources/images/homeImg1.jpg',
-        'Resources/images/homeImg4.jpg',
-        'Resources/images/homeImg3.jpeg',
-        'Resources/images/homeImg5.jpg',
-        'Resources/images/homeImg2.jpg',
-        
-    ];
 
-    let currentIndex = 0;
+function changeImage() {
+    const image = document.getElementById('mainImage');
+    image.style.backgroundImage = "url('" + images[currentIndex] + "')";
+    currentIndex = (currentIndex+1) % images.length;
+}
 
-    function changeImage() {
-        const imgElement = document.getElementById('mainImage');
-        currentIndex = (currentIndex + 1) % images.length;
-        imgElement.src = images[currentIndex];
-    }
+const images = [
+    'Resources/images/homeImg1.jpg',
+    'Resources/images/homeImg4.jpg',
+    'Resources/images/homeImg3.jpeg',
+    'Resources/images/homeImg5.jpg',
+    'Resources/images/homeImg2.jpg',
+];//image to be transitioned t
 
-    // Change image every 5 seconds
-    setInterval(changeImage, 3000);
+let currentIndex = 0;
+
+window.setInterval(() => changeImage(), 10000)
+
+

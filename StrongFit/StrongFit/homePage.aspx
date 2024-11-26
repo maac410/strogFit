@@ -29,7 +29,7 @@
 
  <!-- Image Container -->
 <div class="imgContMain">
-    <img id="mainImage" src="Resources/images/homeImg1.jpg" alt="">
+    <img id="mainImage" alt="">
     <div class="border"></div>
 </div>
 

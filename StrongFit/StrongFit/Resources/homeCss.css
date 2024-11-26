@@ -164,15 +164,18 @@
     right: 0;
 }
 
-.imgContMain img {
-    width: 100%;
-    height: 100%;
-    margin-top: 0;
-    object-fit: cover;
-    object-position: center;
-    max-width: 100%;
-    min-width: 200px;
-}
+    .imgContMain img {
+        background-image: url('./images/homeImg1.jpg'); 
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        object-fit: cover;
+        object-position: center;
+        max-width: 100%;
+        min-width: 200px;
+        transition: background-image 1s ease-out;
+    }
 .border {
     height: 100%;
     width: 10%;
