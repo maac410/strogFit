@@ -165,8 +165,11 @@
 }
 
     .imgContMain img {
+<<<<<<< HEAD
         background-image: url('./images/homeImg1.jpg'); 
         background-size: cover;
+=======
+>>>>>>> 724d10b3adeae9dae970688f2069674acc7a9d2b
         width: 100%;
         height: 100%;
         margin-top: 0;
@@ -174,7 +177,11 @@
         object-position: center;
         max-width: 100%;
         min-width: 200px;
+<<<<<<< HEAD
         transition: background-image 1s ease-out;
+=======
+        transition: background-image 1s
+>>>>>>> 724d10b3adeae9dae970688f2069674acc7a9d2b
     }
 .border {
     height: 100%;
