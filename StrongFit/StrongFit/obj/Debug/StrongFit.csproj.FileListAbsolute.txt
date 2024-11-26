@@ -57,6 +57,7 @@ C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.cs
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.Up2Date
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.dll.config
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.dll
@@ -155,6 +156,8 @@ C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Memory.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Numerics.Vectors.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Threading.Tasks.Extensions.xml
+=======
+>>>>>>> Stashed changes
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.dll.config
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.dll
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\StrongFit.pdb
@@ -241,4 +244,12 @@ C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Numerics
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+<<<<<<< Updated upstream
 C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.Up2Date
+=======
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.AssemblyReference.cache
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.CoreCompileInputs.cache
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.Up2Date
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
+C:\Users\EC-BT-007\Source\Repos\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
+>>>>>>> Stashed changes
