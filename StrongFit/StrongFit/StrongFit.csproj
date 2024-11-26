@@ -118,15 +118,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dataDisplay\Alimentos\Alimentos.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="Resources\homeCss.css" />
     <Content Include="Resources\images\homeDropArrow.png" />
     <Content Include="Resources\images\homeImg1.jpg" />
+    <Content Include="Resources\images\homeImg2.jpg" />
+    <Content Include="Resources\images\homeImg3.jpeg" />
+    <Content Include="Resources\images\homeImg4.jpg" />
+    <Content Include="Resources\images\homeImg5.jpg" />
+    <Content Include="Resources\Js.js" />
+    <Content Include="Resources\Master.css" />
     <Content Include="Web.config" />
     <Content Include="homePage.aspx" />
-    <Content Include="login.aspx" />
-    <Content Include="inicio.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dataDisplay\Alimentos\Alimentos.aspx.cs">
+      <DependentUpon>Alimentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dataDisplay\Alimentos\Alimentos.aspx.designer.cs">
+      <DependentUpon>Alimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
@@ -135,23 +155,17 @@
     <Compile Include="homePage.aspx.designer.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="inicio.aspx.cs">
-      <DependentUpon>inicio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="inicio.aspx.designer.cs">
-      <DependentUpon>inicio.aspx</DependentUpon>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

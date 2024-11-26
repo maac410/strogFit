@@ -141,20 +141,20 @@
     transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1);
     padding: 2px 24px;
 }
-
 .logInCont {
-    display:none;
+    display: none;
     color: rgb(23, 23, 23);
     flex-direction: column;
     background-color: white;
-    width: 15%;
+    width: 20%;
     top: 10vh;
     position: absolute;
     right: 30vh;
-    z-index: 3;
-
+    z-index: 2;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 20px;
 }
-
 .imgContMain {
     width: 50%;
     height: 100vh;
