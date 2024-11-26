@@ -1,4 +1,6 @@
-﻿// Function to toggle the login form visibility
+﻿
+
+// Function to toggle the login form visibility
 function toggleLoginForm() {
     var loginForm = document.getElementById('form1');  // Get the login form by its ID
 
