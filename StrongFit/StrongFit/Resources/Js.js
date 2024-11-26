@@ -21,13 +21,16 @@ function toggleLoginForm() {
         
     ];
 
-    let currentIndex = 0;
+var image = new Image();
+image.onload = function () {
+    $(".element").css("background-image", "url('" + image.src + "')");
+}
 
-    function changeImage() {
-        const imgElement = document.getElementById('mainImage');
-        currentIndex = (currentIndex + 1) % images.length;
-        imgElement.src = images[currentIndex];
-    }
+image.src = [
+    'Resources/images/homeImg1.jpg',
+    'Resources/images/homeImg4.jpg',
+    'Resources/images/homeImg3.jpeg',
+    'Resources/images/homeImg5.jpg',
+    'Resources/images/homeImg2.jpg',
 
-    // Change image every 5 seconds
-    setInterval(changeImage, 3000);
+];//image to be transitioned t
