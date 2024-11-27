@@ -8,8 +8,7 @@ function toggleLoginForm() {
     } else {
         loginForm.style.display = 'flex';  // Show the login form
     }
-}
-document.addEventListener('DOMContentLoaded', function () {
+} document.addEventListener('DOMContentLoaded', function () {
     const images = [
         'Resources/images/homeImg1.jpg',
         'Resources/images/homeImg4.jpg',
@@ -17,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
         'Resources/images/homeImg2.jpg',
         'Resources/images/homeImg5.jpg',
     ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById('mainImage');
 
     // Function to change the image
     function changeImage() {
@@ -58,6 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
         imgElement.style.transform = 'translateX(0)';
     }, 300); // Short delay to start sliding in
 
-    // Set an interval to change the image every 10 seconds (only once)
+    // Set an interval to change the image every 10 seconds
     setInterval(changeImage, 10000); // Change image every 10 seconds
 });
