@@ -10,7 +10,6 @@ function toggleLoginForm() {
     }
 }
 
-<<<<<<< HEAD
 function changeImage() {
     const image = document.getElementById('mainImage');
     image.style.backgroundImage = "url('" + images[currentIndex] + "')";
@@ -28,20 +27,3 @@ const images = [
 let currentIndex = 0;
 
 window.setInterval(() => changeImage(), 10000)
-
-
-=======
-var image = new Image();
-image.onload = function () {
-    $(".element").css("background-image", "url('" + image.src + "')");
-}
-
-image.src = [
-    'Resources/images/homeImg1.jpg',
-    'Resources/images/homeImg4.jpg',
-    'Resources/images/homeImg3.jpeg',
-    'Resources/images/homeImg5.jpg',
-    'Resources/images/homeImg2.jpg',
-
-];//image to be transitioned t
->>>>>>> 724d10b3adeae9dae970688f2069674acc7a9d2b

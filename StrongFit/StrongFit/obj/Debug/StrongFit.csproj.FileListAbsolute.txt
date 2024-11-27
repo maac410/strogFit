@@ -90,7 +90,6 @@ C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.cs
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.csproj.Up2Date
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.dll
 C:\Users\MAAC\Documents\Code\strogFit\StrongFit\StrongFit\obj\Debug\StrongFit.pdb
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 >>>>>>> Stashed changes
@@ -191,7 +190,6 @@ C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Numerics.Vec
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\yoshi\Source\Repos\strogFit\StrongFit\StrongFit\bin\System.Threading.Tasks.Extensions.xml
 >>>>>>> eeeb5eba1e8e55c6616f232126b7e463a855d47c
-=======
 C:\Users\EC-BT-007\Documents\Codigo\New folder\StrongFit\StrongFit\bin\StrongFit.dll.config
 C:\Users\EC-BT-007\Documents\Codigo\New folder\StrongFit\StrongFit\bin\StrongFit.dll
 C:\Users\EC-BT-007\Documents\Codigo\New folder\StrongFit\StrongFit\bin\StrongFit.pdb
