@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1_StrongFit.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Resources/Master.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" class="container" runat="server">
+        <nav>
+            <h2>Menu de navegación</h2>
+            <asp:HyperLink runat="server" ID="hlAlimentos" NavigateUrl="~\dataDisplay\Alimentos\Alimentos.aspx" Text="Plan Nutricional" /><br />
+            <asp:HyperLink runat="server" ID="HyperLink1" NavigateUrl="" Text="Plan de entrenamiento" />
+        </nav>
+
+        <div class="content">
+            <header>
+                <h1>Strong Fit</h1>
+
+                <div>
+                    <h1>El usuario ingreso <%=Session["usuario"] %></h1>
+                    <asp:Button ID="btnSalir"  runat="server" Text="Salir" OnClick="btnSalir_Click"/>
+                </div>
+            </header><hr />
+            <main>            
+                <asp:ContentPlaceHolder ID="main" runat="server">
+                </asp:ContentPlaceHolder>
+            </main><hr />
+            <footer>&copy; STRONG-FIT REVOLUTIÓN</footer>
+        </div>
+    </form>
+</body>
+</html>

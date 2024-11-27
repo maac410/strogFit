@@ -7,21 +7,23 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1_StrongFit
 {
-    public partial class Inicio : System.Web.UI.Page
+    public partial class Site : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] == null)
+            if(!IsPostBack)
             {
-                Response.Redirect("login.aspx");
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("~/login.aspx",true);
+                }
             }
-
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("homePage.aspx", false);
+            Response.Redirect("~/homePage.aspx", true);
             Context.ApplicationInstance.CompleteRequest();
         }
     }
