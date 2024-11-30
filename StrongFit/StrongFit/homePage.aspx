@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Resources\homeCss.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Resources\homeCss.css" />
     <script src="Resources\Js.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
     <title>StrongFit</title>
 </head>
 <body>
@@ -17,25 +17,25 @@
         <button class="home">Home</button>
         <button class="Informacion">Informacion</button>
         <button class="acerca">Acerca</button>
-        <input class="search" type="text" placeholder="search...">
+        <input class="search" type="text" placeholder="search..." />
     </div>
 
     <!-- Title and Description -->
     <div class="contTitle">
-        <p class="mainTitle">Strong Fit</p><hr class="Linea">
+        <p class="mainTitle">Strong Fit</p><hr class="Linea" />
         <p class="subTitle">Alcanza tus metas</p>
         <p class="text">Controla, optimiza tu alimentación y ejercicio con información precisa y herramientas tecnológicas avanzadas. Ideal para personas modernas y ocupadas que buscan mejorar su bienestar físico y mental. ¡Empieza a cuidar de ti mismo hoy!</p>
     </div>
 
  <!-- Image Container -->
 <div class="imgContMain">
-    <img id="mainImage" alt="">
+    <img id="mainImage" alt="" />
     <div class="border"></div>
 </div>
 
     <!-- Button Container -->
     <div class="buttonCont">
-        <button class="logInBtn" onclick="toggleLoginForm()">Iniciar Seción</button>
+        <button class="logInBtn" onclick="toggleLoginForm()">Iniciar Sesión</button>
         <button class="suscribe"> Suscribirse </button>
     </div>
 
