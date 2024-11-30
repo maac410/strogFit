@@ -15,7 +15,7 @@ namespace WebApplication1_StrongFit
             {
                 if (Session["Usuario"] == null)
                 {
-                    Response.Redirect("~/login.aspx",true);
+                    Response.Redirect("~/homePage.aspx", true);
                 }
             }
         }
