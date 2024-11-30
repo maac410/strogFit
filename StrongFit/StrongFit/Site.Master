@@ -28,7 +28,7 @@
 
                 <div>
                     <h1>El usuario ingreso <%=Session["usuario"] %></h1>
-                    <asp:Button ID="btnSalir"  runat="server" Text="Salir" OnClick="btnSalir_Click"/>
+                    <asp:Button ID="btnSalir"  runat="server" Text="Salir" OnClick="btnSalir_Click" OnClientClick="Salir(); return salirAplicacion();"/>
                 </div>
             </header><hr />
             <main>            
@@ -38,5 +38,12 @@
             <footer>&copy; STRONG-FIT REVOLUTIÓN</footer>
         </div>
     </form>
+    <script>
+        function salirAplicacion() {
+            var form = document.getElementById('<%= form1.ClientID %>')
+            form.reset();
+            return true;
+        }
+    </script>
 </body>
 </html>

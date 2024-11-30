@@ -42,15 +42,6 @@ namespace StrongFit.dataDisplay.Alimentos
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAlimento;
 
         /// <summary>
-        /// Control revAlimento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revAlimento;
-
-        /// <summary>
         /// Control lblCantidad.
         /// </summary>
         /// <remarks>
