@@ -143,18 +143,22 @@
 }
 .logInCont {
     display: none;
-    color: rgb(23, 23, 23);
+    color: black;
     flex-direction: column;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semitransparente */
     width: 20%;
     top: 10vh;
     position: absolute;
     right: 30vh;
     z-index: 2;
     border: 2px solid #ccc;
-    border-radius: 15px;
+    border-radius: 25px;
     padding: 20px;
 }
+    .logInCont label {
+        color: black; /* Texto blanco para las etiquetas */
+    }
+
 .imgContMain {
     width: 50%;
     height: 100vh;
