@@ -56,6 +56,7 @@
                     />
                 </td>
             </tr>
+
             <tr>
                 <td><asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label></td></tr>
             <tr>
@@ -75,8 +76,11 @@
             </tr>
             <tr>
                 <td colspan="2"><asp:Label ID="lblEstado" runat="server" ForeColor="Red"></asp:Label></td>
+
             </tr>
+
         </table>
+
     </form>
 
     <button class="dropArrow"></button>
