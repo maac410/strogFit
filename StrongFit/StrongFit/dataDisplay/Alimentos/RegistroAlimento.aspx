@@ -16,14 +16,7 @@
                     ErrorMessage="Campo Obligatorio"
                     ForeColor="Red"
                     Display="Dynamic" />
-                <asp:RegularExpressionValidator
-                    ID="revAlimento"
-                    runat="server"
-                    ControlToValidate="txtAlimento"
-                    ForeColor="Red"
-                    Display="Dynamic"
-                    ValidationExpression="^[A-Z]{1}$"
-                    ErrorMessage="Debe incluir una mayuscula" />
+                
             </td>
         </tr>
 
@@ -47,6 +40,7 @@
                     id="rfvPorcion"
                     runat="server"
                     ControlToValidate="ddlPorcion"
+                    InitialValue="0"
                     ErrorMessage="Agregue unidad de medida"
                     ForeColor="Red"
                     Display="Dynamic" />
