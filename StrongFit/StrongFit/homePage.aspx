@@ -11,7 +11,7 @@
     <title>StrongFit</title>
 </head>
 <body>
-
+    <section class="section1">
     <!-- Navigation Bar -->
     <div class="navBar">
         <button class="home">Home</button>
@@ -83,6 +83,10 @@
 
     </form>
 
-    <button class="dropArrow"></button>
+     <button id="downArrow" class="dropArrow" onclick="dropArrow()"></button>
+        </section>
+<section class="section-2 next-section" style="padding-top:90vh;">
+        Hello world
+    </section>
 </body>
 </html>

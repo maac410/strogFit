@@ -63,3 +63,24 @@ function toggleLoginForm() {
     // Set an interval to change the image every 10 seconds
     setInterval(changeImage, 10000); // Change image every 10 seconds
 });
+function dropArrow() {
+    var scrollDownArrow = document.getElementById('downArrow');
+    var nextSection = document.querySelector('.next-section');  // This is the target for scrolling
+
+    // Remove any previously attached event listeners to avoid duplicates
+    scrollDownArrow.removeEventListener('click', scrollToNextSection);
+
+    // Add a click event listener to the scroll down arrow
+    scrollDownArrow.addEventListener('click', scrollToNextSection);
+
+    // Function to scroll to the next section
+    function scrollToNextSection() {
+        // Check if the next section exists
+        if (nextSection) {
+            nextSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'  // Ensures the next section aligns at the top of the viewport
+            });
+        }
+    }
+}
