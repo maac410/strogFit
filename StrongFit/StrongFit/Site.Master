@@ -35,7 +35,7 @@
                 <asp:ContentPlaceHolder ID="main" runat="server">
                 </asp:ContentPlaceHolder>
             </main><hr />
-            <footer>&copy; STRONG-FIT REVOLUTIÓN</footer>
+            <footer>&copy; STRONG-FIT REVOLUTIÓN...</footer>
         </div>
     </form>
     <script>
