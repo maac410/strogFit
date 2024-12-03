@@ -130,6 +130,7 @@
     <Content Include="Resources\images\homeImg5.jpg" />
     <Content Include="Resources\Js.js" />
     <Content Include="Resources\Master.css" />
+    <Content Include="Resources\tablasCss.css" />
     <Content Include="Web.config" />
     <Content Include="homePage.aspx" />
   </ItemGroup>
