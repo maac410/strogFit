@@ -230,7 +230,7 @@
 }
 
 section {
-    height: 100vh;
+    height: 10vh;
     padding: 20px;
     display: block; /* Ensures the content flows normally */
 }
@@ -240,4 +240,115 @@ section {
 
 .section-2 {
     height: 100%;
+}
+
+/* Estilo para el heading */
+.heading {
+    text-align: center; /* Centra el texto */
+    font-size: 60px; /* Tamaño grande para el encabezado */
+    font-weight: bold; /* Fuente en negrita */
+    margin-bottom: 40px; /* Espacio debajo del encabezado */
+    color: white; /* Color de texto */
+}
+
+.contentWrapper {
+    display: flex; /* Hace que las columnas estén lado a lado */
+    justify-content: space-between; /* Espacio entre las columnas */
+    width: 80%; /* Puedes ajustar el ancho del contenedor */
+    padding-left:10%;
+    padding-right:10%;
+}
+
+/* Estilo para cada columna */
+.charTable1, .charTable2 {
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    margin: 0 5vh; /* Espacio entre las columnas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40%;
+}
+
+    .charTable1 h3, .charTable2 h3 {
+        text-align: center; /* Centra el texto dentro de las columnas */
+        margin: 0;
+        font-size: 24px;
+    }
+/* Contenedor de las imágenes */
+.image-container {
+    position: relative; /* Necesario para que las imágenes se posicionen relativamente dentro de este contenedor */
+    width: 100%; /* Ancho del contenedor */
+    height: 400px; /* Altura fija para el contenedor, ajusta según el tamaño deseado */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Estilo para las imágenes */
+.img-thumbnail {
+    position: absolute; /* Permite que las imágenes se posicionen sobre otras */
+    top: 30%; /* Centra la imagen verticalmente */
+    left: 50%; /* Centra la imagen horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la imagen para que esté perfectamente centrada */
+    width: 80%; /* Establece el tamaño de las imágenes, puedes ajustarlo */
+    max-width: 200px; /* Limita el ancho máximo de las imágenes */
+    max-height: 200px; /* Asegura que las imágenes no se estiren más allá del contenedor */
+    object-fit: cover; /* Recorta la imagen si es necesario para llenar el área sin deformarse */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+    /* Imagen superior (más reciente) con mayor z-index */
+    .img-thumbnail:first-child {
+        z-index: 0; /* Esta imagen estará encima de la siguiente */
+    }
+
+    .img-thumbnail:last-child {
+        z-index: 1; /* Esta imagen estará debajo de la primera */
+        border-radius: 8px; /* Bordes redondeados */
+        padding-left: 40px;
+        padding-top: 50%;
+    }
+
+/* Estilo básico para el pie de página */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .footer-links li {
+        display: inline-block;
+        margin: 5px 15px;
+    }
+
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* Estilo para enlaces telefónicos */
+        .footer-links a[href^="tel:"] {
+            font-weight: bold;
+        }
+
+/* Asegurar que se vean bien en móviles */
+@media (max-width: 768px) {
+    .footer-links li {
+        display: block;
+        margin: 5px 0;
+    }
 }

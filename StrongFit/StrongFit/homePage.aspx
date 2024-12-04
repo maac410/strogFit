@@ -4,10 +4,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Resources\homeCss.css" />
+<link rel="stylesheet" href="Resources/homeCss.css" /> <!-- Your custom CSS should come after Bootstrap -->
+
     <script src="Resources\Js.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
     <title>StrongFit</title>
 </head>
 <body>
@@ -86,7 +87,48 @@
      <button id="downArrow" class="dropArrow" onclick="dropArrow()"></button>
         </section>
 <section class="section-2 next-section" style="padding-top:90vh;">
-        Hello world
+    <header class="heading">¡Suscribete y obten!</header>
+    <div class="contentWrapper">
+    <div class="charTable1"><h3>Contador de Calorias</h3><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+     <div class="image-container">
+<img src="Resources\images\contCalories1.jpg" class="img-thumbnail" alt="Imagen 1">
+<img src="Resources\images\contCalories2.jpg"  class="img-thumbnail" alt="Imagen 2">
+        </div>
+    </div>
+    <div class="charTable2"><h3>Entrenamientos Personalizados</h3><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+        <div class="image-container">
+    <img src="Resources\images\perTraining1.jpg"  class="img-thumbnail" alt="Imagen 1">
+    <img src="Resources\images\perTraining2.jpg" class="img-thumbnail" alt="Imagen 2">
+            </div>
+</div>
+
+    </div>
+    </section>
+
+    <section class="section-3" style="padding-top:90vh;">
+      <div class="footer">
+    <ul class="footer-links">
+        <li><a href="tel:018009171564">¿Preguntas? Llama al 01 800 917 1564</a></li>
+        <li><a href="#">Preguntas frecuentes</a></li>
+        <li><a href="#">Centro de ayuda</a></li>
+        <li><a href="#">Cuenta</a></li>
+        <li><a href="#">Prensa</a></li>
+        <li><a href="#">Relaciones con inversionistas</a></li>
+        <li><a href="#">Empleo</a></li>
+        <li><a href="#">Canjear tarjetas de regalo</a></li>
+        <li><a href="#">Comprar tarjetas de regalo</a></li>
+        <li><a href="#">Formas de ver</a></li>
+        <li><a href="#">Términos de uso</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Preferencias de cookies</a></li>
+        <li><a href="#">Información corporativa</a></li>
+        <li><a href="#">Contáctanos</a></li>
+        <li><a href="#">Prueba de velocidad</a></li>
+        <li><a href="#">Avisos legales</a></li>
+        <li><a href="#">Solo en Netflix</a></li>
+    </ul>
+</div>
+</div>
     </section>
 </body>
 </html>
