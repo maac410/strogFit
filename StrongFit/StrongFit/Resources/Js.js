@@ -63,24 +63,31 @@ function toggleLoginForm() {
     // Set an interval to change the image every 10 seconds
     setInterval(changeImage, 10000); // Change image every 10 seconds
 });
-function dropArrow() {
-    var scrollDownArrow = document.getElementById('downArrow');
-    var nextSection = document.querySelector('.next-section');  // This is the target for scrolling
+// Ensure this function is called once on page load to set up the event listener
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollDownArrow = document.getElementById('downArrow');
+    const sections = document.querySelectorAll('section');  // Select all sections
 
-    // Remove any previously attached event listeners to avoid duplicates
-    scrollDownArrow.removeEventListener('click', scrollToNextSection);
+    // Keep track of which section we are currently on
+    let currentSectionIndex = 0;
 
-    // Add a click event listener to the scroll down arrow
-    scrollDownArrow.addEventListener('click', scrollToNextSection);
+    // Add event listener for clicking the "downArrow"
+    scrollDownArrow.addEventListener('click', function () {
+        scrollToNextSection();
+    });
 
     // Function to scroll to the next section
     function scrollToNextSection() {
-        // Check if the next section exists
-        if (nextSection) {
-            nextSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'  // Ensures the next section aligns at the top of the viewport
-            });
-        }
+        // Move to the next section, but if we're at the last section, loop back to the first
+        currentSectionIndex = (currentSectionIndex + 1) % sections.length;
+
+        // Get the next section element
+        const nextSection = sections[currentSectionIndex];
+
+        // Scroll to the next section with smooth behavior
+        window.scrollTo({
+            top: nextSection.offsetTop - 50, // Adjust the offset to ensure no overlap
+            behavior: 'smooth'
+        });
     }
-}
+});
