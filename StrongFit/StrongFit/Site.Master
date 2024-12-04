@@ -13,6 +13,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="Resources/Master.css" rel="stylesheet" />
+    <link href="Resources/tablasCss.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" class="container" runat="server">
