@@ -4,7 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="main" runat="server">
-    <h2>listado de Alimentos</h2>
+    <h1>listado de Alimentos</h1>
+    <h2><asp:HyperLink ID="hlRegisroAlimento" runat="server" NavigateUrl="~/dataDisplay/Alimentos/RegistroAlimento.aspx" Text="Registrar Alimento" /></h2>
+
     <asp:GridView ID="gvDatosAlimentos" runat="server" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField DataField="idAlimentos" HeaderText="id Alimento" />
