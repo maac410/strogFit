@@ -2,3 +2,9 @@
 .cache
 *.dll
 .StrongFit/StrongFit/bin/
+
+# Ignore build artifacts
+*.dll
+*.pdb
+*.cache
+*.txt
