@@ -17,11 +17,20 @@
           <img class="logo" src="Resources\images\logo.png" alt="Imagen 1">
     <div class="navBar">
       
-        <button class="home">Home</button>
-        <button class="Informacion">Informacion</button>
-        <button class="acerca">Acerca</button>
+        <button class="home" onclick="window.location.href='homePage.aspx'">Home</button>
+       <button class="Informacion" onclick="toggleList()">Informacion</button>
+
+    <!-- Hidden list of options -->
+ 
+        <button class="acerca" onclick="scrollToSection3()">Acerca</button> <!-- Acerca Button -->
         <input class="search" type="text" placeholder="search..." />
     </div>
+
+           <ul id="optionsList" class="InformacionList">
+       <li><button class="Informacion" onclick="window.location.href='mapaNavegacion.html'">Ir a Mapa Navegación</button></li>
+       <li><button class="Informacion">Option 2</button></li>
+       <li><button class="Informacion">Option 3</button></li>
+   </ul>
 
     <!-- Title and Description -->
     <div class="contTitle">
@@ -90,12 +99,12 @@
 <button id="downArrow" class="dropArrow"></button>
 
         </section>
-   <section class="section-2 next-section">
+    <section class="section-2 next-section">
     <header class="heading">¡Suscribete y obten!</header>
     <div class="contentWrapper">
         <div class="charTable1">
             <h3>Contador de Calorias</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+            <h4>En StrongFit, nuestro Contador de Calorías es una herramienta esencial para gestionar tu alimentación de manera inteligente y alcanzar tus objetivos de salud. Registra y monitorea fácilmente las calorías que consumes a diario, ajustando tus planes de alimentación según tus metas, ya sea perder peso, ganar masa muscular o simplemente mantenerte saludable.</h4>
             <div class="image-container">
                 <img src="Resources/images/contCalories1.jpg" class="img-thumbnail" alt="Imagen 1">
                 <img src="Resources/images/contCalories2.jpg" class="img-thumbnail" alt="Imagen 2">
@@ -111,9 +120,7 @@
         </div>
     </div>
 </section>
-
-
-    <section class="section-3">
+    <section id="section-3" class="section-3">
 
 <div class="contentWrapper2">
     <div class="charTable1_5">
@@ -127,7 +134,7 @@
 
 
         
-      <div class="footer">
+  <div class="footer">
     <ul class="footer-links">
         <li><a href="tel:018009171564">¿Preguntas? Llama al 01 800 917 1564</a></li>
         <li><a href="#">Preguntas frecuentes</a></li>

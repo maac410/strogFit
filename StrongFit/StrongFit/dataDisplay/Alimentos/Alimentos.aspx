@@ -2,12 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <link href="../../Resources/tablasCss.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="main" runat="server">
     <h1>listado de Alimentos</h1>
     <h2><asp:HyperLink ID="hlRegisroAlimento" runat="server" NavigateUrl="~/dataDisplay/Alimentos/RegistroAlimento.aspx" Text="Registrar Alimento" /></h2>
 
-    <asp:GridView ID="gvDatosAlimentos" runat="server" AutoGenerateColumns="False">
+    <asp:GridView ID="gvDatosAlimentos" runat="server" AutoGenerateColumns="False" CssClass="custom-gridview" HeaderStyle-CssClass="header" RowStyle-CssClass="row" AlternatingRowStyle-CssClass="alt-row">
         <Columns>
             <asp:BoundField DataField="idAlimentos" HeaderText="id Alimento" />
             <asp:BoundField DataField="Alimento" HeaderText="Nombre del alimento" />

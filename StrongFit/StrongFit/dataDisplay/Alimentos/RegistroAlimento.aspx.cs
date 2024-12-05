@@ -18,11 +18,11 @@ namespace StrongFit.dataDisplay.Alimentos
         {
             if(!IsPostBack)
             {
-
+                LoadRegistro();
             }
 
 
-            LoadRegistro();
+            
         }
 
         private void LoadRegistro()
@@ -31,7 +31,7 @@ namespace StrongFit.dataDisplay.Alimentos
             {
                 try
                 {
-                    String sql = "SELECT alimento,Cantidad,Tamaño_ración FROM alimentos\r\nINNER JOIN registro_de_comidas";
+                    String sql = "SELECT distinct Tamaño_ración FROM alimentos INNER JOIN registro_de_comidas ";
                     conexion.Open();
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
                     ddlPorcion.DataSource = comando.ExecuteReader();
@@ -48,14 +48,14 @@ namespace StrongFit.dataDisplay.Alimentos
 
             }
         }
-
+        
         protected void btnAñadir_Click(object sender, EventArgs e)
         {
             if(Page.IsValid)
             {
                 string alimento = txtAlimento.Text;
                 string cantidad = txtCantidad.Text;
-                int porcion = int.Parse(ddlPorcion.SelectedValue);
+                string Porcion = ddlPorcion.Text;
                 using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
                 {
                     try
@@ -63,7 +63,7 @@ namespace StrongFit.dataDisplay.Alimentos
                         MySqlCommand comando = new MySqlCommand("INSERT INTO alimentos (alimento,cantidad,tamaño_ración) VALUES (@alimento,@Cantidad,@tamaño_ración)", conexion);
                         comando.Parameters.AddWithValue("alimento", alimento);
                         comando.Parameters.AddWithValue("cantidad", cantidad);
-                        comando.Parameters.AddWithValue("tamaño_ración", porcion);
+                        comando.Parameters.AddWithValue("tamaño_ración", Porcion);
                         conexion.Open();
                         comando.ExecuteNonQuery();
                         //limpiar los campos del formulario
