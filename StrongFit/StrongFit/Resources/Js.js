@@ -91,3 +91,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+function toggleList() {
+    var list = document.getElementById("optionsList");
+    if (list.style.display === "none" || list.style.display === "") {
+        list.style.display = "block"; // Show the list when the button is clicked
+    } else {
+        list.style.display = "none"; // Hide the list if clicked again
+    }
+}
+
+function toggleList() {
+    var list = document.getElementById("optionsList");
+    if (list.style.display === "none" || list.style.display === "") {
+        list.style.display = "block"; // Show the list when the button is clicked
+    } else {
+        list.style.display = "none"; // Hide the list if clicked again
+    }
+}
+
+// Function to scroll to section 3
+function scrollToSection3() {
+    document.getElementById("section-3").scrollIntoView({ behavior: "smooth" });
+}
