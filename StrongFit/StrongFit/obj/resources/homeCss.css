@@ -442,16 +442,3 @@ section {
             font-size: 14px; /* Ajusta el tamaño del subtítulo en pantallas pequeñas */
         }
 }
-
-ul.InformacionList {
-    list-style-type: none;
-    padding: 0;
-    display: none; /* Hide the list by default */
-    padding-left: 10%; /* Add padding from the left */
-    z-index: 3; /* Ensure the list appears above other elements */
-    position: relative; /* Positioning to use z-index effectively */
-}
-
-li {
-    margin: 10px 0;
-}

@@ -55,9 +55,9 @@
     <form id="form1" runat="server" class="logInCont">
         <table>
             <tr>
-                <td><asp:Label ID="lblUsuario" runat="server" Text="Id Usuario"></asp:Label></td></tr>
+                <td><asp:Label ID="lblUsuario" runat="server" Text="Id Usuario"></asp:Label></td></tr> 
             <tr>
-                <td><asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled" Style="width:90%"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled" Style="width:90%" CssClass="button"></asp:TextBox></td>
                 <td><asp:RequiredFieldValidator
                     runat="server"
                     ID="rfvUsuario"
@@ -72,7 +72,7 @@
             <tr>
                 <td><asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label></td></tr>
             <tr>
-                <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Style="width:90%"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Style="width:90%" CssClass="button"></asp:TextBox></td>
                 <td><asp:RequiredFieldValidator
                     runat="server"
                     ID="rfvContraseña"
@@ -84,10 +84,10 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" /></td>
+                <td colspan="2"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="button" /></td>
             </tr>
             <tr>
-                <td colspan="2"><asp:Label ID="lblEstado" runat="server" ForeColor="Red"></asp:Label></td>
+                <td colspan="2"><asp:Label ID="lblEstado" runat="server" ForeColor="Red" ></asp:Label></td>
 
             </tr>
 
@@ -104,7 +104,7 @@
     <div class="contentWrapper">
         <div class="charTable1">
             <h3>Contador de Calorias</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+            <h4>En StrongFit, nuestro Contador de Calorías es una herramienta esencial para gestionar tu alimentación de manera inteligente y alcanzar tus objetivos de salud. Registra y monitorea fácilmente las calorías que consumes a diario, ajustando tus planes de alimentación según tus metas, ya sea perder peso, ganar masa muscular o simplemente mantenerte saludable.</h4>
             <div class="image-container">
                 <img src="Resources/images/contCalories1.jpg" class="img-thumbnail" alt="Imagen 1">
                 <img src="Resources/images/contCalories2.jpg" class="img-thumbnail" alt="Imagen 2">
@@ -112,7 +112,7 @@
         </div>
         <div class="charTable2">
             <h3>Entrenamientos Personalizados</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+            <h4>En StrongFit, nuestros Entrenamientos Personalizados están diseñados para adaptarse a tus necesidades, nivel de condición física y metas específicas. Ya sea que quieras perder peso, ganar fuerza, aumentar tu resistencia o simplemente mantenerte activo, encontrarás planes que se ajustan perfectamente a ti.</h4>
             <div class="image-container">
                 <img src="Resources/images/perTraining1.jpg" class="img-thumbnail" alt="Imagen 1">
                 <img src="Resources/images/perTraining2.jpg" class="img-thumbnail" alt="Imagen 2">
@@ -128,7 +128,7 @@
     </div>
     <div class="charTable2_5">
         <h1 class="subTitle">Quienes somos</h1>
-        <h1>Strong fit es una empresa Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim v</h1>
+        <h1>En StrongFit, somos un equipo apasionado por la salud, el bienestar y la tecnología. Nuestra misión es ayudarte a alcanzar tus objetivos de condición física a través de una plataforma integral que combina planes nutricionales, entrenamientos personalizados y herramientas de seguimiento, todo diseñado pensando en ti.</h1>
     </div>
 </div>
 

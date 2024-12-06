@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el tamaño total */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /*background-image: url(/resources/images/fondo.jpg);*/
+    background-size: cover; /* Cambia la imagen de fondo para que cubra toda la ventana */
+    background-attachment: fixed;
+    color: #333; /* Color de texto general */
+    display: flex; /* Flexbox para el layout */
+    min-height: 100vh; /* Altura mínima del body */
+}
+
+.container {
+    display: flex; /* Flex para el contenedor principal */
+    flex: 1; /* Ocupa todo el espacio disponible */
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en pantallas pequeñas */
+}
+
+nav {
+    width: 250px; /* Ancho fijo para el menú */
+    background-color: #2c3e50; /* Color de fondo oscuro para el menú */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del menú */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    min-height: 100vh; /* Asegura que el menú cubra toda la altura */
+}
+
+    nav h2 {
+        color: white; /* Color del texto en el menú */
+        margin-bottom: 15px; /* Espaciado entre encabezados */
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white; /* Color de texto para los enlaces */
+        padding: 10px 15px; /* Espacio alrededor del texto */
+        border-radius: 5px; /* Bordes redondeados para los enlaces */
+        margin-bottom: 10px; /* Espacio entre los enlaces */
+        transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+    }
+
+        nav a:hover {
+            background-color: #2980b9; /* Color de fondo al pasar el mouse */
+            color: white; /* Color del texto al pasar el mouse */
+        }
+
+.content {
+    flex: 1; /* Permite que el contenido ocupe el resto del espacio disponible */
+    display: flex;
+    flex-direction: column; /* Organiza header, main y footer en columna */
+    padding: 20px; /* Espaciado interno */
+}
+
+header {
+    background-color: #34495e; /* Color de fondo del header */
+    color: white; /* Color del texto en el header */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio debajo del header */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del header */
+    text-align: center; /* Centra el texto */
+}
+
+main {
+    flex: 1; /* Permite que el main ocupe el resto del espacio disponible */
+    background-color: #ecf0f1; /* Color de fondo del contenido */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del contenido */
+}
+
+footer {
+    background-color: #34495e; /* Color de fondo del footer */
+    color: white; /* Color del texto en el footer */
+    padding: 10px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centra el texto */
+    margin-top: 20px; /* Espacio encima del footer */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #3498db; /* Color azul suave para los encabezados */
+    margin: 10px 0; /* Espaciado vertical */
+}
+
+.button {
+    background-color: #2980b9; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    padding: 10px 15px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+    .button:hover {
+        background-color: #3498db; /* Color de fondo al pasar el mouse */
+    }
+
+.link-button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilo para el botón Actualizar */
+.link-button-update {
+    background-color: #28a745; /* Verde */
+}
+
+    .link-button-update:hover {
+        background-color: #218838; /* Verde oscuro */
+        transform: scale(1.05); /* Ligera ampliación al pasar el ratón */
+    }
+
+/* Estilo para el botón Eliminar */
+.link-button-delete {
+    background-color: #dc3545; /* Rojo */
+}
+
+    .link-button-delete:hover {
+        background-color: #c82333; /* Rojo oscuro */
+        transform: scale(1.05); /* Ligera ampliación al pasar el ratón */
+    }
+
+/* Responsividad */
+@media (max-width: 768px) {
+    nav {
+        width: 100%; /* Hacer que el menú ocupe todo el ancho en pantallas pequeñas */
+        min-height: auto; /* Permitir que la altura se ajuste automáticamente */
+    }
+
+    .container {
+        flex-direction: column; /* Cambiar la dirección del flex a columna */
+    }
+}
