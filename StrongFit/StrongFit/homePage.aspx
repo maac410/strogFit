@@ -112,7 +112,7 @@
         </div>
         <div class="charTable2">
             <h3>Entrenamientos Personalizados</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+            <h4>En StrongFit, nuestros Entrenamientos Personalizados están diseñados para adaptarse a tus necesidades, nivel de condición física y metas específicas. Ya sea que quieras perder peso, ganar fuerza, aumentar tu resistencia o simplemente mantenerte activo, encontrarás planes que se ajustan perfectamente a ti.</h4>
             <div class="image-container">
                 <img src="Resources/images/perTraining1.jpg" class="img-thumbnail" alt="Imagen 1">
                 <img src="Resources/images/perTraining2.jpg" class="img-thumbnail" alt="Imagen 2">
@@ -128,7 +128,7 @@
     </div>
     <div class="charTable2_5">
         <h1 class="subTitle">Quienes somos</h1>
-        <h1>Strong fit es una empresa Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim v</h1>
+        <h1>En StrongFit, somos un equipo apasionado por la salud, el bienestar y la tecnología. Nuestra misión es ayudarte a alcanzar tus objetivos de condición física a través de una plataforma integral que combina planes nutricionales, entrenamientos personalizados y herramientas de seguimiento, todo diseñado pensando en ti.</h1>
     </div>
 </div>
 

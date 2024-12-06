@@ -1,33 +1,119 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Navegación</title>
+    <style>
+        /* Estilos generales */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color:white;
+        }
+
+        /* Contenedor para la imagen y el menú */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alineación a la izquierda */
+            padding-left:30px;
+            height: 100%;
+            width:250px;
+            background-color: rgb(23, 23, 23); /* Fondo oscuro para el menú */
+        }
+
+        /* Estilo para la imagen */
+        img {
+            width: 150px; /* Puedes ajustar el tamaño de la imagen */
+            margin-top: 20px;
+        }
+
+        /* Estilo para el menú */
+        ul.footer-links {
+            list-style-type: none; /* Eliminar los puntos de la lista */
+            padding: 0;
+            margin: 0; /* Eliminar márgenes */
+            background-color: rgb(23, 23, 23); /* Fondo oscuro para el menú */
+            width: 250px; /* Ancho del menú */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+            /* Estilo de los elementos de la lista */
+            ul.footer-links > li {
+                display: table-row; /* Comportamiento de fila de tabla */
+                border: 1px solid #ddd; /* Borde entre las filas */
+            }
+
+                /* Estilo de los enlaces */
+                ul.footer-links > li > a {
+                    display: table-cell; /* Comportamiento de celda de tabla */
+                    padding: 8px 16px;
+                    text-decoration: none;
+                    border-right: 1px solid #ddd;
+                    width: 100%;
+                }
+
+                    /* Eliminar el borde derecho de la última celda */
+                    ul.footer-links > li > a:last-child {
+                        border-right: none;
+                    }
+
+                /* Efecto al pasar el ratón */
+                ul.footer-links > li:hover {
+                    background-color: white;
+                    color:black;
+                }
+            ul.footer-links li:hover > ul {
+                display: block; /* Mostrar submenús cuando se pase el ratón por encima */
+                padding-left: 20px; /* Indentación del submenú */
+                background-color: white;
+                color: black;
+            }
+
+            /* Estilo para los sub-enlaces */
+            ul.footer-links li ul li a {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+    </style>
 </head>
 <body>
-    <ul class="footer-links">
-        <li><a href="homePage.aspx">I. Pagina de Inicio</a></li>
-        <li>
-            II. Secciones
-            <ul>
-                <li><a href="#">II. Pagina de suscripcion</a></li>
-                <li><a href="#">II. Masterpage</a></li>
-            </ul>
-        </li>
-        <li>
-            III. Información
-            <ul>
-                <li><a href="#">III. Informacion de la aplicacion</a></li>
-                <li><a href="#">III. Quienes somos</a></li>
-            </ul>
-        </li>
-        <li>
-            IIII. Paginas de Error 
-            <ul>
-                <li><a href="Resources/paginasError/error404.html">Error 404 - Página no encontrada</a></li>
-                <li><a href="Resources/paginasError/error505.html">Error 505 - Error del servidor</a></li>
-            </ul>
-        </li>
-    </ul>
+
+    <!-- Contenedor para la imagen y el menú -->
+    <div class="container">
+        <!-- Imagen -->
+        <img src="Resources/images/logo.png" alt="Logo">
+
+        <!-- Menú de navegación -->
+        <ul class="footer-links">
+            <li><a href="homePage.aspx">I. Página de Inicio</a></li>
+            <li>
+                II. Secciones
+                <ul>
+                    <li><a href="#">II. Página de suscripción</a></li>
+                    <li><a href="#">II. Masterpage</a></li>
+                </ul>
+            </li>
+            <li>
+                III. Información
+                <ul>
+                    <li><a href="#">III. Información de la aplicación</a></li>
+                    <li><a href="#">III. Quiénes somos</a></li>
+                </ul>
+            </li>
+            <li>
+                IV. Páginas de Error
+                <ul>
+                    <li><a href="Resources/paginasError/error404.html">Error 404 - Página no encontrada</a></li>
+                    <li><a href="Resources/paginasError/error505.html">Error 505 - Error del servidor</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
 </body>
 </html>

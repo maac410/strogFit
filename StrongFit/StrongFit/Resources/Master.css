@@ -1,150 +1,122 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el tamaño total */
-}
-
+/* General body settings */
 body {
     font-family: 'Arial', sans-serif;
-    /*background-image: url(/resources/images/fondo.jpg);*/
-    background-size: cover; /* Cambia la imagen de fondo para que cubra toda la ventana */
-    background-attachment: fixed;
-    color: #333; /* Color de texto general */
-    display: flex; /* Flexbox para el layout */
-    min-height: 100vh; /* Altura mínima del body */
+    background-color: #111111; /* Fondo oscuro para el cuerpo */
+    color: #e9ecef; /* Texto claro */
 }
 
-.container {
-    display: flex; /* Flex para el contenedor principal */
-    flex: 1; /* Ocupa todo el espacio disponible */
-    flex-wrap: wrap; /* Permite que el contenido se ajuste en pantallas pequeñas */
-}
-
+/* Navbar styles */
 nav {
-    width: 250px; /* Ancho fijo para el menú */
-    background-color: #2c3e50; /* Color de fondo oscuro para el menú */
+    background-color: #2a2a2a; /* Fondo oscuro para el menú */
     padding: 20px;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del menú */
-    display: flex;
-    flex-direction: column; /* Organiza los elementos en una columna */
-    min-height: 100vh; /* Asegura que el menú cubra toda la altura */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #00ffe8;
 }
 
     nav h2 {
-        color: white; /* Color del texto en el menú */
-        margin-bottom: 15px; /* Espaciado entre encabezados */
+        font-size: 26px;
+        font-weight: 600;
+        color: #00ffe8; /* Texto claro */
+        margin-bottom: 20px;
+        letter-spacing: 1px;
     }
 
     nav a {
+        color: white;
+        font-size: 18px;
         text-decoration: none;
-        color: white; /* Color de texto para los enlaces */
-        padding: 10px 15px; /* Espacio alrededor del texto */
-        border-radius: 5px; /* Bordes redondeados para los enlaces */
-        margin-bottom: 10px; /* Espacio entre los enlaces */
-        transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+        display: block;
+        padding: 8px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
     }
 
         nav a:hover {
-            background-color: #2980b9; /* Color de fondo al pasar el mouse */
-            color: white; /* Color del texto al pasar el mouse */
+            background-color: #495057; /* Fondo gris oscuro en hover */
+            color: #00ffe8; /* Amarillo en hover */
         }
 
+/* Main content area */
 .content {
-    flex: 1; /* Permite que el contenido ocupe el resto del espacio disponible */
-    display: flex;
-    flex-direction: column; /* Organiza header, main y footer en columna */
-    padding: 20px; /* Espaciado interno */
+    background-color: #2a2a2a; /* Fondo oscuro */
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px #00ffe8;
+    color: #8c7700;
 }
 
-header {
-    background-color: #34495e; /* Color de fondo del header */
-    color: white; /* Color del texto en el header */
-    padding: 20px; /* Espacio interno */
-    border-radius: 10px; /* Bordes redondeados */
-    margin-bottom: 20px; /* Espacio debajo del header */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del header */
-    text-align: center; /* Centra el texto */
-}
-
-main {
-    flex: 1; /* Permite que el main ocupe el resto del espacio disponible */
-    background-color: #ecf0f1; /* Color de fondo del contenido */
-    padding: 20px; /* Espacio interno */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra del contenido */
-}
-
-footer {
-    background-color: #34495e; /* Color de fondo del footer */
-    color: white; /* Color del texto en el footer */
-    padding: 10px; /* Espacio interno */
-    border-radius: 10px; /* Bordes redondeados */
-    text-align: center; /* Centra el texto */
-    margin-top: 20px; /* Espacio encima del footer */
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #3498db; /* Color azul suave para los encabezados */
-    margin: 10px 0; /* Espaciado vertical */
-}
-
-.button {
-    background-color: #2980b9; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    padding: 10px 15px; /* Espacio interno */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s; /* Transición suave para el hover */
-}
-
-    .button:hover {
-        background-color: #3498db; /* Color de fondo al pasar el mouse */
-    }
-
-.link-button {
-    display: inline-block;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
+/* Header styles */
+header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #00ffe8;
     text-align: center;
-    text-decoration: none;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+header div h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #00ffe8;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Button Styles */
+button {
+    background-color: #00ffe8; /* Verde vibrante */
     border: none;
-    border-radius: 4px;
+    color: #00ffe8;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 20px;
 }
 
-/* Estilo para el botón Actualizar */
-.link-button-update {
-    background-color: #28a745; /* Verde */
-}
-
-    .link-button-update:hover {
-        background-color: #218838; /* Verde oscuro */
-        transform: scale(1.05); /* Ligera ampliación al pasar el ratón */
+    button:hover {
+        background-color: #00ffe8; /* Verde oscuro al hacer hover */
     }
 
-/* Estilo para el botón Eliminar */
-.link-button-delete {
-    background-color: #dc3545; /* Rojo */
-}
-
-    .link-button-delete:hover {
-        background-color: #c82333; /* Rojo oscuro */
-        transform: scale(1.05); /* Ligera ampliación al pasar el ratón */
+    button:focus {
+        outline: none;
     }
 
-/* Responsividad */
+/* Footer styles */
+footer {
+    text-align: center;
+    background-color: #343a40;
+    padding: 15px;
+    margin-top: 30px;
+    color: #ffc107;
+    font-size: 16px;
+    border-top: 1px solid #00ffe8;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav {
-        width: 100%; /* Hacer que el menú ocupe todo el ancho en pantallas pequeñas */
-        min-height: auto; /* Permitir que la altura se ajuste automáticamente */
+    nav h2 {
+        font-size: 22px;
     }
 
-    .container {
-        flex-direction: column; /* Cambiar la dirección del flex a columna */
+    nav a {
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
     }
 }
