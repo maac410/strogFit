@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebApplication1_StrongFit.Alimentos;
+using static Mysqlx.Datatypes.Scalar.Types;
+using String = System.String;
 
 namespace StrongFit.dataDisplay.Alimentos
 {
@@ -18,18 +20,61 @@ namespace StrongFit.dataDisplay.Alimentos
         String pa_idAlimentos;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 LoadRegistro();
                 if (Request.Form["idAlimentos"] != null)
                 {
                     pa_idAlimentos = Request.Form["idAlimentos"];
                     Response.Write("<script>alert('Se recibio: " + pa_idAlimentos + "');</script>");
+                    lblAccion.Text = "Actualizar Alimento";
+                    btnUpdate.Visible = true;
+                    CargarDatos();
+
                 }
+
+
             }
 
 
-            
+
+        }
+
+        private void CargarDatos()
+        {
+            if (Page.IsValid)
+            {
+                string alimento = txtAlimento.Text;
+                string cantidad = txtCantidad.Text;
+                string Porcion = ddlPorcion.Text;
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                {
+                    try
+                    {
+                        MySqlCommand comando = new MySqlCommand("SELECT alimento,cantidad,Tamaño_ración FROM Alimentos WHERE alimento = @alimeto", conexion);
+                        comando.Parameters.AddWithValue("alimento", pa_idAlimentos);
+                        conexion.Open();
+                        MySqlDataReader lector = comando.ExecuteReader();
+                        if (lector.HasRows)
+                        {
+                            lector.Read();
+                            txtAlimento.Text = lector["alimento"].ToString();
+                            txtCantidad.Text = lector["cantida"].ToString();
+                            ddlPorcion.SelectedValue = lector["Tamaño_ración"].ToString();
+                        }
+                        else
+                        {
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se Encontro el alimento para actualizar');", true);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " +
+                            HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true); 
+                    }
+                
+                }
+            }
         }
 
         private void LoadRegistro()
@@ -38,7 +83,7 @@ namespace StrongFit.dataDisplay.Alimentos
             {
                 try
                 {
-                    String sql = "SELECT distinct Tamaño_ración FROM alimentos INNER JOIN registro_de_comidas ";
+                    String sql = "SELECT * FROM alimentos";
                     conexion.Open();
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
                     ddlPorcion.DataSource = comando.ExecuteReader();
@@ -55,10 +100,10 @@ namespace StrongFit.dataDisplay.Alimentos
 
             }
         }
-        
+
         protected void btnAñadir_Click(object sender, EventArgs e)
         {
-            if(Page.IsValid)
+            if (Page.IsValid)
             {
                 string alimento = txtAlimento.Text;
                 string cantidad = txtCantidad.Text;
@@ -82,11 +127,18 @@ namespace StrongFit.dataDisplay.Alimentos
                     }
                     catch (Exception ex)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " + HttpUtility.JavaScriptStringEncode(ex.Message), true);
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " + 
+                            HttpUtility.JavaScriptStringEncode(ex.Message), true);
                     }
 
                 }
             }
         }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

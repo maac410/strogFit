@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="main" runat="server">
-    <h2>Añadir Alimento</h2>
+    <h2><asp:Label ID="lblAccion" runat="server" Text="" /></h2>
     <table>
         <tr>
             <td><asp:Label ID="lblAlimento" runat="server" Text="Nombre del Alimento" AssociatedControlID="txtAlimento" /></td>
@@ -48,7 +48,12 @@
 
         </tr>
         <tr>
-            <td colspan="2" style="text-align:left"><asp:Button ID="btnAñadir" runat="server" Text="Añadir" OnClick="btnAñadir_Click" UseSubmitBehavior="true" /></td>
+            <td colspan="2" style="text-align:left">
+                <asp:Button ID="btnAñadir" runat="server" Text="Añadir" OnClick="btnAñadir_Click" UseSubmitBehavior="true" Visible="false" />
+                <asp:Button ID="btnUpdate" runat="server" Text="Actualizar Alimento" OnClick="btnUpdate_Click" UseSubmitBehavior="true" Visible="false" />
+                <asp:Button ID="btnVolver" runat="server" Text="Volver" Visible="true" OnClientClick="window.location.href='Alimentos.aspx'; return false;" />
+            </td>
+                
         </tr>
     </table>
 
