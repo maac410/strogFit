@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,11 +15,17 @@ namespace StrongFit.dataDisplay.Alimentos
     public partial class RegistroAlimento : System.Web.UI.Page
     {
         String cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+        String pa_idAlimentos;
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
                 LoadRegistro();
+                if (Request.Form["idAlimentos"] != null)
+                {
+                    pa_idAlimentos = Request.Form["idAlimentos"];
+                    Response.Write("<script>alert('Se recibio: " + pa_idAlimentos + "');</script>");
+                }
             }
 
 
