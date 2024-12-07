@@ -30,8 +30,8 @@ namespace WebApplication1_StrongFit.Alimentos
                     conexion.Open();
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
 
-                  
-                 
+
+
                     MySqlDataAdapter da = new MySqlDataAdapter(comando);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -41,9 +41,24 @@ namespace WebApplication1_StrongFit.Alimentos
                 }
                 catch (Exception ex)
                 {
-                    
+
                 }
 
+            }
+        }
+
+        protected void gvDatosAlimentos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            String Idalimentos = e.CommandArgument.ToString();
+            if (e.CommandName == "Actualizar")
+            {
+                String targetUrl = "RegistroAlimento.aspx";
+                String formHtml = $"<form action='{targetUrl}' method='post' style='display:none'>" +
+                    $"<input type='hidden' name='IdAlimentos' value='{Idalimentos}' />" +
+                    "</form><script>document.forms[0].submit();</script>";
+                Response.Clear();
+                Response.Write(formHtml);
+                Response.End();
             }
         }
     }
