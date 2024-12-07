@@ -60,6 +60,46 @@ namespace WebApplication1_StrongFit.Alimentos
                 Response.Write(formHtml);
                 Response.End();
             }
+            else if(e.CommandName == "Eliminar")
+            {
+                eliminarAlimento(Idalimentos);
+            }
+        }
+
+        private void eliminarAlimento(string idalimentos)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+            {
+                try
+                {
+                    MySqlCommand comando = new MySqlCommand("DELETE FROM alimentos WHERE idAlimentos = @idAlimentos", conexion);
+                    comando.Parameters.AddWithValue("idAlimentos", idalimentos);
+                    conexion.Open();
+                    int filasBorradas = comando.ExecuteNonQuery();
+                    if (filasBorradas > 0)
+                    {
+                        string script = "alert('Alimento Eliminado exitosamente.');window.location.href='Alimentos.aspx'";
+                        ClientScript.RegisterStartupScript(this.GetType(), "RedirectOK", script, true);
+                    }
+                    else
+                    {
+                        string script = "alert('Alimento no registrado.');window.location.href='Alimentos.aspx'";
+                        ClientScript.RegisterStartupScript(this.GetType(), "RedirectNf", script, true);
+                    }
+
+
+
+
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Alimento Ingresado con Exito.');", true);
+
+                }
+                catch (Exception ex)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " +
+                        HttpUtility.JavaScriptStringEncode(ex.Message), true);
+                }
+
+            }
         }
     }
 }
