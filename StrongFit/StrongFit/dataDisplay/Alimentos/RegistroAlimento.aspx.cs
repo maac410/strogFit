@@ -26,11 +26,17 @@ namespace StrongFit.dataDisplay.Alimentos
                 if (Request.Form["idAlimentos"] != null)
                 {
                     pa_idAlimentos = Request.Form["idAlimentos"];
-                    Response.Write("<script>alert('Se recibio: " + pa_idAlimentos + "');</script>");
+                    //Response.Write("<script>alert('Se recibio: " + pa_idAlimentos + "');</script>");
                     lblAccion.Text = "Actualizar Alimento";
                     btnUpdate.Visible = true;
+                    txtAlimento.Enabled = false;
                     CargarDatos();
 
+                }
+                else
+                {
+                    lblAccion.Text = "Insertar alimento";
+                    btnAñadir.Visible = true;   
                 }
 
 
@@ -42,7 +48,6 @@ namespace StrongFit.dataDisplay.Alimentos
 
         private void CargarDatos()
         {
-            if (Page.IsValid)
             {
                 string alimento = txtAlimento.Text;
                 string cantidad = txtCantidad.Text;
@@ -51,6 +56,7 @@ namespace StrongFit.dataDisplay.Alimentos
                 {
                     try
                     {
+
                         MySqlCommand comando = new MySqlCommand("SELECT alimento,cantidad,Tamaño_ración FROM Alimentos WHERE alimento = @alimeto", conexion);
                         comando.Parameters.AddWithValue("alimento", pa_idAlimentos);
                         conexion.Open();
@@ -70,12 +76,13 @@ namespace StrongFit.dataDisplay.Alimentos
                     catch (Exception ex)
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " +
-                            HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true); 
+                            HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true);
                     }
-                
+
                 }
             }
         }
+
 
         private void LoadRegistro()
         {
@@ -127,7 +134,7 @@ namespace StrongFit.dataDisplay.Alimentos
                     }
                     catch (Exception ex)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " + 
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " +
                             HttpUtility.JavaScriptStringEncode(ex.Message), true);
                     }
 
@@ -137,7 +144,47 @@ namespace StrongFit.dataDisplay.Alimentos
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (Page.IsValid)
+            {
+                string alimento = txtAlimento.Text;
+                string cantidad = txtCantidad.Text;
+                string Porcion = ddlPorcion.Text;
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                {
+                    try
+                    {
+                        MySqlCommand comando = new MySqlCommand("UPDATE alimentos SET cantidad = @cantidad, tamaño_ración = @tamaño_ración WHERE alimento = @alimento", conexion);
+                        comando.Parameters.AddWithValue("alimento", alimento);
+                        comando.Parameters.AddWithValue("cantidad", cantidad);
+                        comando.Parameters.AddWithValue("tamaño_ración", Porcion);
+                        conexion.Open();
+                        comando.ExecuteNonQuery();
+                        int filasAfectadas = comando.ExecuteNonQuery();
+                        if(filasAfectadas > 0)
+                        {
+                            string script = "alert('Alimento Actualizado exitosamente.');window.location.href='Alimentos.aspx'";
+                            ClientScript.RegisterStartupScript(this.GetType(), "RedirectOK", script, true);
+                        }
+                        else
+                        {
+                            string script = "alert('Alimento no registrado.');window.location.href='Alimentos.aspx'";
+                            ClientScript.RegisterStartupScript(this.GetType(), "RedirectNf", script, true);
+                        }
 
+
+
+
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Alimento Ingresado con Exito.');", true);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " +
+                            HttpUtility.JavaScriptStringEncode(ex.Message), true);
+                    }
+
+                }
+            }
         }
 
     }
