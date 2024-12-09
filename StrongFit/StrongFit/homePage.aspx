@@ -17,7 +17,7 @@
           <img class="logo" src="Resources\images\logo.png" alt="Imagen 1">
     <div class="navBar">
       
-        <button class="home" onclick="window.location.href='homePage.aspx'">Home</button>
+        <button class="home" onclick="window.location.href='homePage.aspx'">Inicio</button>
        <button class="Informacion" onclick="toggleList()">Informacion</button>
 
     <!-- Hidden list of options -->
