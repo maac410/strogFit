@@ -48,7 +48,7 @@
     <!-- Button Container -->
     <div class="buttonCont">
         <button class="logInBtn" onclick="toggleLoginForm()">Iniciar Sesión</button>
-        <button class="suscribe"> Suscribirse </button>
+        <button class="suscribe" onclick="window.location.href='suscriptionPage.aspx'"> Suscribirse </button>
     </div>
 
     <!-- Hidden Login Form -->

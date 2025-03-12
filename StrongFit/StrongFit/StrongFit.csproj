@@ -142,6 +142,7 @@
     <Content Include="Resources\tablasCss.css" />
     <Content Include="Web.config" />
     <Content Include="homePage.aspx" />
+    <Content Include="suscriptionPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dataDisplay\Alimentos\Alimentos.aspx.cs">
@@ -180,11 +181,18 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="suscriptionPage.aspx.cs">
+      <DependentUpon>suscriptionPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suscriptionPage.aspx.designer.cs">
+      <DependentUpon>suscriptionPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
-    <Content Include="Resources\error_404.webp" />
+    <Content Include="Resources\images\error_404.webp" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
