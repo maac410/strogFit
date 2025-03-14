@@ -28,7 +28,7 @@
             <tr>
                 <td><asp:Label ID="rCorreo" runat="server" Text="Correo"></asp:Label></td></tr>
             <tr>
-                <td><asp:TextBox ID="txtCorreo" runat="server" TextMode="Password" Style="width:90%" CssClass="button"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtCorreo" runat="server" TextMode="Email" Style="width:90%" CssClass="button"></asp:TextBox></td>
                 <td><asp:RequiredFieldValidator
                     runat="server"
                     ID="RequiredFieldValidator1"

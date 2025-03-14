@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
 <link rel="stylesheet" href="Resources/homeCss.css" /> <!-- Your custom CSS should come after Bootstrap -->
 
-    <script src="Resources\Js.js"></script>
+    <script src="Resources\homePageJs.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 
     <title>StrongFit</title>
