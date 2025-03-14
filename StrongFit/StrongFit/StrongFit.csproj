@@ -121,22 +121,6 @@
     <Content Include="dataDisplay\Alimentos\Alimentos.aspx" />
     <Content Include="dataDisplay\Alimentos\RegistroAlimento.aspx" />
     <Content Include="Index.aspx" />
-    <Content Include="obj\resources\homeCss.css" />
-    <Content Include="obj\resources\images\contCalories1.jpg" />
-    <Content Include="obj\resources\images\contCalories2.jpg" />
-    <Content Include="obj\resources\images\homeDropArrow.png" />
-    <Content Include="obj\resources\images\homeImg1.jpg" />
-    <Content Include="obj\resources\images\homeImg2.jpg" />
-    <Content Include="obj\resources\images\homeImg3.jpeg" />
-    <Content Include="obj\resources\images\homeImg4.jpg" />
-    <Content Include="obj\resources\images\homeImg5.jpg" />
-    <Content Include="obj\resources\images\logo.png" />
-    <Content Include="obj\resources\images\logo2.png" />
-    <Content Include="obj\resources\images\perTraining1.jpg" />
-    <Content Include="obj\resources\images\perTraining2.jpg" />
-    <Content Include="obj\resources\Js.js" />
-    <Content Include="obj\resources\Master.css" />
-    <Content Include="obj\resources\tablasCss.css" />
     <Content Include="mapaNavegacion.html" />
     <Content Include="Resources\homeCss.css" />
     <Content Include="Resources\images\contCalories1.jpg" />
@@ -158,6 +142,7 @@
     <Content Include="Resources\tablasCss.css" />
     <Content Include="Web.config" />
     <Content Include="homePage.aspx" />
+    <Content Include="suscriptionPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dataDisplay\Alimentos\Alimentos.aspx.cs">
@@ -196,10 +181,18 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="suscriptionPage.aspx.cs">
+      <DependentUpon>suscriptionPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suscriptionPage.aspx.designer.cs">
+      <DependentUpon>suscriptionPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
+    <Content Include="Resources\images\error_404.webp" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

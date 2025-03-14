@@ -17,7 +17,7 @@
           <img class="logo" src="Resources\images\logo.png" alt="Imagen 1">
     <div class="navBar">
       
-        <button class="home" onclick="window.location.href='homePage.aspx'">Home</button>
+        <button class="home" onclick="window.location.href='homePage.aspx'">Inicio</button>
        <button class="Informacion" onclick="toggleList()">Informacion</button>
 
     <!-- Hidden list of options -->
@@ -48,7 +48,7 @@
     <!-- Button Container -->
     <div class="buttonCont">
         <button class="logInBtn" onclick="toggleLoginForm()">Iniciar Sesión</button>
-        <button class="suscribe"> Suscribirse </button>
+        <button class="suscribe" onclick="window.location.href='suscriptionPage.aspx'"> Suscribirse </button>
     </div>
 
     <!-- Hidden Login Form -->

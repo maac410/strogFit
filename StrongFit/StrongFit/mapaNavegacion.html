@@ -1,112 +1,111 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de Navegación</title>
+    <title>Menú con Botones</title>
     <style>
-        /* Estilos generales */
-        html, body {
+        /* Estilo global */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            color:white;
+            background-color: #121212;
+            color: #ffffff;
         }
 
-        /* Contenedor para la imagen y el menú */
+        /* Contenedor principal */
         .container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Alineación a la izquierda */
-            padding-left:30px;
-            height: 100%;
-            width:250px;
-            background-color: rgb(23, 23, 23); /* Fondo oscuro para el menú */
+            align-items: flex-start;
+            padding: 20px;
+            width: 250px;
+            background-color: rgb(23, 23, 23);
+            height: 100vh;
         }
 
-        /* Estilo para la imagen */
+        /* Estilo para imágenes */
         img {
-            width: 150px; /* Puedes ajustar el tamaño de la imagen */
-            margin-top: 20px;
+            width: 150px;
+            margin-bottom: 20px;
         }
 
-        /* Estilo para el menú */
-        ul.footer-links {
-            list-style-type: none; /* Eliminar los puntos de la lista */
+        /* Menú */
+        .footer-links {
+            list-style: none;
             padding: 0;
-            margin: 0; /* Eliminar márgenes */
-            background-color: rgb(23, 23, 23); /* Fondo oscuro para el menú */
-            width: 250px; /* Ancho del menú */
-            border-radius: 5px; /* Bordes redondeados */
-            box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            margin: 20;
+            width: 100%;
         }
 
-            /* Estilo de los elementos de la lista */
-            ul.footer-links > li {
-                display: table-row; /* Comportamiento de fila de tabla */
-                border: 1px solid #ddd; /* Borde entre las filas */
+            .footer-links > li {
+                margin-bottom: 10px;
+                font-size: 18px;
+                font-weight: bold;
             }
 
-                /* Estilo de los enlaces */
-                ul.footer-links > li > a {
-                    display: table-cell; /* Comportamiento de celda de tabla */
-                    padding: 8px 16px;
-                    text-decoration: none;
-                    border-right: 1px solid #ddd;
-                    width: 100%;
+            .footer-links a {
+                display: block;
+                text-decoration: none;
+                color: #ffffff;
+                background-color: #1e90ff;
+                padding: 10px;
+                border-radius: 15px;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                margin: 5px;
+            }
+
+                .footer-links a:hover {
+                    background-color: #ff6347;
+                    transform: scale(1.05);
                 }
 
-                    /* Eliminar el borde derecho de la última celda */
-                    ul.footer-links > li > a:last-child {
-                        border-right: none;
+            /* Submenús */
+            .footer-links ul {
+                list-style: none;
+                padding: 0;
+                margin-top: 10px;
+            }
+
+                .footer-links ul li a {
+                    background-color: #2a2a2a;
+                    color: #1e90ff;
+                    padding: 8px 15px;
+                    font-size: 14px;
+                }
+
+                    .footer-links ul li a:hover {
+                        background-color: #444;
+                        color: #ff6347;
                     }
-
-                /* Efecto al pasar el ratón */
-                ul.footer-links > li:hover {
-                    background-color: white;
-                    color:black;
-                }
-            ul.footer-links li:hover > ul {
-                display: block; /* Mostrar submenús cuando se pase el ratón por encima */
-                padding-left: 20px; /* Indentación del submenú */
-                background-color: white;
-                color: black;
-            }
-
-            /* Estilo para los sub-enlaces */
-            ul.footer-links li ul li a {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
     </style>
 </head>
 <body>
-
     <!-- Contenedor para la imagen y el menú -->
     <div class="container">
-        <!-- Imagen -->
+        <!-- Imagen del logo -->
         <img src="Resources/images/logo.png" alt="Logo">
 
         <!-- Menú de navegación -->
         <ul class="footer-links">
-            <li><a href="homePage.aspx">I. Página de Inicio</a></li>
+            <li><a href="homePage.aspx">Página de Inicio</a></li>
             <li>
-                II. Secciones
+                Secciones
                 <ul>
-                    <li><a href="#">II. Página de suscripción</a></li>
-                    <li><a href="#">II. Masterpage</a></li>
+                    <li><a href="#">Página de Suscripción</a></li>
+                    <li><a href="#">Masterpage</a></li>
                 </ul>
             </li>
             <li>
-                III. Información
+                Información
                 <ul>
-                    <li><a href="#">III. Información de la aplicación</a></li>
-                    <li><a href="#">III. Quiénes somos</a></li>
+                    <li><a href="#">Información de la Aplicación</a></li>
+                    <li><a href="#">Quiénes Somos</a></li>
                 </ul>
             </li>
             <li>
-                IV. Páginas de Error
+                Páginas de Error
                 <ul>
                     <li><a href="Resources/paginasError/error404.html">Error 404 - Página no encontrada</a></li>
                     <li><a href="Resources/paginasError/error505.html">Error 505 - Error del servidor</a></li>
@@ -114,6 +113,5 @@
             </li>
         </ul>
     </div>
-
 </body>
 </html>
