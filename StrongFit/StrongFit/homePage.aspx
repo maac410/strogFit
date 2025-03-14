@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
 <link rel="stylesheet" href="Resources/homeCss.css" /> <!-- Your custom CSS should come after Bootstrap -->
 
-    <script src="Resources\Js.js"></script>
+    <script src="Resources\homePageJs.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 
     <title>StrongFit</title>
@@ -46,14 +46,18 @@
     <!-- Button Container -->
     <div class="buttonCont">
         <button class="logInBtn" onclick="toggleLoginForm()">Iniciar Sesión</button>
+<<<<<<< HEAD
         <button class="suscribe" onclick="window.location.href='Suscribirse.aspx'"> Suscribirse </button>
+=======
+        <button class="suscribe" onclick="window.location.href='suscriptionPage.aspx'"> Suscribirse </button>
+>>>>>>> 03993919cc8028650ca7c47ff086d5680c70c5f1
     </div>
 
     <!-- Hidden Login Form -->
     <form id="form1" runat="server" class="logInCont">
         <table>
             <tr>
-                <td><asp:Label ID="lblUsuario" runat="server" Text="Id Usuario"></asp:Label></td></tr>
+                <td><asp:Label ID="lblUsuario" runat="server" Text="Id Usuario"></asp:Label></td></tr> 
             <tr>
                 <td><asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled" Style="width:90%" CssClass="button"></asp:TextBox></td>
                 <td><asp:RequiredFieldValidator
@@ -70,7 +74,11 @@
             <tr>
                 <td><asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label></td></tr>
             <tr>
+<<<<<<< HEAD
                 <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Style="width:90%" CssClass="button" ></asp:TextBox></td>
+=======
+                <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Style="width:90%" CssClass="button"></asp:TextBox></td>
+>>>>>>> 03993919cc8028650ca7c47ff086d5680c70c5f1
                 <td><asp:RequiredFieldValidator
                     runat="server"
                     ID="rfvContraseña"
@@ -82,10 +90,14 @@
                 </td>
             </tr>
             <tr>
+<<<<<<< HEAD
                 <td colspan="2"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="button"/></td>
+=======
+                <td colspan="2"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="button" /></td>
+>>>>>>> 03993919cc8028650ca7c47ff086d5680c70c5f1
             </tr>
             <tr>
-                <td colspan="2"><asp:Label ID="lblEstado" runat="server" ForeColor="Red"></asp:Label></td>
+                <td colspan="2"><asp:Label ID="lblEstado" runat="server" ForeColor="Red" ></asp:Label></td>
 
             </tr>
 

@@ -120,23 +120,33 @@
   <ItemGroup>
     <Content Include="dataDisplay\Alimentos\Alimentos.aspx" />
     <Content Include="dataDisplay\Alimentos\RegistroAlimento.aspx" />
-    <Content Include="Index.aspx" />
     <Content Include="mapaNavegacion.html" />
     <Content Include="Resources\homeCss.css" />
+<<<<<<< HEAD
     <Content Include="Resources\images\error 404.jpg" />
+=======
+    <Content Include="Resources\images\contCalories1.jpg" />
+    <Content Include="Resources\images\contCalories2.jpg" />
+>>>>>>> 03993919cc8028650ca7c47ff086d5680c70c5f1
     <Content Include="Resources\images\homeDropArrow.png" />
     <Content Include="Resources\images\homeImg1.jpg" />
     <Content Include="Resources\images\homeImg2.jpg" />
     <Content Include="Resources\images\homeImg3.jpeg" />
     <Content Include="Resources\images\homeImg4.jpg" />
     <Content Include="Resources\images\homeImg5.jpg" />
-    <Content Include="Resources\Js.js" />
+    <Content Include="Resources\images\logo.png" />
+    <Content Include="Resources\images\logo2.png" />
+    <Content Include="Resources\images\perTraining1.jpg" />
+    <Content Include="Resources\images\perTraining2.jpg" />
+    <Content Include="Resources\homePageJs.js" />
     <Content Include="Resources\Master.css" />
     <Content Include="Resources\paginasError\error404.html" />
     <Content Include="Resources\paginasError\error505.html" />
     <Content Include="Resources\tablasCss.css" />
     <Content Include="Web.config" />
     <Content Include="homePage.aspx" />
+    <Content Include="suscriptionPage.aspx" />
+    <Content Include="objetivo.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dataDisplay\Alimentos\Alimentos.aspx.cs">
@@ -153,13 +163,6 @@
     <Compile Include="dataDisplay\Alimentos\RegistroAlimento.aspx.designer.cs">
       <DependentUpon>RegistroAlimento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
@@ -175,10 +178,25 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="suscriptionPage.aspx.cs">
+      <DependentUpon>suscriptionPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suscriptionPage.aspx.designer.cs">
+      <DependentUpon>suscriptionPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="objetivo.aspx.cs">
+      <DependentUpon>objetivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="objetivo.aspx.designer.cs">
+      <DependentUpon>objetivo.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
+    <Content Include="Resources\images\error_404.webp" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

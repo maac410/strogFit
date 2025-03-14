@@ -146,9 +146,9 @@
     padding: 2px 24px;
 }
 .logInCont {
-    display: none;
+    display: none; 
     color: white;
-    flex-direction: column;
+    flex-direction: column; 
     background-color: rgba(0, 0, 0, 0.8); /* Fondo blanco semitransparente */
     width: 20%;
     top: 10vh;
@@ -165,17 +165,24 @@
 .button {
     border-radius: 15px; /* Bordes ovalados */
 }
+<<<<<<< HEAD
 
 .button {
     border-radius: 15px; /* Bordes ovalados */
 }
 
+=======
+.button {
+    border-radius: 15px; /* Bordes ovalados */
+}
+>>>>>>> 03993919cc8028650ca7c47ff086d5680c70c5f1
 .button {
     border-radius: 80px; /* Bordes ovalados */
     padding: 5px 10px;
 }
 
-.imgContMain {
+
+    .imgContMain {
     width: 50%;
     height: 100vh;
     overflow: hidden;
@@ -183,8 +190,6 @@
     top: 0;
     right: 0;
 }
-
-
     /* Styling for the image */
     .imgContMain img {
         width: 100%;
