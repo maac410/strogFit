@@ -122,7 +122,6 @@
     <Content Include="dataDisplay\Alimentos\RegistroAlimento.aspx" />
     <Content Include="mapaNavegacion.html" />
     <Content Include="Resources\homeCss.css" />
-<<<<<<< HEAD
     <Content Include="Resources\images\error 404.jpg" />
 =======
     <Content Include="Resources\images\contCalories1.jpg" />
