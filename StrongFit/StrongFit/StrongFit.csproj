@@ -123,6 +123,7 @@
     <Content Include="Index.aspx" />
     <Content Include="mapaNavegacion.html" />
     <Content Include="Resources\homeCss.css" />
+    <Content Include="Resources\images\error 404.jpg" />
     <Content Include="Resources\images\homeDropArrow.png" />
     <Content Include="Resources\images\homeImg1.jpg" />
     <Content Include="Resources\images\homeImg2.jpg" />

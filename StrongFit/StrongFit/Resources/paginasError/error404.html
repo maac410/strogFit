@@ -11,7 +11,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #000000;
         }
 
         .error-container {
@@ -25,6 +25,7 @@
 
         p {
             font-size: 20px;
+            color: #ffffff;
         }
 
         .home-btn {
@@ -34,7 +35,7 @@
             background-color: #007bff;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 15px; /* Bordes ovalados */
         }
 
             .home-btn:hover {
@@ -44,7 +45,9 @@
 </head>
 <body>
     <div class="error-container">
+        <img src="../images/logo.png" style="width: 200px; height: 200px; position: absolute; top: 50px; left: 20px; " />
         <h1>404</h1>
+        <img src="/Resources/images/error 404.jpg" alt="Descripción de la imagen" style=" width: 300px; height: 200px; " />
         <p>¡Ups! La página que estás buscando no existe.</p>
         <a href="../../homePage.aspx" class="home-btn">Volver a la página de inicio</a>
     </div>

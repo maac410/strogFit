@@ -17,19 +17,17 @@
           <img class="logo" src="Resources\images\logo.png" alt="Imagen 1">
     <div class="navBar">
       
-        <button class="home" onclick="window.location.href='homePage.aspx'">Home</button>
+        <button class="home" onclick="window.location.href='homePage.aspx'">Inicio</button>
        <button class="Informacion" onclick="toggleList()">Informacion</button>
 
     <!-- Hidden list of options -->
  
         <button class="acerca" onclick="scrollToSection3()">Acerca</button> <!-- Acerca Button -->
-        <input class="search" type="text" placeholder="search..." />
+        <input class="search" type="text" placeholder="Buscar..." />
     </div>
 
            <ul id="optionsList" class="InformacionList">
        <li><button class="Informacion" onclick="window.location.href='mapaNavegacion.html'">Ir a Mapa Navegación</button></li>
-       <li><button class="Informacion">Option 2</button></li>
-       <li><button class="Informacion">Option 3</button></li>
    </ul>
 
     <!-- Title and Description -->
@@ -48,7 +46,7 @@
     <!-- Button Container -->
     <div class="buttonCont">
         <button class="logInBtn" onclick="toggleLoginForm()">Iniciar Sesión</button>
-        <button class="suscribe"> Suscribirse </button>
+        <button class="suscribe" onclick="window.location.href='Suscribirse.aspx'"> Suscribirse </button>
     </div>
 
     <!-- Hidden Login Form -->
@@ -57,7 +55,7 @@
             <tr>
                 <td><asp:Label ID="lblUsuario" runat="server" Text="Id Usuario"></asp:Label></td></tr>
             <tr>
-                <td><asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled" Style="width:90%"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled" Style="width:90%" CssClass="button"></asp:TextBox></td>
                 <td><asp:RequiredFieldValidator
                     runat="server"
                     ID="rfvUsuario"
@@ -72,7 +70,7 @@
             <tr>
                 <td><asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label></td></tr>
             <tr>
-                <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Style="width:90%"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Style="width:90%" CssClass="button" ></asp:TextBox></td>
                 <td><asp:RequiredFieldValidator
                     runat="server"
                     ID="rfvContraseña"
@@ -84,7 +82,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" /></td>
+                <td colspan="2"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="button"/></td>
             </tr>
             <tr>
                 <td colspan="2"><asp:Label ID="lblEstado" runat="server" ForeColor="Red"></asp:Label></td>

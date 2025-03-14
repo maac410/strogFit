@@ -1,33 +1,118 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú con Botones</title>
+    <style>
+        /* Estilo global */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            width: 250px;
+            background-color: rgb(23, 23, 23);
+            height: 100vh;
+        }
+
+        /* Estilo para imágenes */
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* Menú */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 20;
+            width: 100%;
+        }
+
+            .footer-links > li {
+                margin-bottom: 10px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .footer-links a {
+                display: block;
+                text-decoration: none;
+                color: #ffffff;
+                background-color: #1e90ff;
+                padding: 10px;
+                border-radius: 15px;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                margin: 5px;
+            }
+
+                .footer-links a:hover {
+                    background-color: #ff6347;
+                    transform: scale(1.05);
+                }
+
+            /* Submenús */
+            .footer-links ul {
+                list-style: none;
+                padding: 0;
+                margin-top: 10px;
+            }
+
+                .footer-links ul li a {
+                    background-color: #2a2a2a;
+                    color: #1e90ff;
+                    padding: 8px 15px;
+                    font-size: 14px;
+                }
+
+                    .footer-links ul li a:hover {
+                        background-color: #444;
+                        color: #ff6347;
+                    }
+    </style>
 </head>
 <body>
-    <ul class="footer-links">
-        <li><a href="homePage.aspx">I. Pagina de Inicio</a></li>
-        <li>
-            II. Secciones
-            <ul>
-                <li><a href="#">II. Pagina de suscripcion</a></li>
-                <li><a href="#">II. Masterpage</a></li>
-            </ul>
-        </li>
-        <li>
-            III. Información
-            <ul>
-                <li><a href="#">III. Informacion de la aplicacion</a></li>
-                <li><a href="#">III. Quienes somos</a></li>
-            </ul>
-        </li>
-        <li>
-            IIII. Paginas de Error 
-            <ul>
-                <li><a href="Resources/paginasError/error404.html">Error 404 - Página no encontrada</a></li>
-                <li><a href="Resources/paginasError/error505.html">Error 505 - Error del servidor</a></li>
-            </ul>
-        </li>
-    </ul>
+    <!-- Contenedor para la imagen y el menú -->
+    <div class="container">
+        <!-- Imagen del logo -->
+        <img src="Resources/images/logo.png" alt="Logo">
+        <img src="Resources/images/homeImg1.jpg" style="width:1000px; height:1025px; position:absolute; top:0px; right:0px;" />
+
+        <!-- Menú de navegación -->
+        <ul class="footer-links">
+            <li><a href="homePage.aspx">Página de Inicio</a></li>
+            <li>
+                Secciones
+                <ul>
+                    <li><a href="#">Página de Suscripción</a></li>
+                    <li><a href="#">Masterpage</a></li>
+                </ul>
+            </li>
+            <li>
+                Información
+                <ul>
+                    <li><a href="#">Información de la Aplicación</a></li>
+                    <li><a href="#">Quiénes Somos</a></li>
+                </ul>
+            </li>
+            <li>
+                Páginas de Error
+                <ul>
+                    <li><a href="Resources/paginasError/error404.html">Error 404 - Página no encontrada</a></li>
+                    <li><a href="Resources/paginasError/error505.html">Error 505 - Error del servidor</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

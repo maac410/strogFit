@@ -162,6 +162,18 @@
     .logInCont label {
         color: black; /* Texto blanco para las etiquetas */
     }
+.button {
+    border-radius: 15px; /* Bordes ovalados */
+}
+
+.button {
+    border-radius: 15px; /* Bordes ovalados */
+}
+
+.button {
+    border-radius: 80px; /* Bordes ovalados */
+    padding: 5px 10px;
+}
 
 .imgContMain {
     width: 50%;
