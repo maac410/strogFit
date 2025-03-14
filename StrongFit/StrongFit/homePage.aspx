@@ -23,13 +23,11 @@
     <!-- Hidden list of options -->
  
         <button class="acerca" onclick="scrollToSection3()">Acerca</button> <!-- Acerca Button -->
-        <input class="search" type="text" placeholder="search..." />
+        <input class="search" type="text" placeholder="Buscar..." />
     </div>
 
            <ul id="optionsList" class="InformacionList">
        <li><button class="Informacion" onclick="window.location.href='mapaNavegacion.html'">Ir a Mapa Navegación</button></li>
-       <li><button class="Informacion">Option 2</button></li>
-       <li><button class="Informacion">Option 3</button></li>
    </ul>
 
     <!-- Title and Description -->
@@ -84,7 +82,9 @@
                 </td>
             </tr>
             <tr>
+
                 <td colspan="2"><asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="button" /></td>
+
             </tr>
             <tr>
                 <td colspan="2"><asp:Label ID="lblEstado" runat="server" ForeColor="Red" ></asp:Label></td>

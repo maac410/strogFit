@@ -165,9 +165,17 @@
 .button {
     border-radius: 15px; /* Bordes ovalados */
 }
+<<<<<<< HEAD
+
 .button {
     border-radius: 15px; /* Bordes ovalados */
 }
+
+=======
+.button {
+    border-radius: 15px; /* Bordes ovalados */
+}
+>>>>>>> 03993919cc8028650ca7c47ff086d5680c70c5f1
 .button {
     border-radius: 80px; /* Bordes ovalados */
     padding: 5px 10px;
