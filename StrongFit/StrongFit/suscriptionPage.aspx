@@ -1,68 +1,38 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="suscriptionPage.aspx.cs" Inherits="StrongFit.WebForm2" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Suscribirse - StrongFit</title>
+    <link rel="stylesheet" href="Resources/suscriptionPage.css" />
 </head>
 <body>
-       <!-- Hidden Login Form -->
-    <form id="form2" runat="server" class="registerUser">
-        <table>
-            <tr>
-                <td><asp:Label ID="rUsuario" runat="server" Text="Nombre/Usuario"></asp:Label> </td></tr>
-            <tr>
-                <td><asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled" Style="width:90%" CssClass="button"></asp:TextBox></td>
-                <td><asp:RequiredFieldValidator
-                    runat="server"
-                    ID="rfvUsuario"
-                    ControlToValidate="txtUsuario"
-                    ErrorMessage="*"
-                    ForeColor="Red"
-                    Display="Dynamic"
-                    />
-                </td>
-            </tr>
-                    
-            <tr>
-                <td><asp:Label ID="rCorreo" runat="server" Text="Correo"></asp:Label></td></tr>
-            <tr>
-                <td><asp:TextBox ID="txtCorreo" runat="server" TextMode="Email" Style="width:90%" CssClass="button"></asp:TextBox></td>
-                <td><asp:RequiredFieldValidator
-                    runat="server"
-                    ID="RequiredFieldValidator1"
-                    ControlToValidate="txtCorreo"
-                    ErrorMessage="*"
-                    ForeColor="Red"
-                    Display="Dynamic"
-                    />
-                </td>
-            </tr>
-         <tr>
-             <td><asp:Label ID="rContraseña" runat="server" Text="Contraseña"></asp:Label></td></tr>
-         <tr>
-             <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Style="width:90%" CssClass="button"></asp:TextBox></td>
-             <td><asp:RequiredFieldValidator
-                 runat="server"
-                 ID="rfvContraseña"
-                 ControlToValidate="txtContraseña"
-                 ErrorMessage="*"
-                 ForeColor="Red"
-                 Display="Dynamic"
-                 />
-             </td>
-         </tr>
-            <tr>
-                <td colspan="2"><asp:Button ID="btnContinuar" runat="server" Text="Continuar" CssClass="button" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><asp:Label ID="lblEstado" runat="server" ForeColor="Red" ></asp:Label></td>
-
-            </tr>
-
-        </table>
-
-    </form>
+    <div class="container">
+        <div class="form-box">
+            <img src="Resources/images/logo2.png" alt="StrongFit Logo" class="logo" />
+            <h2>Únete a StrongFit</h2>
+            <form id="form1" runat="server" class="register-form">
+                <div class="input-group">
+                    <label for="txtUsuario">Nombre de Usuario</label>
+                    <asp:TextBox ID="txtUsuario" runat="server" CssClass="input-field" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtUsuario" ErrorMessage="*" ForeColor="Red" />
+                </div>
+                <div class="input-group">
+                    <label for="txtCorreo">Correo Electrónico</label>
+                    <asp:TextBox ID="txtCorreo" runat="server" TextMode="Email" CssClass="input-field" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCorreo" ErrorMessage="*" ForeColor="Red" />
+                </div>
+                <div class="input-group">
+                    <label for="txtContraseña">Contraseña</label>
+                    <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" CssClass="input-field" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContraseña" ErrorMessage="*" ForeColor="Red" />
+                </div>
+                <button class="Continuar" onclick="window.location.href='objetivo.aspx'"> Continuar </button>
+                <asp:Label ID="lblEstado" runat="server" ForeColor="Red" />
+            </form>
+        </div>
+    </div>
 </body>
 </html>

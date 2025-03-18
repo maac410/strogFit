@@ -1,0 +1,115 @@
+﻿/* ======== Estilo General ======== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../Resources/images/homeImg1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ======== Contenedor Principal ======== */
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 350px;
+}
+
+/* ======== Logo ======== */
+.logo {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* ======== Formulario ======== */
+.registerUser {
+    background-color: rgba(15, 15, 15, 0.98);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    width: 400px;
+    text-align: center;
+    border: 3px solid rgba(0, 255, 0, 0.9);
+    position: relative;
+}
+
+/* ======== Campos de Entrada ======== */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid rgba(0, 255, 0, 0.7);
+    border-radius: 5px;
+    background: rgba(40, 40, 40, 0.9);
+    color: white;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Se mejoró la visibilidad del texto dentro de los campos */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Efecto al enfocar los campos */
+input:focus {
+    border-color: rgba(0, 255, 0, 1);
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+}
+
+/* ======== Validación: Tamaño de los "*" ======== */
+.validation-error {
+    font-size: 50px; /* Aumentado para mejor visibilidad */
+    color: #ff3333;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* ======== Botón "Continuar" ======== */
+.button {
+    width: 100%;
+    padding: 14px; /* Aumentado para mejor experiencia */
+    border: 2px solid rgba(0, 255, 0, 0.7);
+    background: linear-gradient(90deg, #008f39, #00cc66);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+    /* Efecto hover para mejorar el aspecto visual */
+    .button:hover {
+        background: linear-gradient(90deg, #00cc66, #00ff99);
+        border-color: #00ff99;
+        box-shadow: 0 0 12px rgba(0, 255, 0, 1);
+    }
+
+    /* Efecto activo para cuando el botón es presionado */
+    .button:active {
+        transform: scale(0.98);
+    }
+
+/* Mejoras en la responsividad */
+@media screen and (max-width: 480px) {
+    .registerUser {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        width: 100%;
+    }
+}

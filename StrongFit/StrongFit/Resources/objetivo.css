@@ -1,0 +1,63 @@
+﻿/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor del formulario */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+/* Título */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grupos de entrada */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+    /* Etiquetas */
+    .input-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+/* Campos de entrada */
+.input-field {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botón */
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .submit-button:hover {
+        background-color: #218838;
+    }

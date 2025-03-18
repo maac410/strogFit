@@ -14,7 +14,7 @@
 <body>
     <section class="section1">
     <!-- Navigation Bar -->
-          <img class="logo" src="Resources\images\logo.png" alt="Imagen 1">
+          <img class="logo" src="Resources\images\logo.png" alt="Imagen 1"/>
     <div class="navBar">
       
         <button class="home" onclick="window.location.href='homePage.aspx'">Inicio</button>
@@ -37,9 +37,9 @@
         <p class="text">Controla, optimiza tu alimentación y ejercicio con información precisa y herramientas tecnológicas avanzadas. Ideal para personas modernas y ocupadas que buscan mejorar su bienestar físico y mental. ¡Empieza a cuidar de ti mismo hoy!</p>
     </div>
 
- <!-- Image Container -->
+<!-- Contenedor de imagen -->
 <div class="imgContMain">
-    <img id="mainImage" alt="" />
+    <img id="mainImage" src="ruta/de/imagen.jpg" alt="Imagen principal" />
     <div class="border"></div>
 </div>
 
@@ -106,16 +106,16 @@
             <h3>Contador de Calorias</h3>
             <h4>En StrongFit, nuestro Contador de Calorías es una herramienta esencial para gestionar tu alimentación de manera inteligente y alcanzar tus objetivos de salud. Registra y monitorea fácilmente las calorías que consumes a diario, ajustando tus planes de alimentación según tus metas, ya sea perder peso, ganar masa muscular o simplemente mantenerte saludable.</h4>
             <div class="image-container">
-                <img src="Resources/images/contCalories1.jpg" class="img-thumbnail" alt="Imagen 1">
-                <img src="Resources/images/contCalories2.jpg" class="img-thumbnail" alt="Imagen 2">
+                <img src="Resources/images/contCalories1.jpg" class="img-thumbnail" alt="Imagen 1"/>
+                <img src="Resources/images/contCalories2.jpg" class="img-thumbnail" alt="Imagen 2"/>
             </div>
         </div>
         <div class="charTable2">
             <h3>Entrenamientos Personalizados</h3>
             <h4>En StrongFit, nuestros Entrenamientos Personalizados están diseñados para adaptarse a tus necesidades, nivel de condición física y metas específicas. Ya sea que quieras perder peso, ganar fuerza, aumentar tu resistencia o simplemente mantenerte activo, encontrarás planes que se ajustan perfectamente a ti.</h4>
             <div class="image-container">
-                <img src="Resources/images/perTraining1.jpg" class="img-thumbnail" alt="Imagen 1">
-                <img src="Resources/images/perTraining2.jpg" class="img-thumbnail" alt="Imagen 2">
+                <img src="Resources/images/perTraining1.jpg" class="img-thumbnail" alt="Imagen 1"/>
+                <img src="Resources/images/perTraining2.jpg" class="img-thumbnail" alt="Imagen 2"/>
             </div>
         </div>
     </div>
@@ -124,7 +124,7 @@
 
 <div class="contentWrapper2">
     <div class="charTable1_5">
-        <img src="Resources/images/logo2.png" alt="Imagen 1">
+        <img src="Resources/images/logo2.png" alt="Imagen 1"/>
     </div>
     <div class="charTable2_5">
         <h1 class="subTitle">Quienes somos</h1>
