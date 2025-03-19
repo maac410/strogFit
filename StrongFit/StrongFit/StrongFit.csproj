@@ -136,8 +136,10 @@
     <Content Include="Resources\images\perTraining2.jpg" />
     <Content Include="Resources\homePageJs.js" />
     <Content Include="Resources\Master.css" />
+    <Content Include="Resources\objetivo.css" />
     <Content Include="Resources\paginasError\error404.html" />
     <Content Include="Resources\paginasError\error505.html" />
+    <Content Include="Resources\suscriptionPage.css" />
     <Content Include="Resources\tablasCss.css" />
     <Content Include="Web.config" />
     <Content Include="homePage.aspx" />

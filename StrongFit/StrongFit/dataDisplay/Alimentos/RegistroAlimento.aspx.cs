@@ -100,7 +100,7 @@ namespace StrongFit.dataDisplay.Alimentos
                     ddlPorcion.Items.Insert(0, new ListItem("--Seleccione unidad--", "0"));
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
