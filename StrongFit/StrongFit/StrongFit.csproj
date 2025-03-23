@@ -141,10 +141,14 @@
     <Content Include="Resources\paginasError\error505.html" />
     <Content Include="Resources\suscriptionPage.css" />
     <Content Include="Resources\tablasCss.css" />
+    <Content Include="Resources\userPage.css" />
+    <Content Include="Resources\userPageJs.js" />
     <Content Include="Web.config" />
     <Content Include="homePage.aspx" />
     <Content Include="suscriptionPage.aspx" />
     <Content Include="objetivo.aspx" />
+    <Content Include="userPage.aspx" />
+    <Content Include="Index.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dataDisplay\Alimentos\Alimentos.aspx.cs">
@@ -189,6 +193,20 @@
     </Compile>
     <Compile Include="objetivo.aspx.designer.cs">
       <DependentUpon>objetivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userPage.aspx.cs">
+      <DependentUpon>userPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userPage.aspx.designer.cs">
+      <DependentUpon>userPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

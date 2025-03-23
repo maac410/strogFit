@@ -41,7 +41,8 @@
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtPeso" ErrorMessage="*" ForeColor="Red" />
             </div>
 
-            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="submit-button" OnClick="btnGuardar_Click" />
+         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClientClick="window.location.href='userPage.aspx'; return false;" CssClass="submit-button" />
+
         </form>
     </div>
 </body>

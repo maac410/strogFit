@@ -21,11 +21,6 @@
         <nav>
             <h2>Menu de navegación</h2>
             <asp:HyperLink runat="server" ID="hlAlimentos" NavigateUrl="~\dataDisplay\Alimentos\Alimentos.aspx" Text="Plan Nutricional" /><br />
-<<<<<<< HEAD
-=======
-            
-            
->>>>>>> 03993919cc8028650ca7c47ff086d5680c70c5f1
         </nav>
 
         <div class="content">
