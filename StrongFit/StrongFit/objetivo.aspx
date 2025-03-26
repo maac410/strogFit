@@ -40,8 +40,7 @@
                 <asp:TextBox ID="txtPeso" runat="server" CssClass="input-field" TextMode="Number" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtPeso" ErrorMessage="*" ForeColor="Red" />
             </div>
-
-         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClientClick="window.location.href='userPage.aspx'; return false;" CssClass="submit-button" />
+<asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" CssClass="submit-button" />
 
         </form>
     </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="suscriptionPage.aspx.cs" Inherits="StrongFit.WebForm2" %>
+﻿<<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="suscriptionPage.aspx.cs" Inherits="StrongFit.suscriptionPage" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,7 +29,7 @@
                     <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" CssClass="input-field" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContraseña" ErrorMessage="*" ForeColor="Red" />
                 </div>
-                <button class="Continuar" onclick="window.location.href='objetivo.aspx'"> Continuar </button>
+                <asp:Button ID="btnRegister" runat="server" Text="Continuar" OnClick="btnRegister_Click" CssClass="Continuar" />
                 <asp:Label ID="lblEstado" runat="server" ForeColor="Red" />
             </form>
         </div>
