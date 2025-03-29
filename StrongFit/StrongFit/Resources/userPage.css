@@ -1,7 +1,7 @@
 ﻿/* General body styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f7f7f9;
+    background-color: #f0f4f8; /* Light gray-blue background */
     margin: 0;
     padding: 0;
     display: flex;
@@ -16,19 +16,21 @@ body {
 /* Container for the buttons */
 .btnContainer {
     margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
     .btnContainer button {
         padding: 12px 25px;
         font-size: 18px;
-        margin: 8px;
         cursor: pointer;
         border: none;
         background-color: #3498db; /* Softer blue */
         color: white;
         border-radius: 8px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
         .btnContainer button:hover {
@@ -40,41 +42,32 @@ body {
             outline: none;
         }
 
-        /* Additional button for 'Day' */
-        .btnContainer button.dayBtn {
-            background-color: #e67e22; /* Orange for Day */
-        }
-
-            .btnContainer button.dayBtn:hover {
-                background-color: #d35400; /* Darker orange */
-            }
-
 /* Container for the content boxes */
 .bxContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
     flex-direction: column;
     width: 100%;
     height: 100%;
     position: relative;
+    gap: 20px; /* Added gap for spacing */
+    padding: 0 20px; /* Add padding for responsive spacing */
 }
 
-    /* Styles for each content box */
+    /* Styles for each content box (Rutina, Dieta) */
     .bxContainer > div {
         width: 320px;
-        height: 220px;
-        border: none;
-        border-radius: 10px;
         padding: 25px;
         margin: 15px 0;
-        visibility: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff; /* White background */
+        color: #333; /* Darker text for readability */
+        transition: all 0.3s ease;
         opacity: 0;
-        transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease;
-        text-align: center;
-        position: absolute;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        visibility: hidden;
+        transform: translateY(20px);
     }
 
     .bxContainer .rutina {
@@ -95,11 +88,77 @@ body {
     transform: translateY(0);
 }
 
-/* Additional styling for a smoother transition effect */
-.bxContainer > div {
-    transform: translateY(20px);
+/* Calendar Styling */
+.userpage__calendar {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
 }
 
-    .bxContainer > div.show {
-        transform: translateY(0);
+    .userpage__calendar table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
     }
+
+    .userpage__calendar th,
+    .userpage__calendar td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+        font-size: 16px;
+    }
+
+    .userpage__calendar th {
+        background-color: #3498db; /* Soft blue */
+        color: white;
+        font-weight: bold;
+    }
+
+    .userpage__calendar td {
+        background-color: #f9f9f9;
+        cursor: pointer;
+    }
+
+        .userpage__calendar td.disabled {
+            background-color: #e0e0e0;
+            color: #bbb;
+        }
+
+        .userpage__calendar td:hover:not(.disabled) {
+            background-color: #3498db;
+            color: white;
+        }
+
+/* Buttons for Day Selection */
+.dayButtons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+    .dayButtons button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #f39c12; /* Orange for Day buttons */
+        border: none;
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .dayButtons button:hover {
+            background-color: #e67e22; /* Darker orange */
+            transform: scale(1.05);
+        }
+
+        .dayButtons button:focus {
+            outline: none;
+        }

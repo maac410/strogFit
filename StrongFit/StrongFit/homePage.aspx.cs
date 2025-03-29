@@ -4,14 +4,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
-using System.Xml.Linq;
 
 namespace StrongFit
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
         // Retrieve the connection string from the web.config file
-        String cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+        string cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
 
         // This is the Page_Load event
         protected void Page_Load(object sender, EventArgs e)
@@ -22,16 +21,16 @@ namespace StrongFit
         // This is the event handler for the login button click
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            String Usuario = txtUsuario.Text;
-            String Contra = txtContraseña.Text;
+            string Usuario = txtUsuario.Text;
+            string Contra = txtContrasena.Text;
 
             // Create a connection to the database
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
                 try
                 {
-                    // SQL query to check if the user exists in the database
-                    String sql = "SELECT contraseña FROM clientes WHERE Nombre = @Usuario AND contraseña = @Contra";
+                    // Modify the SQL query to also get the role
+                    string sql = "SELECT contrasena, rol FROM usuarios WHERE nombre = @Usuario AND contrasena = @Contra";
 
                     // Open the connection
                     conexion.Open();
@@ -49,11 +48,24 @@ namespace StrongFit
                     // Check if any rows are returned (user exists and password matches)
                     if (lector.HasRows)
                     {
+                        // Read the data (password and role)
+                        lector.Read();
+                        string rol = lector["rol"].ToString(); // Get the role
+
                         // Set session variable for the logged-in user
                         Session["usuario"] = Usuario;
 
-                        // Redirect the user to the homepage (Inicio.aspx)
-                        Response.Redirect("Index.aspx", false);
+                        // Redirect based on the user's role
+                        if (rol == "Usuario")
+                        {
+                            // Redirect to userPage.aspx for other roles
+                            Response.Redirect("userPage.aspx", false);
+                        }
+                        else
+                        {
+                            // Redirect to Index.aspx if the user is an administrator, nutricionista, or entrenador
+                            Response.Redirect("Index.aspx", false);
+                        }
                     }
                     else
                     {

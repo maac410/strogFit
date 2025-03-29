@@ -49,8 +49,8 @@
         </tr>
         <tr>
             <td colspan="2" style="text-align:left">
-                <asp:Button ID="btnAñadir" runat="server" Text="Añadir" OnClick="btnAñadir_Click" UseSubmitBehavior="true" Visible="false" />
-                <asp:Button ID="btnUpdate" runat="server" Text="Actualizar Alimento" OnClick="btnUpdate_Click" UseSubmitBehavior="true" Visible="false" />
+                <asp:Button ID="btnAñadir" runat="server" Text="Añadir" OnClick="btnAñadir_Click" UseSubmitBehavior="true"/>
+                <asp:Button ID="btnUpdate" runat="server" Text="Actualizar Alimento" OnClick="btnUpdate_Click" UseSubmitBehavior="true" />
                 <asp:Button ID="btnVolver" runat="server" Text="Volver" Visible="true" OnClientClick="window.location.href='Alimentos.aspx'; return false;" />
             </td>
                 

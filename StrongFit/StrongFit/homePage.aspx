@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="StrongFit.WebForm1" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homePage.aspx.cs" Inherits="StrongFit.WebForm1" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="UTF-8" />
-<link rel="stylesheet" href="Resources/homeCss.css" /> <!-- Your custom CSS should come after Bootstrap -->
+<link rel="stylesheet" href="Resources/home.css" /> <!-- Your custom CSS should come after Bootstrap -->
 
-    <script src="Resources\homePageJs.js"></script>
+    <script src="Resources\homePage.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 
     <title>StrongFit</title>
@@ -68,13 +68,13 @@
             </tr>
 
             <tr>
-                <td><asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label></td></tr>
+                <td><asp:Label ID="lblContrasena" runat="server" Text="Contraseña"></asp:Label></td></tr>
             <tr>
-                <td><asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Style="width:90%" CssClass="button"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtContrasena" runat="server" TextMode="Password" Style="width:90%" CssClass="button"></asp:TextBox></td>
                 <td><asp:RequiredFieldValidator
                     runat="server"
                     ID="rfvContraseña"
-                    ControlToValidate="txtContraseña"
+                    ControlToValidate="txtContrasena"
                     ErrorMessage="*"
                     ForeColor="Red"
                     Display="Dynamic"

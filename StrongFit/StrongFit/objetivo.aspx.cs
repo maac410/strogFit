@@ -43,12 +43,11 @@ namespace StrongFit
                 try
                 {
                     con.Open();
-                    string query = "INSERT INTO Objetivos (Edad, Genero, Altura, Peso) VALUES (@Edad, @Genero, @Altura, @Peso)";
+                    string query = "INSERT INTO objetivos (genero, altura, peso) VALUES (@Edad, @Genero, @Altura, @Peso)";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, con))
                     {
                         // Defining parameters to prevent SQL injection
-                        cmd.Parameters.AddWithValue("@Edad", edad);
                         cmd.Parameters.AddWithValue("@Genero", genero);
                         cmd.Parameters.AddWithValue("@Altura", altura);
                         cmd.Parameters.AddWithValue("@Peso", peso);

@@ -17,7 +17,7 @@ namespace StrongFit
         /// <summary>
         /// form1 control.
         /// </summary>
-        /// <remarks>https://localhost:44327/suscriptionPage.aspx.cs
+        /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
@@ -42,13 +42,13 @@ namespace StrongFit
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
 
         /// <summary>
-        /// txtContraseña control.
+        /// txtContrasena control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContraseña;
+        protected global::System.Web.UI.WebControls.TextBox txtContrasena;
 
         /// <summary>
         /// btnRegister control.

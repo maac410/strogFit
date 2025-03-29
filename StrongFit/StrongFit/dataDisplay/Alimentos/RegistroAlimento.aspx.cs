@@ -1,16 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Asn1.Ocsp;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplication1_StrongFit.Alimentos;
-using static Mysqlx.Datatypes.Scalar.Types;
-using String = System.String;
 
 namespace StrongFit.dataDisplay.Alimentos
 {
@@ -18,6 +11,7 @@ namespace StrongFit.dataDisplay.Alimentos
     {
         String cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
         String pa_idAlimentos;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,37 +20,28 @@ namespace StrongFit.dataDisplay.Alimentos
                 if (Request.Form["idAlimentos"] != null)
                 {
                     pa_idAlimentos = Request.Form["idAlimentos"];
-                    //Response.Write("<script>alert('Se recibio: " + pa_idAlimentos + "');</script>");
                     lblAccion.Text = "Actualizar Alimento";
                     btnUpdate.Visible = true;
                     txtAlimento.Enabled = false;
                     CargarDatos();
-
                 }
                 else
                 {
                     lblAccion.Text = "Insertar alimento";
-                    btnAñadir.Visible = true;   
+                    btnAñadir.Visible = true;
                 }
-
-
             }
-
-
-
         }
+
         private void CargarDatos()
         {
-            string alimento = txtAlimento.Text;
-            string cantidad = txtCantidad.Text;
-            string Porcion = ddlPorcion.Text;
-
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
                 try
                 {
-                    MySqlCommand comando = new MySqlCommand("SELECT alimento,cantidad,Tamaño_ración FROM Alimentos WHERE alimento = @alimento", conexion);
-                    comando.Parameters.AddWithValue("@alimento", pa_idAlimentos); // Fix parameter name
+                    // Fix the parameter name to use ID for fetching
+                    MySqlCommand comando = new MySqlCommand("SELECT alimento, cantidad, Tamaño_ración FROM alimentos WHERE idAlimento = @idAlimento", conexion);
+                    comando.Parameters.AddWithValue("@idAlimento", pa_idAlimentos); // Using ID for fetching the data
 
                     conexion.Open();
                     MySqlDataReader lector = comando.ExecuteReader();
@@ -64,12 +49,12 @@ namespace StrongFit.dataDisplay.Alimentos
                     {
                         lector.Read();
                         txtAlimento.Text = lector["alimento"].ToString();
-                        txtCantidad.Text = lector["cantidad"].ToString(); // Fix field name
+                        txtCantidad.Text = lector["cantidad"].ToString();
                         ddlPorcion.SelectedValue = lector["Tamaño_ración"].ToString();
                     }
                     else
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se Encontro el alimento para actualizar');", true);
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No se encontró el alimento para actualizar');", true);
                     }
                 }
                 catch (Exception ex)
@@ -79,14 +64,13 @@ namespace StrongFit.dataDisplay.Alimentos
             }
         }
 
-
         private void LoadRegistro()
         {
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
                 try
                 {
-                    String sql = "SELECT * FROM alimentos";
+                    string sql = "SELECT * FROM alimentos";
                     conexion.Open();
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
                     ddlPorcion.DataSource = comando.ExecuteReader();
@@ -94,13 +78,11 @@ namespace StrongFit.dataDisplay.Alimentos
                     ddlPorcion.DataValueField = "Tamaño_ración";
                     ddlPorcion.DataBind();
                     ddlPorcion.Items.Insert(0, new ListItem("--Seleccione unidad--", "0"));
-
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error al cargar datos: " + HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true);
                 }
-
             }
         }
 
@@ -111,32 +93,35 @@ namespace StrongFit.dataDisplay.Alimentos
                 string alimento = txtAlimento.Text;
                 string cantidad = txtCantidad.Text;
                 string Porcion = ddlPorcion.Text;
+
                 using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
                 {
                     try
                     {
-                        MySqlCommand comando = new MySqlCommand("INSERT INTO alimentos (alimento,cantidad,tamaño_ración) VALUES (@alimento,@Cantidad,@tamaño_ración)", conexion);
-                        comando.Parameters.AddWithValue("alimento", alimento);
-                        comando.Parameters.AddWithValue("cantidad", cantidad);
-                        comando.Parameters.AddWithValue("tamaño_ración", Porcion);
-                        conexion.Open();
-                        comando.ExecuteNonQuery();
-                        //limpiar los campos del formulario
+                        using (MySqlCommand comando = new MySqlCommand("INSERT INTO alimentos (alimento, cantidad, tamaño_ración) VALUES (@alimento, @Cantidad, @tamaño_ración)", conexion))
+                        {
+                            comando.Parameters.AddWithValue("alimento", alimento);
+                            comando.Parameters.AddWithValue("cantidad", cantidad);
+                            comando.Parameters.AddWithValue("tamaño_ración", Porcion);
+
+                            conexion.Open();
+                            comando.ExecuteNonQuery();
+                        }
+
+                        // Clear input fields after successful insert
                         txtAlimento.Text = "";
                         txtCantidad.Text = "";
                         ddlPorcion.SelectedIndex = 0;
                         ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Alimento Ingresado con Exito.');", true);
-
                     }
                     catch (Exception ex)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " +
-                            HttpUtility.JavaScriptStringEncode(ex.Message), true);
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Error general: " + HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true);
                     }
-
                 }
             }
         }
+
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
@@ -149,22 +134,25 @@ namespace StrongFit.dataDisplay.Alimentos
                 {
                     try
                     {
-                        MySqlCommand comando = new MySqlCommand("UPDATE alimentos SET cantidad = @cantidad, tamaño_ración = @tamaño_ración WHERE alimento = @alimento", conexion);
-                        comando.Parameters.AddWithValue("@alimento", alimento);
-                        comando.Parameters.AddWithValue("@cantidad", cantidad);
-                        comando.Parameters.AddWithValue("@tamaño_ración", Porcion);
-                        conexion.Open();
-                        int filasAfectadas = comando.ExecuteNonQuery();
+                        using (MySqlCommand comando = new MySqlCommand("UPDATE alimentos SET cantidad = @cantidad, tamaño_ración = @tamaño_ración WHERE alimento = @alimento", conexion))
+                        {
+                            comando.Parameters.AddWithValue("@alimento", alimento);
+                            comando.Parameters.AddWithValue("@cantidad", cantidad);
+                            comando.Parameters.AddWithValue("@tamaño_ración", Porcion);
 
-                        if (filasAfectadas > 0)
-                        {
-                            string script = "alert('Alimento Actualizado exitosamente.');window.location.href='Alimentos.aspx'";
-                            ClientScript.RegisterStartupScript(this.GetType(), "RedirectOK", script, true);
-                        }
-                        else
-                        {
-                            string script = "alert('Alimento no registrado.');window.location.href='Alimentos.aspx'";
-                            ClientScript.RegisterStartupScript(this.GetType(), "RedirectNf", script, true);
+                            conexion.Open();
+                            int filasAfectadas = comando.ExecuteNonQuery();
+
+                            if (filasAfectadas > 0)
+                            {
+                                string script = "alert('Alimento Actualizado exitosamente.');window.location.href='Alimentos.aspx'";
+                                ClientScript.RegisterStartupScript(this.GetType(), "RedirectOK", script, true);
+                            }
+                            else
+                            {
+                                string script = "alert('Alimento no registrado.');window.location.href='Alimentos.aspx'";
+                                ClientScript.RegisterStartupScript(this.GetType(), "RedirectNf", script, true);
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -174,8 +162,5 @@ namespace StrongFit.dataDisplay.Alimentos
                 }
             }
         }
-
-
     }
 }
-//listo

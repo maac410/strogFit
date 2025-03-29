@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <link href="../../Resources/tablasCss.css" rel="stylesheet" />
+    <link href="../../Resources/tablas.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="main" runat="server">
     <h1>listado de Alimentos</h1>

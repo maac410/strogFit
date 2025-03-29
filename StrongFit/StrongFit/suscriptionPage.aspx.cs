@@ -22,7 +22,7 @@ namespace StrongFit
                 // Get values from form fields
                 string usuario = txtUsuario.Text.Trim();
                 string correo = txtCorreo.Text.Trim();
-                string contraseña = txtContraseña.Text.Trim();
+                string contraseña = txtContrasena.Text.Trim();
 
                 // Call the method to insert data into the database
                 RegisterUser(usuario, correo, contraseña);
@@ -35,12 +35,12 @@ namespace StrongFit
                 // Open connection to MySQL database
                 using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
                 {
-                    MySqlCommand comando = new MySqlCommand("INSERT INTO Clientes (nombre, correo, contraseña) VALUES (@usuario, @correo, @contraseña)", conexion);
+                    MySqlCommand comando = new MySqlCommand("INSERT INTO usuarios (nombre, rol, correo, contrasena) VALUES (@usuario, 'Usuario', @correo, @contrasena)", conexion);
 
                     // Add parameters to prevent SQL injection
                     comando.Parameters.AddWithValue("@usuario", usuario);
                     comando.Parameters.AddWithValue("@correo", correo);
-                    comando.Parameters.AddWithValue("@contraseña", contrasena);
+                    comando.Parameters.AddWithValue("@contrasena", contrasena);
 
                     conexion.Open();
                     int filasAfectadas = comando.ExecuteNonQuery(); // Execute the query to insert data
