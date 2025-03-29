@@ -1,122 +1,163 @@
-/* General body settings */
+/* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #111111; /* Fondo oscuro para el cuerpo */
-    color: #e9ecef; /* Texto claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../Resources/images/homeImg4.jpg') no-repeat center center/cover;
+    color: white;
 }
 
-/* Navbar styles */
-nav {
-    background-color: #2a2a2a; /* Fondo oscuro para el menú */
-    padding: 20px;
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 18px 10px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
     border-radius: 10px;
-    box-shadow: 0 4px 8px #00ffe8;
+    box-shadow: 0px 0px 15px rgba(0, 255, 68, 0.3);
 }
 
-    nav h2 {
-        font-size: 26px;
-        font-weight: 600;
-        color: #00ffe8; /* Texto claro */
-        margin-bottom: 20px;
-        letter-spacing: 1px;
-    }
+h1 {
+    color: #00ff44;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-shadow: 0px 0px 10px rgba(0, 255, 68, 0.5);
+}
 
-    nav a {
-        color: white;
-        font-size: 18px;
+p {
+    font-size: 1.2em;
+    opacity: 1;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+
+/* Barra de navegación */
+.navbar {
+    background: rgba(26, 26, 26, 0.9);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+    .navbar a {
+        color: #00ff44;
         text-decoration: none;
-        display: block;
-        padding: 8px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
+        font-size: 18px;
+        font-weight: bold;
     }
 
-        nav a:hover {
-            background-color: #495057; /* Fondo gris oscuro en hover */
-            color: #00ffe8; /* Amarillo en hover */
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        padding: 0;
+        margin: 0;
+    }
+
+        .navbar ul li {
+            display: inline;
         }
 
-/* Main content area */
-.content {
-    background-color: #2a2a2a; /* Fondo oscuro */
-    border-radius: 12px;
-    padding: 30px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px #00ffe8;
-    color: #8c7700;
+            .navbar ul li a {
+                color: #00ff44;
+                transition: 0.3s;
+            }
+
+                .navbar ul li a:hover {
+                    color: white;
+                }
+
+/* Encabezado */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #00ff44;
 }
 
-/* Header styles */
-header h1 {
-    font-size: 38px;
-    font-weight: 700;
-    color: #00ffe8;
-    text-align: center;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-header div h1 {
-    font-size: 20px;
-    font-weight: 400;
-    color: #00ffe8;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Button Styles */
-button {
-    background-color: #00ffe8; /* Verde vibrante */
-    border: none;
-    color: #00ffe8;
-    padding: 12px 24px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
-    margin-top: 20px;
-}
-
-    button:hover {
-        background-color: #00ffe8; /* Verde oscuro al hacer hover */
+    .header h1 {
+        font-size: 28px;
+        font-weight: bold;
+        color: #00ff44;
     }
 
-    button:focus {
-        outline: none;
+    .header .user-info {
+        font-size: 18px;
     }
 
-/* Footer styles */
-footer {
-    text-align: center;
-    background-color: #343a40;
-    padding: 15px;
-    margin-top: 30px;
-    color: #ffc107;
+/* Botón de salida */
+.btn-neon {
+    background: transparent;
+    border: 2px solid #00ff44;
+    color: #00ff44;
+    padding: 10px 20px;
     font-size: 16px;
-    border-top: 1px solid #00ffe8;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Responsive Design */
+    .btn-neon:hover {
+        background: #00ff44;
+        color: black;
+    }
+
+/* Contenido principal */
+.main-content {
+    margin-top: 20px;
+}
+
+/* Pie de página */
+.footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 2px solid #00ff44;
+}
+
+/* Media Queries (para móviles) */
 @media (max-width: 768px) {
-    nav h2 {
-        font-size: 22px;
+    .navbar {
+        flex-direction: column;
+        text-align: center;
     }
 
-    nav a {
-        font-size: 16px;
-    }
+        .navbar ul {
+            flex-direction: column;
+            gap: 10px;
+        }
 
-    header h1 {
-        font-size: 30px;
-    }
-
-    footer {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 10px 20px;
+    .header {
+        flex-direction: column;
+        text-align: center;
     }
 }
+.explore-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #00ff44; /* Verde neon */
+    border: 2px solid #00ff44;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    text-transform: uppercase;
+}
+
+    .explore-button:hover {
+        background: #00ff44;
+        color: black;
+        box-shadow: 0 0 15px #00ff44;
+        transform: scale(1.05);
+    }

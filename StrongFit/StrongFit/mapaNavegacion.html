@@ -1,118 +1,44 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú con Botones</title>
-    <style>
-        /* Estilo global */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-        }
-
-        /* Contenedor principal */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 20px;
-            width: 250px;
-            background-color: rgb(23, 23, 23);
-            height: 100vh;
-        }
-
-        /* Estilo para imágenes */
-        img {
-            width: 150px;
-            margin-bottom: 20px;
-        }
-
-        /* Menú */
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 20px;
-            width: 100%;
-        }
-
-            .footer-links > li {
-                margin-bottom: 10px;
-                font-size: 18px;
-                font-weight: bold;
-            }
-
-            .footer-links a {
-                display: block;
-                text-decoration: none;
-                color: #ffffff;
-                background-color: #1e90ff;
-                padding: 10px;
-                border-radius: 15px;
-                transition: background-color 0.3s ease, transform 0.2s ease;
-                margin: 5px;
-            }
-
-                .footer-links a:hover {
-                    background-color: #ff6347;
-                    transform: scale(1.05);
-                }
-
-            /* Submenús */
-            .footer-links ul {
-                list-style: none;
-                padding: 0;
-                margin-top: 10px;
-            }
-
-                .footer-links ul li a {
-                    background-color: #2a2a2a;
-                    color: #1e90ff;
-                    padding: 8px 15px;
-                    font-size: 14px;
-                }
-
-                    .footer-links ul li a:hover {
-                        background-color: #444;
-                        color: #ff6347;
-                    }
-    </style>
+    <title>Strong Fit</title>
+    <link rel="stylesheet" href="Resources/MapaNavegacion.css">
 </head>
 <body>
-    <!-- Contenedor para la imagen y el menú -->
-    <div class="container">
-        <!-- Imagen del logo -->
-        <img src="Resources/images/logo.png" alt="Logo">
-        <img src="Resources/images/homeImg1.jpg" style="width:1615px; height:1025px; position:absolute; top:0px; right:0px;" />
 
-        <!-- Menú de navegación -->
-        <ul class="footer-links">
-            <li><a href="homePage.aspx">Página de Inicio</a></li>
-            <li>
-                Secciones
-                <ul>
-                    <li><a href="suscriptionPage.aspx">Página de Suscripción</a></li>
-                    <li><a href="Site.Master">Masterpage</a></li>
-                </ul>
-            </li>
-            <li>
-                Información
-                <ul>
-                    <li><a href="#">Información de la Aplicación</a></li>
-                    <li><a href="#">Quiénes Somos</a></li>
-                </ul>
-            </li>
-            <li>
-                Páginas de Error
-                <ul>
-                    <li><a href="Resources/paginasError/error404.html">Error 404 - Página no encontrada</a></li>
-                    <li><a href="Resources/paginasError/error505.html">Error 505 - Error del servidor</a></li>
-                </ul>
-            </li>
-        </ul>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Menú lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="Resources/images/logo.png" alt="Logo Strong Fit">
+            </div>
+            <nav>
+                <a href="homePage.aspx" class="menu-item active">Página de Inicio</a>
+
+                <h3>Secciones</h3>
+                <a href="suscriptionPage.aspx" class="menu-item">Página de Suscripción</a>
+                <a href="masterpage.html" class="menu-item">Masterpage</a>
+                <a href="objetivo.aspx" class="menu-item">Objetivo</a>
+
+                <h3>Información</h3>
+                <a href="homePage.aspx#section-2" class="menu-item">Información de la Aplicación</a>
+                <a href="homePage.aspx#section-3" class="menu-item">Quiénes Somos</a>
+
+
+                <h3>Páginas de Error</h3>
+                <a href="Resources/paginasError/error404.html" class="menu-item error">Error 404 - Página no encontrada</a>
+                <a href="Resources/paginasError/error505.html" class="menu-item error">Error 505 - Error del servidor</a>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <img src="Resources/images/homeImg1.jpg" alt="Ejercicio">
+        </main>
     </div>
+
 </body>
 </html>
