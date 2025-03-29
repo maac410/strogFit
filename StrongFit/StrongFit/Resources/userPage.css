@@ -3,7 +3,6 @@ body {
     background: url('../Resources/images/homeImg8.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
-    color: white;
     margin: 0;
     padding: 0;
     display: flex;
@@ -207,3 +206,53 @@ input, select {
         padding: 10px;
     }
 }
+
+
+/* Calendar Table Styles */
+.userpage__calendar table {
+    width: 100%;
+    max-width: 600px; /* Restrict width of the calendar */
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visual */
+}
+
+.userpage__calendar th, .userpage__calendar td {
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.userpage__calendar th {
+    background-color: #3498db; /* Blue background for the header */
+    color: white;
+    font-weight: bold;
+}
+
+.userpage__calendar td {
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    /* Hover effect for calendar cells */
+    .userpage__calendar td:hover {
+        background-color: #2980b9; /* Darker blue when hovering over a day */
+        transform: scale(1.05);
+        color: white;
+    }
+
+    /* Disabled day styles */
+    .userpage__calendar td.disabled {
+        color: #aaa; /* Gray color for disabled days */
+        pointer-events: none; /* Disable click interaction */
+        background-color: #f0f0f0; /* Light gray background for disabled days */
+    }
+
+/* Add spacing between each row of days */
+.userpage__calendar tr {
+    text-align: center;
+}
+

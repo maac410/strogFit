@@ -27,11 +27,21 @@
 
         <!-- Botón Mejorado -->
         <div class="mt-4">
-            <asp:HyperLink runat="server" NavigateUrl="~/dataDisplay/Alimentos/Alimentos.aspx" 
+            <asp:HyperLink runat="server" NavigateUrl="~/dataDisplay/Usuarios/usuarios.aspx" 
                            CssClass="explore-button"
-                           aria-label="Explorar el Plan Nutricional">
-                Explorar Plan Nutricional
+                           aria-label="Registro de Usuarios">
+                Registro de Usuarios
             </asp:HyperLink>
+               <asp:HyperLink runat="server" NavigateUrl="~/dataDisplay/Recetas/recetas.aspx" 
+                  CssClass="explore-button"
+                  aria-label="Editar Recetas">
+                Editar Recetas
+   </asp:HyperLink>
+           <asp:HyperLink runat="server" NavigateUrl="~/dataDisplay/Ejercicios/ejercicios.aspx" 
+                  CssClass="explore-button"
+                  aria-label="Editar Ejercicios">
+                Editar Ejercicios
+   </asp:HyperLink>
         </div>
     </div>
 </asp:Content>

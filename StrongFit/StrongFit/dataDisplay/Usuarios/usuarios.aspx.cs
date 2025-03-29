@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace StrongFit.dataDisplay.Alimentos
+namespace WebApplication1_StrongFit.Usuarios
 {
     public partial class Usuarios : System.Web.UI.Page
     {
@@ -20,76 +20,73 @@ namespace StrongFit.dataDisplay.Alimentos
             }
         }
 
-        // Method to load data into the GridView
         private void CargarGridView()
         {
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
                 try
                 {
-                    // SQL query to fetch users data
-                    String sql = "SELECT usuario_id, nombre, rol, correo FROM usuarios";
+                    // Query to fetch the users' data
+                    String sql = "SELECT usuario_id, rol, nombre, correo FROM usuarios";
+
                     conexion.Open();
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
                     MySqlDataAdapter da = new MySqlDataAdapter(comando);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    // Bind the data to the GridView
                     gvDatosUsuarios.DataSource = dt;
-                    gvDatosUsuarios.DataBind();
+                    gvDatosUsuarios.DataBind(); // Important to reflect data on the UI
                 }
                 catch (Exception ex)
                 {
-                    // Display error if there is an issue with data retrieval
+                    // Register error for debugging
                     ClientScript.RegisterStartupScript(this.GetType(), "alert",
                         "alert('Error al cargar datos: " + HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true);
                 }
             }
         }
 
-        // Event handler for the GridView RowCommand event (for Update and Delete operations)
         protected void gvDatosUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            string IdUsuario = e.CommandArgument.ToString();
-
+            String usuarioId = e.CommandArgument.ToString();
             if (e.CommandName == "Actualizar")
             {
-                // Redirect to the update page with the user ID
-                Response.Redirect("ActualizarUsuario.aspx?usuario_id=" + IdUsuario);
+                String targetUrl = "RegistroUsuario.aspx";
+                String formHtml = $"<form action='{targetUrl}' method='post' style='display:none'>" +
+                                  $"<input type='hidden' name='usuario_id' value='{usuarioId}' />" +
+                                  "</form><script>document.forms[0].submit();</script>";
+                Response.Clear();
+                Response.Write(formHtml);
+                Response.End();
             }
             else if (e.CommandName == "Eliminar")
             {
-                // Call the method to delete the user
-                eliminarUsuario(IdUsuario);
+                eliminarUsuario(usuarioId);
             }
         }
 
-        // Method to delete a user by their ID
-        private void eliminarUsuario(string idUsuario)
+        private void eliminarUsuario(string usuarioId)
         {
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
                 try
                 {
-                    // SQL command to delete a user from the database
-                    MySqlCommand comando = new MySqlCommand("DELETE FROM usuarios WHERE usuario_id = @IdUsuario", conexion);
-                    comando.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                    MySqlCommand comando = new MySqlCommand("DELETE FROM usuarios WHERE usuario_id = @usuario_id", conexion);
+                    comando.Parameters.AddWithValue("@usuario_id", usuarioId);
                     conexion.Open();
                     int filasBorradas = comando.ExecuteNonQuery();
 
-                    // Notify the user if the deletion was successful
                     string script = filasBorradas > 0
-                        ? "alert('Usuario eliminado exitosamente.');window.location.href='usuarios.aspx';"
-                        : "alert('Usuario no encontrado.');window.location.href='usuarios.aspx';";
+                        ? "alert('Usuario eliminado exitosamente.');window.location.href='Usuarios.aspx';"
+                        : "alert('Usuario no encontrado.');window.location.href='Usuarios.aspx';";
 
                     ClientScript.RegisterStartupScript(this.GetType(), "Redirect", script, true);
                 }
                 catch (Exception ex)
                 {
-                    // Handle errors and display them
                     ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Error al eliminar: " + HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true);
+                        "alert('Error general: " + HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true);
                 }
             }
         }

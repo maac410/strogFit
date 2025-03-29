@@ -48,10 +48,7 @@
             <div class="container">
                 <a class="logo" href="#">StrongFit</a>
                 <div class="nav-links">
-                    <asp:HyperLink runat="server" ID="hlAlimentos" 
-                                   NavigateUrl="~/dataDisplay/Alimentos/Alimentos.aspx" 
-                                   CssClass="nav-item" 
-                                   Text="Plan Nutricional" />
+        
                 </div>
             </div>
         </nav>

@@ -147,8 +147,11 @@
     <Content Include="Resources\images\perTraining1.jpg" />
     <Content Include="Resources\images\perTraining2.jpg" />
     <Content Include="Resources\homePage.js" />
+    <Content Include="Resources\index.css" />
     <Content Include="Resources\JavaScript.js" />
     <Content Include="Resources\calendar.js" />
+    <Content Include="Resources\mapaNavegacion.css" />
+    <Content Include="Resources\mapaNavegacion.js" />
     <Content Include="Resources\Master.css" />
     <Content Include="Resources\objetivo.css" />
     <Content Include="Resources\paginasError\error404.html" />

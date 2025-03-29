@@ -28,6 +28,7 @@ namespace StrongFit
                 RegisterUser(usuario, correo, contraseña);
             }
         }
+
         private void RegisterUser(string usuario, string correo, string contrasena)
         {
             try
@@ -35,7 +36,8 @@ namespace StrongFit
                 // Open connection to MySQL database
                 using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
                 {
-                    MySqlCommand comando = new MySqlCommand("INSERT INTO usuarios (nombre, rol, correo, contrasena) VALUES (@usuario, 'Usuario', @correo, @contrasena)", conexion);
+                    // SQL command to insert the user with the plain password
+                    MySqlCommand comando = new MySqlCommand("INSERT INTO usuarios (nombre, rol, correo, contrasena) VALUES (@usuario, 'Usuario', @correo, @contrasena); SELECT LAST_INSERT_ID();", conexion);
 
                     // Add parameters to prevent SQL injection
                     comando.Parameters.AddWithValue("@usuario", usuario);
@@ -43,13 +45,20 @@ namespace StrongFit
                     comando.Parameters.AddWithValue("@contrasena", contrasena);
 
                     conexion.Open();
-                    int filasAfectadas = comando.ExecuteNonQuery(); // Execute the query to insert data
 
-                    if (filasAfectadas > 0)
+                    // Retrieve the user ID (last inserted ID)
+                    object result = comando.ExecuteScalar();
+
+                    if (result != null)
                     {
+                        int userId = Convert.ToInt32(result);
+
                         // Pop-up alert for success and redirect to objetivo.aspx
                         string script = "alert('Usuario registrado exitosamente.');window.location.href='objetivo.aspx';";
                         ClientScript.RegisterStartupScript(this.GetType(), "SuccessAlertAndRedirect", script, true);
+
+                        // Store user_id in session
+                        Session["user_id"] = userId;
                     }
                     else
                     {
@@ -84,6 +93,5 @@ namespace StrongFit
                 ClientScript.RegisterStartupScript(this.GetType(), "GeneralErrorAlert", script, true);
             }
         }
-
     }
 }

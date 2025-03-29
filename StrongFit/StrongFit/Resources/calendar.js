@@ -1,40 +1,40 @@
-﻿function displayCalendar(year, monthIndex) {
+﻿function generateCalendar(year, monthIndex) {
+    // Ensure the calendar div exists
+    const calendarDiv = document.getElementById('calendarSection');
+
+    if (!calendarDiv) {
+        console.error("Calendar container (#calendarSection) not found.");
+        return;
+    }
+
     const firstDay = new Date(year, monthIndex, 1);
     const lastDay = new Date(year, monthIndex + 1, 0);
-    const totalDays = lastDay.getDate() - firstDay.getDate() + 1;
-    console.log('firstDate ', firstDay);
-    console.log('lastDay ', lastDay);
-    console.log('totalDays', totalDays);
-    const startOffset = firstDay.getDay() - 1;
+    const totalDays = lastDay.getDate();
+    const startOffset = firstDay.getDay();
     const endOffset = 7 - lastDay.getDay();
 
     const calendarDays = Array.from({ length: totalDays }, (_, i) => ({
         date: new Date(year, monthIndex, i + 1),
         isEnabled: true,
-        monthIndexPosition: 0,
     }));
 
     const calendarDaysPrevious = Array.from({ length: startOffset }, (_, i) => ({
         date: new Date(year, monthIndex, -i),
-        isEnabled: true,
-        monthIndexPosition: -1,
+        isEnabled: false,
     }));
 
     const calendarDaysNext = Array.from({ length: endOffset }, (_, i) => ({
         date: new Date(year, monthIndex + 1, i + 1),
-        isEnabled: true,
-        monthIndexPosition: 1,
+        isEnabled: false,
     }));
 
-    return [...calendarDaysPrevious.reverse(), ...calendarDays, ...calendarDaysNext];
-}
+    const calendarArray = [
+        ...calendarDaysPrevious.reverse(),
+        ...calendarDays,
+        ...calendarDaysNext,
+    ];
 
-// Assuming you're calling this function to display the calendar
-function generateCalendar(year, monthIndex) {
-    const calendarDiv = document.querySelector('.userpage__calendar');
-    const calendarArray = displayCalendar(year, monthIndex);
-
-    // Clear the previous calendar content
+    // Clear previous calendar content
     calendarDiv.innerHTML = '';
 
     const table = document.createElement('table');
@@ -55,12 +55,15 @@ function generateCalendar(year, monthIndex) {
 
         const td = document.createElement('td');
         td.innerText = dayObj.date.getDate();
-        td.classList.add(dayObj.isEnabled ? '' : 'disabled');
+        // Only add the 'disabled' class if the day is not enabled
+        if (!dayObj.isEnabled) {
+            td.classList.add('disabled');
+        }
         row.appendChild(td);
     });
 
-    calendarDiv.appendChild(table);
+    calendarDiv.appendChild(table); // Append the table to the calendar container
 }
 
-// Call this when you want to generate the calendar for a specific month
-generateCalendar(2025, 3); // Example: Generate calendar for March 2025
+// Call the function to generate the calendar for a specific month and year
+generateCalendar(2025, 3); // Example for April 2025

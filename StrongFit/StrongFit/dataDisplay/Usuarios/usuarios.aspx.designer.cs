@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StrongFit.dataDisplay.Alimentos
+namespace WebApplication1_StrongFit.Usuarios
 {
 
 
@@ -15,13 +15,13 @@ namespace StrongFit.dataDisplay.Alimentos
     {
 
         /// <summary>
-        /// hlRegistrarUsuario control.
+        /// hlRegistroUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlRegistrarUsuario;
+        protected global::System.Web.UI.WebControls.HyperLink hlRegistroUsuario;
 
         /// <summary>
         /// gvDatosUsuarios control.
