@@ -14,7 +14,7 @@
 <body>
     <section class="section1">
     <!-- Navigation Bar -->
-          <img class="logo" src="Resources\images\logo.png" alt="Imagen 1"/>
+          <img class="logo" src="Resources\images\logo2.png" alt="Imagen 1"/>
     <div class="navBar">
       
         <button class="home" onclick="window.location.href='homePage.aspx'">Inicio</button>
@@ -99,7 +99,7 @@
 <button id="downArrow" class="dropArrow"></button>
 
         </section>
-    <section class="section-2 next-section">
+    <section id="section-2" class="section-2">
     <header class="heading">¡Suscribete y obten!</header>
     <div class="contentWrapper">
         <div class="charTable1">
@@ -136,25 +136,20 @@
         
   <div class="footer">
     <ul class="footer-links">
-        <li><a href="tel:018009171564">¿Preguntas? Llama al 01 800 917 1564</a></li>
         <li><a href="#">Preguntas frecuentes</a></li>
         <li><a href="#">Centro de ayuda</a></li>
         <li><a href="#">Cuenta</a></li>
-        <li><a href="#">Prensa</a></li>
-        <li><a href="#">Relaciones con inversionistas</a></li>
-        <li><a href="#">Empleo</a></li>
-        <li><a href="#">Canjear tarjetas de regalo</a></li>
-        <li><a href="#">Comprar tarjetas de regalo</a></li>
-        <li><a href="#">Formas de ver</a></li>
         <li><a href="#">Términos de uso</a></li>
         <li><a href="#">Privacidad</a></li>
         <li><a href="#">Preferencias de cookies</a></li>
-        <li><a href="#">Información corporativa</a></li>
-        <li><a href="#">Contáctanos</a></li>
-        <li><a href="#">Prueba de velocidad</a></li>
         <li><a href="#">Avisos legales</a></li>
     </ul>
 </div>
     </section>
+    <script src="Resources/mapaNavegacion.js"></script>
+    <script src="Resources/mapaNavegacion.js"></script>
+
+
+
 </body>
 </html>

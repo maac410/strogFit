@@ -138,6 +138,10 @@
     <Content Include="Resources\images\homeImg3.jpeg" />
     <Content Include="Resources\images\homeImg4.jpg" />
     <Content Include="Resources\images\homeImg5.jpg" />
+    <Content Include="Resources\images\homeImg6.png" />
+    <Content Include="Resources\images\homeImg7.jpg" />
+    <Content Include="Resources\images\homeImg8.jpg" />
+    <Content Include="Resources\images\homeImg9.jpg" />
     <Content Include="Resources\images\logo.png" />
     <Content Include="Resources\images\logo2.png" />
     <Content Include="Resources\images\perTraining1.jpg" />

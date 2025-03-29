@@ -7,26 +7,85 @@
     <title>Diseño Básico</title>
     <!-- Load CSS -->
     <link rel="stylesheet" href="Resources/userPage.css" />
-        <link rel="stylesheet" href="Resources/userPage.css" />
-    <!-- Include Vue.js CDN (optional, based on your setup) -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        /* Estilos para el menú lateral */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        .sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            color: white;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .sidebar button:hover {
+            background-color: #575757;
+        }
+
+        /* Botón de menú hamburguesa */
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            color: white;
+        }
+
+        /* Contenido */
+        .content {
+            margin-left: 60px;
+            padding: 20px;
+        }
+
+        /* Secciones ocultas */
+        .rutina, .dieta {
+            display: none;
+            padding: 15px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            margin-top: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+    </style>
 </head>
 <body>
-<div class="btnContainer">
-    <button onclick="loadRutina()">Rutina</button>
-    <button onclick="loadDieta()">Dieta</button>
-     <button onclick="loadCalendar()">Calendario</button> <!-- New Calendar Button -->
+
+<!-- Botón de menú hamburguesa -->
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<!-- Menú lateral -->
+<div id="sidebar" class="sidebar">
+    <button onclick="toggleSection('rutina')">Rutina</button>
+    <button onclick="toggleSection('dieta')">Dieta</button>
+    <button onclick="window.location.href='homePage.aspx'">Ir a Inicio</button>
 </div>
 
-<div class="bxContainer">
-    <!-- Rutina Content -->
-    <div class="rutina">
+<div class="content">
+    <div id="rutina" class="rutina">
         <h3>Rutina de Entrenamiento</h3>
         <p>Aquí irá la información sobre la rutina de entrenamiento.</p>
     </div>
 
-    <!-- Dieta Content -->
-    <div class="dieta">
+    <div id="dieta" class="dieta">
         <h3>Dieta</h3>
         <p>Aquí irá la información sobre la dieta.</p>
     </div>
@@ -35,16 +94,24 @@
         <!-- Calendar will be injected here -->
     </div>
 
-<!-- Shared Buttons for Hoy / Mañana -->
-<div class="dayButtons">
-    <button onclick="setDay('hoy')">Hoy</button>
-    <button onclick="setDay('manana')">Mañana</button>
-</div>
+<!-- JavaScript para el menú y las secciones -->
+<script>
+    function toggleMenu() {
+        let sidebar = document.getElementById("sidebar");
+        if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+        } else {
+            sidebar.style.width = "250px";
+        }
+    }
 
-<!-- Load JavaScript -->
-<script src="Resources/userPage.js" defer></script>
-<!-- Move calendar.js script here -->
-<script src="Resources/calendar.js"></script>
+    function toggleSection(sectionId) {
+        let sections = document.querySelectorAll('.rutina, .dieta');
+        sections.forEach(section => {
+            section.style.display = section.id === sectionId ? (section.style.display === 'none' ? 'block' : 'none') : 'none';
+        });
+    }
+</script>
 
 </body>
 </html>

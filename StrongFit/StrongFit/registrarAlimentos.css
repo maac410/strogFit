@@ -1,0 +1,145 @@
+﻿/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: url('Resources/images/homeImg4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Contenedor principal */
+.container {
+    width: 50%;
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Título */
+.title-label {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff00;
+    margin-bottom: 15px;
+}
+
+/* Panel del formulario */
+.form-panel {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Tabla del formulario */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    /* Celdas */
+    .form-table td {
+        padding: 10px;
+        vertical-align: middle;
+    }
+
+/* Etiquetas */
+.form-label {
+    font-weight: bold;
+    color: #00ff00;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada */
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+    .form-input:focus,
+    .form-select:focus {
+        border-color: #00ff00;
+        box-shadow: 0 0 10px #00ff00;
+    }
+
+/* Validaciones */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Botones */
+.form-buttons {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Botón Añadir */
+.btn-primary {
+    background-color: #00cc00;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #009900;
+    }
+
+/* Botón Actualizar */
+.btn-warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+    }
+
+/* Botón Volver */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .form-table td {
+        display: block;
+        width: 100%;
+    }
+}

@@ -1,63 +1,66 @@
-﻿/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+﻿body {
     margin: 0;
+    padding: 0;
+    background: url('images/homeImg4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
 }
 
-/* Contenedor del formulario */
 .container {
-    background: white;
-    padding: 20px;
+    width: 20%;
+    margin: 100px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.8); /* Más opacidad para mejor visibilidad */
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
     text-align: center;
+    color: white;
 }
 
-/* Título */
 h2 {
     margin-bottom: 20px;
-    color: #333;
 }
 
-/* Grupos de entrada */
 .input-group {
     margin-bottom: 15px;
     text-align: left;
 }
 
-    /* Etiquetas */
     .input-group label {
         display: block;
-        font-weight: bold;
         margin-bottom: 5px;
+        font-weight: bold;
     }
 
-/* Campos de entrada */
 .input-field {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: 2px solid #00ff00;
     border-radius: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-/* Botón */
+    /* Efecto de resplandor verde al seleccionar el input */
+    .input-field:focus {
+        border-color: #00ff00;
+        box-shadow: 0 0 10px #00ff00;
+    }
+
 .submit-button {
-    background-color: #28a745;
-    color: white;
+    width: 100%;
     padding: 10px;
+    background: #00cc00;
     border: none;
     border-radius: 5px;
-    width: 100%;
+    color: white;
+    font-size: 18px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background 0.3s;
 }
 
     .submit-button:hover {
-        background-color: #218838;
+        background: #009900;
     }
