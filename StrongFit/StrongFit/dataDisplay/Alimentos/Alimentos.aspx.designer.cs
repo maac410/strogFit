@@ -15,13 +15,13 @@ namespace WebApplication1_StrongFit.Alimentos
     {
 
         /// <summary>
-        /// Control hlRegisroAlimento.
+        /// Control hlRegistroAlimento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlRegisroAlimento;
+        protected global::System.Web.UI.WebControls.HyperLink hlRegistroAlimento;
 
         /// <summary>
         /// Control gvDatosAlimentos.

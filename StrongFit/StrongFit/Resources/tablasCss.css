@@ -1,44 +1,119 @@
-﻿/* Estilo de la tabla */
+﻿/* Estilo general de la tabla */
 .custom-gridview {
     width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     table-layout: fixed;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-    .custom-gridview th,
-    .custom-gridview td {
-        padding: 10px 15px;
-        text-align: left;
-        border: 1px solid #ddd;
-        word-wrap: break-word;
-    }
-
+    /* Estilos para encabezados */
     .custom-gridview th {
-        background-color: #2c3e50;
-        color: #fff;
+        background-color: #1f2d3d; /* Azul oscuro */
+        color: #ffffff;
         text-transform: uppercase;
         font-weight: bold;
         text-align: center;
+        padding: 12px;
+        border-bottom: 3px solid #00ff44;
     }
 
+    /* Estilos para filas */
     .custom-gridview .row {
         background-color: #f9f9f9;
     }
 
     .custom-gridview .alt-row {
-        background-color: #f1f1f1;
+        background-color: #e6e6e6;
     }
 
+    /* Efecto hover en filas */
     .custom-gridview tr:hover {
-        background-color: #eaf6ff;
+        background-color: #d4edfc;
+        transition: 0.3s;
     }
 
-    /* Ajustes específicos para celdas */
-    .custom-gridview td:nth-child(1), /* ID Alimento */
-    .custom-gridview td:nth-child(3) /* Calorías */ {
-        text-align: center;
-        vertical-align: middle;
+    /* Celdas */
+    .custom-gridview td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        word-wrap: break-word;
+        color: #333;
     }
+
+        /* Alineación de columnas específicas */
+        .custom-gridview td.centered-column,
+        .custom-gridview th.centered-column {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* Ajustes para botones de acción dentro de la tabla */
+        .custom-gridview td:last-child {
+            text-align: center;
+        }
+
+/* Botones dentro de la tabla */
+.btn-action {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+    /* Botón Actualizar */
+    .btn-action.update {
+        background-color: #3498db; /* Azul */
+        color: white;
+        border: 1px solid #2980b9;
+    }
+
+        .btn-action.update:hover {
+            background-color: #2980b9;
+        }
+
+    /* Botón Eliminar */
+    .btn-action.delete {
+        background-color: #e74c3c; /* Rojo */
+        color: white;
+        border: 1px solid #c0392b;
+    }
+
+        .btn-action.delete:hover {
+            background-color: #c0392b;
+        }
+
+/* Mejoras generales */
+.page-title {
+    text-align: center;
+    color: #00ff44;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.register-link {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #800080;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+    .register-link:hover {
+        text-decoration: underline;
+    }
+
+/* Contenedor para centrar la tabla */
+.table-container {
+    overflow-x: auto;
+    margin: 0 auto;
+    width: 95%;
+}
