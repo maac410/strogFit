@@ -15,69 +15,63 @@ namespace StrongFit
         // This is the Page_Load event
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Any Page Load logic goes here
+            if (!IsPostBack)
+            {
+                // Restart the session only if the user is NOT already logged in
+                if (Session["userId"] == null)
+                {
+                    Session.Abandon();
+                    Session.Clear();
+                }
+            }
         }
 
-        // This is the event handler for the login button click
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             string Usuario = txtUsuario.Text;
             string Contra = txtContrasena.Text;
 
-            // Create a connection to the database
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
                 try
                 {
-                    // Modify the SQL query to also get the role and user ID
                     string sql = "SELECT usuario_id, contrasena, rol FROM usuarios WHERE nombre = @Usuario AND contrasena = @Contra";
 
-                    // Open the connection
                     conexion.Open();
-
-                    // Create a command object to execute the query
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
-
-                    // Add parameters to the command to prevent SQL injection
                     comando.Parameters.AddWithValue("@Usuario", Usuario);
                     comando.Parameters.AddWithValue("@Contra", Contra);
 
-                    // Execute the query and get the result
                     MySqlDataReader lector = comando.ExecuteReader();
 
-                    // Check if any rows are returned (user exists and password matches)
                     if (lector.HasRows)
                     {
-                        // Read the data (user ID, password, and role)
                         lector.Read();
-                        int userId = Convert.ToInt32(lector["usuario_id"]); // Get the user ID
-                        string rol = lector["rol"].ToString(); // Get the role
+                        int userId = Convert.ToInt32(lector["usuario_id"]);
+                        string rol = lector["rol"].ToString();
 
-                        // Set session variables for the logged-in user
+                        // Store user data in session
                         Session["usuario"] = Usuario;
-                        Session["userId"] = userId; // Store the user ID in the session
+                        Session["userId"] = userId;
+                        Session["sessionId"] = Session.SessionID; // Store the session ID
 
-                        // Redirect based on the user's role
+                        // Redirect user based on role
                         if (rol == "Usuario")
                         {
-                            // Redirect to userPage.aspx for regular users
                             Response.Redirect("userPage.aspx", false);
                         }
                         else
                         {
-                            // Redirect to Index.aspx if the user is an administrator, nutricionista, or entrenador
                             Response.Redirect("Index.aspx", false);
                         }
                     }
                     else
                     {
-                        // Display error message if the user is not found
                         lblEstado.Text = "¡El usuario no está registrado en la BD!";
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Display any errors that occur during the connection or query execution
                     lblEstado.Text = "Error en la conexión: " + ex.Message;
                 }
             }

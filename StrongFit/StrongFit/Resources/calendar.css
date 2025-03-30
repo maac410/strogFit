@@ -1,0 +1,61 @@
+﻿/* === Basic Styles for Calendar === */
+.userpage__calendar {
+    background-color: beige;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    color: #333; /* Default text color */
+}
+
+    .calendar-table th,
+    .calendar-table td {
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #333;
+    }
+
+    .calendar-table th {
+        background-color: #333;
+        color: white; /* Header text color */
+    }
+
+.calendar-day {
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    color: #000; /* Default day text color */
+}
+
+    .calendar-day:hover {
+        background-color: #00ff00;
+        color: #333;
+    }
+
+/* === Style for Workout Names under each day === */
+.workout-name {
+    display: block;
+    font-size: 12px;
+    color: #00ff00; /* Workout name text color */
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* === Responsive Styling for Mobile === */
+@media (max-width: 768px) {
+    .calendar-table th, .calendar-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .calendar-day {
+        font-size: 16px;
+    }
+
+    .workout-name {
+        font-size: 10px;
+    }
+}

@@ -1,5 +1,9 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     generateCalendar();
+
+    // Example workout dates (this should come from a server)
+    const entrenamientosDates = ["2025-03-10", "2025-03-15", "2025-03-22"];
+    highlightEntrenamientos(entrenamientosDates);
 });
 
 // Generate the calendar dynamically
@@ -48,16 +52,18 @@ function generateCalendar() {
         const td = document.createElement("td");
         td.textContent = currentDay;
         td.classList.add("calendar-day");
-        td.dataset.date = `${year}-${month + 1}-${currentDay}`;
+        td.dataset.date = `${year}-${String(month + 1).padStart(2, "0")}-${String(currentDay).padStart(2, "0")}`;
 
         row.appendChild(td);
         currentDay++;
     }
 
-    // Add the last row if necessary
-    if (row.childElementCount > 0) {
-        calendarTable.appendChild(row);
+    // Fill remaining empty cells in the last row
+    while (row.childElementCount < 7) {
+        const emptyTd = document.createElement("td");
+        row.appendChild(emptyTd);
     }
+    calendarTable.appendChild(row);
 
     // Append the generated calendar table to the container
     calendarContainer.innerHTML = ""; // Clear any existing content
@@ -71,7 +77,6 @@ function highlightEntrenamientos(entrenamientosDates) {
 
         allCalendarDays.forEach(function (dayElement) {
             const dayDate = dayElement.dataset.date;
-
             if (entrenamientosDates.includes(dayDate)) {
                 dayElement.classList.add("highlighted");
             }

@@ -1,25 +1,26 @@
-﻿/* === Fondo con imagen === */
+﻿/* === Global Styles === */
 body {
     background: url('../Resources/images/homeImg8.jpg') no-repeat center center fixed;
     background-size: cover;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
+    color: white;
 }
 
-/* === Menú lateral (Sidebar) === */
+/* === Sidebar Menu === */
 .sidebar {
     height: 100%;
     width: 0;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
@@ -45,7 +46,7 @@ body {
             box-shadow: 0 0 15px #00ff00;
         }
 
-/* === Botón de menú hamburguesa === */
+/* === Hamburger Menu Button === */
 .menu-btn {
     font-size: 30px;
     cursor: pointer;
@@ -63,28 +64,26 @@ body {
         color: #00ff00;
     }
 
-/* === Contenido Principal === */
+/* === Content Wrapper === */
 .content {
-    margin-left: 60px;
+    margin-left: 80px;
     padding: 20px;
+    max-width: 800px;
 }
 
-/* === Contenedor principal (bxContainer) === */
+/* === Main Box Container === */
 .bxContainer {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 25px;
     border-radius: 15px;
     width: 90%;
     max-width: 550px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: white;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
 }
 
-/* === Botones de Rutina y Dieta === */
+/* === Routine & Diet Buttons === */
 .btnContainer {
     display: flex;
     flex-direction: column;
@@ -104,7 +103,7 @@ body {
         font-weight: bold;
         text-transform: uppercase;
         box-shadow: 0 0 15px #00ff00;
-        transition: 0.3s;
+        transition: all 0.3s ease-in-out;
     }
 
         .btnContainer button:hover, .dayButtons button:hover {
@@ -113,7 +112,7 @@ body {
             box-shadow: 0 0 25px #00ff00;
         }
 
-/* === Secciones de Rutina y Dieta === */
+/* === Routine & Diet Sections === */
 .rutina, .dieta {
     width: 80%;
     padding: 20px;
@@ -126,7 +125,7 @@ body {
     display: none;
 }
 
-/* === Botones "Hoy" y "Mañana" === */
+/* === Today & Tomorrow Buttons === */
 .dayButtons {
     display: flex;
     width: 100%;
@@ -154,7 +153,7 @@ body {
             box-shadow: 0 0 10px #00ff00;
         }
 
-/* === Botón de guardar === */
+/* === Save Button === */
 button.guardar {
     width: 100%;
     padding: 12px;
@@ -165,7 +164,7 @@ button.guardar {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
 }
 
     button.guardar:hover {
@@ -173,7 +172,7 @@ button.guardar {
         color: black;
     }
 
-/* === Estilo para los inputs y select === */
+/* === Input Fields & Select Dropdown === */
 input, select {
     width: 100%;
     padding: 10px;
@@ -185,8 +184,71 @@ input, select {
     font-size: 16px;
 }
 
-/* === Ajustes responsivos === */
-@media screen and (max-width: 768px) {
+/* === Exercise Grid === */
+.exercise-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.exercise-item {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid #00ff00;
+}
+
+    .exercise-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 20px #00ff00;
+    }
+
+    .exercise-item img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+
+    .exercise-item h4 {
+        font-size: 1.3rem;
+        color: #00ff00;
+        margin-top: 10px;
+    }
+
+    .exercise-item p {
+        font-size: 0.95rem;
+        color: #ccc;
+        margin: 5px 0;
+    }
+
+    .exercise-item label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+        color: #00ff00;
+    }
+
+    .exercise-item input[type="date"] {
+        width: 100%;
+        padding: 5px;
+        border-radius: 6px;
+        border: 2px solid #00ff00;
+        text-align: center;
+        font-size: 0.9rem;
+        background: black;
+        color: white;
+    }
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
     .menu-btn {
         font-size: 26px;
         left: 5px;
@@ -205,54 +267,8 @@ input, select {
         font-size: 16px;
         padding: 10px;
     }
-}
 
-
-/* Calendar Table Styles */
-.userpage__calendar table {
-    width: 100%;
-    max-width: 600px; /* Restrict width of the calendar */
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #fff;
-    border-radius: 8px; /* Add rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visual */
-}
-
-.userpage__calendar th, .userpage__calendar td {
-    padding: 12px 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-.userpage__calendar th {
-    background-color: #3498db; /* Blue background for the header */
-    color: white;
-    font-weight: bold;
-}
-
-.userpage__calendar td {
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-    /* Hover effect for calendar cells */
-    .userpage__calendar td:hover {
-        background-color: #2980b9; /* Darker blue when hovering over a day */
-        transform: scale(1.05);
-        color: white;
+    .exercise-container {
+        grid-template-columns: 1fr;
     }
-
-    /* Disabled day styles */
-    .userpage__calendar td.disabled {
-        color: #aaa; /* Gray color for disabled days */
-        pointer-events: none; /* Disable click interaction */
-        background-color: #f0f0f0; /* Light gray background for disabled days */
-    }
-
-/* Add spacing between each row of days */
-.userpage__calendar tr {
-    text-align: center;
 }
-
