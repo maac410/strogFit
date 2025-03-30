@@ -256,3 +256,16 @@ input, select {
     text-align: center;
 }
 
+.welcome-message {
+    font-size: 26px;
+    font-weight: bold;
+    color: white; /* Texto en blanco para mejor visibilidad */
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: rgba(50, 50, 50, 0.9); /* Gris oscuro con algo de transparencia */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Sombra verde para mantener la estética */
+}
+
+

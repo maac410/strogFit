@@ -49,6 +49,7 @@ body {
     gap: 10px;
 }
 
+    /* Botones con identificadores específicos */
     .nav-buttons button {
         background: none;
         border: 2px solid #00ff55;
@@ -60,10 +61,18 @@ body {
         transition: 0.3s ease-in-out;
     }
 
-        .nav-buttons button:hover {
-            background-color: #00ff55;
-            color: black;
-        }
+/* Ocultación de botones según rol */
+.phAdministrador .btn-registro-usuarios,
+.phEntrenador .btn-editar-ejercicios,
+.phNutricionista .btn-registro-usuarios,
+.phNutricionista .btn-editar-ejercicios {
+    display: none;
+}
+
+.nav-buttons button:hover {
+    background-color: #00ff55;
+    color: black;
+}
 
 /* Estilo del contenedor principal */
 .main-container {
@@ -133,7 +142,8 @@ body {
         text-align: center;
     }
 
-    .text-section, .image-section {
+    .text-section,
+    .image-section {
         width: 100%;
     }
 

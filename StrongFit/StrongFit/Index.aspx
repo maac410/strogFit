@@ -27,11 +27,15 @@
 
         <!-- Botón Mejorado -->
         <div class="mt-4">
+            <asp:PlaceHolder ID="phAdministrador" runat="server">
+ 
             <asp:HyperLink runat="server" NavigateUrl="~/dataDisplay/Usuarios/usuarios.aspx" 
                            CssClass="explore-button"
                            aria-label="Registro de Usuarios">
+               
                 Registro de Usuarios
             </asp:HyperLink>
+                 </asp:PlaceHolder>
                <asp:HyperLink runat="server" NavigateUrl="~/dataDisplay/Recetas/recetas.aspx" 
                   CssClass="explore-button"
                   aria-label="Editar Recetas">

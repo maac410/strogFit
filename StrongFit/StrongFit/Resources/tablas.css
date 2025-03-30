@@ -1,13 +1,20 @@
-﻿/* Estilo general de la tabla */
+﻿/* Contenedor para centrar la tabla */
+.table-container {
+    overflow-x: auto;
+    margin: 0 auto;
+    width: 95%;
+}
+
+/* Estilo general de la tabla */
 .custom-gridview {
     width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    table-layout: fixed;
     border-radius: 8px;
     overflow: hidden;
+    table-layout: fixed;
 }
 
     /* Estilos para encabezados */
@@ -19,6 +26,7 @@
         text-align: center;
         padding: 12px;
         border-bottom: 3px solid #00ff44;
+        white-space: nowrap; /* 🔥 Evita saltos de línea */
     }
 
     /* Estilos para filas */
@@ -40,21 +48,10 @@
     .custom-gridview td {
         padding: 12px 15px;
         border: 1px solid #ddd;
-        word-wrap: break-word;
         color: #333;
+        word-wrap: break-word;
+        text-align: center;
     }
-
-        /* Alineación de columnas específicas */
-        .custom-gridview td.centered-column,
-        .custom-gridview th.centered-column {
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        /* Ajustes para botones de acción dentro de la tabla */
-        .custom-gridview td:last-child {
-            text-align: center;
-        }
 
 /* Botones dentro de la tabla */
 .btn-action {
@@ -110,10 +107,3 @@
     .register-link:hover {
         text-decoration: underline;
     }
-
-/* Contenedor para centrar la tabla */
-.table-container {
-    overflow-x: auto;
-    margin: 0 auto;
-    width: 95%;
-}
