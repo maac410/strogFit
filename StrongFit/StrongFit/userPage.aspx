@@ -5,49 +5,41 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Rutina de Entrenamiento</title>
-    <!-- Load CSS -->
     <link rel="stylesheet" href="Resources/userPage.css" />
-      <link rel="stylesheet" href="Resources/calendar.css" />
-        <script src="Resources/userPage.js"></script> <!-- Include your calendar.js script -->
-            <script src="Resources/calendar.js"></script> <!-- Include your calendar.js script -->
+    <link rel="stylesheet" href="Resources/calendar.css" />
+    <script src="Resources/userPage.js"></script>
+    <script src="Resources/calendar.js"></script>
 </head>
 <body onload="mostrarBienvenida()">
 
-    <!-- Botón de menú hamburguesa -->
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <!-- Menú lateral -->
     <div id="sidebar" class="sidebar">
         <button onclick="loadRutina()">Rutina</button>
-<button onclick="loadDieta()">Dieta</button>
-        <button onclick="loadCalendar()">Calendario</button> <!-- New Calendar Button -->
-        <button onclick="window.location.href='homePage.aspx'">Ir a Inicio</button>
+        <button onclick="loadDieta()">Dieta</button>
+        <button onclick="loadCalendar()">Calendario</button>
+        <button onclick="window.location.href='homePage.aspx'">Cerrar sesión</button>
     </div>
 
-    <!-- Contenido -->
     <div class="content">
-        <!-- Bienvenida al usuario -->
         <p class="welcome-message">¡Bienvenido! Esperamos que tengas un gran día. 💪🔥</p>
-
-
 
         <div id="rutina" class="rutina">
             <h3>Rutina de Entrenamiento</h3>
             <ul id="exerciseList">
-                <!-- This Literal will dynamically display exercise list -->
                 <asp:Literal ID="exerciseListLiteral" runat="server"></asp:Literal>
             </ul>
         </div>
 
-
         <div id="dieta" class="dieta">
             <h3>Dieta</h3>
-            <p>Aquí irá la información sobre la dieta.</p>
+            <ul id="dietaList">
+                <asp:Literal ID="dietaListLiteral" runat="server"></asp:Literal>
+            </ul>
         </div>
 
         <div id="calendarSection" class="userpage__calendar"></div>
     </div>
-
 
 </body>
 </html>

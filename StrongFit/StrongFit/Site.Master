@@ -43,15 +43,8 @@
 
 <body>
     <form id="form1" runat="server">
-        <!-- Barra de Navegación -->
-        <nav class="navbar">
-            <div class="container">
-                <a class="logo" href="#">StrongFit</a>
-                <div class="nav-links">
-        
-                </div>
-            </div>
-        </nav>
+    
+                <img class="logo" style="height:100px" src="\Resources\images\logo.png">
 
         <div class="container">
             <!-- Encabezado -->

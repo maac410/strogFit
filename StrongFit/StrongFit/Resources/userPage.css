@@ -63,12 +63,32 @@ body {
     .menu-btn:hover {
         color: #00ff00;
     }
-
-/* === Content Wrapper === */
+/* === Center the Content Without Cutting or Scaling === */
 .content {
-    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    min-height: 90vh; /* Ensures the section takes up at least 90% of the viewport */
     padding: 20px;
-    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+/* === Exercise Container (Centered & Scrollable When Needed) === */
+.exercise-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    min-height: 80vh; /* Takes at least 80% of the viewport */
+    overflow-y: auto; /* Enables scrolling without cutting content */
 }
 
 /* === Main Box Container === */
@@ -183,16 +203,6 @@ input, select {
     color: white;
     font-size: 16px;
 }
-
-/* === Exercise Grid === */
-.exercise-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
-}
-
 .exercise-item {
     background: rgba(0, 0, 0, 0.9);
     border-radius: 12px;

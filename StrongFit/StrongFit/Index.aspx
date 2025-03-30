@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="WebApplication1_StrongFit.Index" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Inicio | StrongFit
 </asp:Content>
@@ -21,31 +20,31 @@
         <!-- Bienvenida al usuario -->
         <div class="mt-4">
             <h4>
-                Hola, <%= Session["usuario"] != null ? System.Web.HttpUtility.HtmlEncode(Session["usuario"].ToString()) : "Invitado" %> 👋
+                Hola, 
+                <asp:Label ID="lblUsuario" runat="server" CssClass="fw-bold"></asp:Label> 
+                (<asp:Label ID="lblRol" runat="server" CssClass="text-muted"></asp:Label>) 👋
             </h4>
         </div>
 
-        <!-- Botón Mejorado -->
+        <!-- Botones de navegación -->
         <div class="mt-4">
-            <asp:PlaceHolder ID="phAdministrador" runat="server">
- 
-            <asp:HyperLink runat="server" NavigateUrl="~/dataDisplay/Usuarios/usuarios.aspx" 
-                           CssClass="explore-button"
-                           aria-label="Registro de Usuarios">
-               
+            <!-- Botón Registro de Usuarios -->
+            <asp:HyperLink ID="hlRegistroUsuarios" runat="server" NavigateUrl="~/dataDisplay/Usuarios/usuarios.aspx" 
+                           CssClass="explore-button" aria-label="Registro de Usuarios">
                 Registro de Usuarios
             </asp:HyperLink>
-                 </asp:PlaceHolder>
-               <asp:HyperLink runat="server" NavigateUrl="~/dataDisplay/Recetas/recetas.aspx" 
-                  CssClass="explore-button"
-                  aria-label="Editar Recetas">
+
+            <!-- Botón Registro de Dietas -->
+            <asp:HyperLink ID="hlRegistroDietas" runat="server" NavigateUrl="~/dataDisplay/Recetas/recetas.aspx" 
+                           CssClass="explore-button" aria-label="Editar Recetas">
                 Editar Recetas
-   </asp:HyperLink>
-           <asp:HyperLink runat="server" NavigateUrl="~/dataDisplay/Ejercicios/ejercicios.aspx" 
-                  CssClass="explore-button"
-                  aria-label="Editar Ejercicios">
+            </asp:HyperLink>
+
+            <!-- Botón Registro de Entrenamientos -->
+            <asp:HyperLink ID="hlRegistroEntrenamientos" runat="server" NavigateUrl="~/dataDisplay/Ejercicios/ejercicios.aspx" 
+                           CssClass="explore-button" aria-label="Editar Ejercicios">
                 Editar Ejercicios
-   </asp:HyperLink>
+            </asp:HyperLink>
         </div>
     </div>
 </asp:Content>

@@ -119,8 +119,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dataDisplay\Alimentos\Alimentos.aspx" />
-    <Content Include="dataDisplay\Alimentos\RegistroAlimento.aspx" />
     <Content Include="dataDisplay\Ejercicios\ejercicios.aspx" />
     <Content Include="dataDisplay\Entrenamiento\entrenamientos.aspx" />
     <Content Include="dataDisplay\Recetas\registroRecetas.aspx" />
@@ -209,20 +207,6 @@
     <Content Include="Index.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dataDisplay\Alimentos\Alimentos.aspx.cs">
-      <DependentUpon>Alimentos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="dataDisplay\Alimentos\Alimentos.aspx.designer.cs">
-      <DependentUpon>Alimentos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="dataDisplay\Alimentos\RegistroAlimento.aspx.cs">
-      <DependentUpon>RegistroAlimento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="dataDisplay\Alimentos\RegistroAlimento.aspx.designer.cs">
-      <DependentUpon>RegistroAlimento.aspx</DependentUpon>
-    </Compile>
     <Compile Include="dataDisplay\Ejercicios\ejercicios.aspx.cs">
       <DependentUpon>ejercicios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
