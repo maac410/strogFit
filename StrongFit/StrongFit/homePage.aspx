@@ -68,12 +68,12 @@
             </tr>
 
             <tr>
-                <td><asp:Label ID="lblContrasena" runat="server" Text="Contraseña"></asp:Label></td></tr>
+                <td><asp:Label ID="lblContrasena" runat="server" Text="Contrasena"></asp:Label></td></tr>
             <tr>
                 <td><asp:TextBox ID="txtContrasena" runat="server" TextMode="Password" Style="width:90%" CssClass="button"></asp:TextBox></td>
                 <td><asp:RequiredFieldValidator
                     runat="server"
-                    ID="rfvContraseña"
+                    ID="rfvContrasena"
                     ControlToValidate="txtContrasena"
                     ErrorMessage="*"
                     ForeColor="Red"

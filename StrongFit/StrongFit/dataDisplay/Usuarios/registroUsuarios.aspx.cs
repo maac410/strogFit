@@ -8,7 +8,7 @@ namespace StrongFit.dataDisplay.Usuarios
 {
     public partial class RegistroUsuario : System.Web.UI.Page
     {
-        String cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+        private readonly string cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"]?.ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,12 +16,11 @@ namespace StrongFit.dataDisplay.Usuarios
             {
                 if (Request.QueryString["id"] != null)
                 {
-                    // Si el parámetro 'id' está presente, es para actualizar un usuario
                     string idUsuario = Request.QueryString["id"];
                     CargarUsuario(idUsuario);
                     lblAccion.Text = "Actualizar Usuario";
-                    btnAñadir.Visible = false; // Ocultar botón de Añadir si estamos actualizando
-                    btnActualizar.Visible = true; // Mostrar botón de Actualizar
+                    btnAñadir.Visible = false;
+                    btnActualizar.Visible = true;
                 }
                 else
                 {
@@ -39,10 +38,11 @@ namespace StrongFit.dataDisplay.Usuarios
                 try
                 {
                     conexion.Open();
-                    string sql = "SELECT * FROM usuarios WHERE id = @id";
+                    string sql = "SELECT nombre, correo, rol, contrasena FROM usuarios WHERE id = @id";
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
                     comando.Parameters.AddWithValue("@id", idUsuario);
                     MySqlDataReader reader = comando.ExecuteReader();
+
                     if (reader.Read())
                     {
                         txtNombre.Text = reader["nombre"].ToString();
@@ -52,8 +52,7 @@ namespace StrongFit.dataDisplay.Usuarios
                 }
                 catch (Exception ex)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Error al cargar los datos del usuario: " + HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true);
+                    MostrarAlerta($"Error al cargar los datos del usuario: {ex.Message}");
                 }
             }
         }
@@ -64,23 +63,27 @@ namespace StrongFit.dataDisplay.Usuarios
             {
                 try
                 {
-                    string sql = "INSERT INTO usuarios (nombre, correo, rol) " +
-                                 "VALUES (@nombre, @correo, @rol)";
+                    if (txtContrasena == null || string.IsNullOrEmpty(txtContrasena.Text))
+                    {
+                        MostrarAlerta("La contraseña no puede estar vacía.");
+                        return;
+                    }
+
+                    string sql = "INSERT INTO usuarios (nombre, correo, rol, contrasena) VALUES (@nombre, @correo, @rol, @contrasena)";
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
                     comando.Parameters.AddWithValue("@nombre", txtNombre.Text);
                     comando.Parameters.AddWithValue("@correo", txtCorreo.Text);
                     comando.Parameters.AddWithValue("@rol", ddlTipoUsuario.SelectedValue);
+                    comando.Parameters.AddWithValue("@contrasena", txtContrasena.Text); // Sin encriptar
 
                     conexion.Open();
                     comando.ExecuteNonQuery();
 
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Usuario registrado exitosamente.');window.location.href='Usuarios.aspx';", true);
+                    MostrarAlerta("Usuario registrado exitosamente.", "Usuarios.aspx");
                 }
                 catch (Exception ex)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Error al registrar el usuario: " + HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true);
+                    MostrarAlerta($"Error al registrar el usuario: {ex.Message}");
                 }
             }
         }
@@ -92,25 +95,44 @@ namespace StrongFit.dataDisplay.Usuarios
             {
                 try
                 {
-                    string sql = "UPDATE usuarios SET nombre = @nombre, correo = @correo, rol = @rol WHERE id = @id";
+                    string sql = "UPDATE usuarios SET nombre = @nombre, correo = @correo, rol = @rol";
+                    if (txtContrasena != null && !string.IsNullOrEmpty(txtContrasena.Text))
+                    {
+                        sql += ", contrasena = @contrasena";
+                    }
+                    sql += " WHERE id = @id";
+
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
                     comando.Parameters.AddWithValue("@id", idUsuario);
                     comando.Parameters.AddWithValue("@nombre", txtNombre.Text);
                     comando.Parameters.AddWithValue("@correo", txtCorreo.Text);
                     comando.Parameters.AddWithValue("@rol", ddlTipoUsuario.SelectedValue);
 
+                    if (txtContrasena != null && !string.IsNullOrEmpty(txtContrasena.Text))
+                    {
+                        comando.Parameters.AddWithValue("@contrasena", txtContrasena.Text); // Sin encriptar
+                    }
+
                     conexion.Open();
                     comando.ExecuteNonQuery();
 
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Usuario actualizado exitosamente.');window.location.href='Usuarios.aspx';", true);
+                    MostrarAlerta("Usuario actualizado exitosamente.", "Usuarios.aspx");
                 }
                 catch (Exception ex)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert",
-                        "alert('Error al actualizar el usuario: " + HttpUtility.JavaScriptStringEncode(ex.Message) + "');", true);
+                    MostrarAlerta($"Error al actualizar el usuario: {ex.Message}");
                 }
             }
+        }
+
+        private void MostrarAlerta(string mensaje, string redireccion = null)
+        {
+            string script = $"alert('{HttpUtility.JavaScriptStringEncode(mensaje)}');";
+            if (!string.IsNullOrEmpty(redireccion))
+            {
+                script += $"window.location.href='{redireccion}';";
+            }
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
         }
     }
 }

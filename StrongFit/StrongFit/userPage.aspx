@@ -8,7 +8,7 @@
     <!-- Load CSS -->
     <link rel="stylesheet" href="Resources/userPage.css" />
 </head>
-<body>
+<body onload="mostrarBienvenida()">
 
     <!-- Botón de menú hamburguesa -->
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -17,15 +17,19 @@
     <div id="sidebar" class="sidebar">
         <button onclick="toggleSection('rutina')">Rutina</button>
         <button onclick="toggleSection('dieta')">Dieta</button>
-        <button onclick="loadCalendar()">Calendario</button> <!-- New Calendar Button -->
-        <button onclick="window.location.href='homePage.aspx'">Ir a Inicio</button>
+        <button onclick="loadCalendar()">Calendario</button>
+        <button onclick="window.location.href='homePage.aspx'">Cerrar Sesion</button>
     </div>
 
     <!-- Contenido -->
     <div class="content">
+        <!-- Bienvenida al usuario -->
+        <p class="welcome-message">¡Bienvenido! Esperamos que tengas un gran día. 💪🔥</p>
+
+
+
         <div id="rutina" class="rutina">
             <h3>Rutina de Entrenamiento</h3>
-            <!-- Literal control to dynamically display the exercises -->
             <ul id="exerciseList">
                 <asp:Literal ID="exerciseListLiteral" runat="server"></asp:Literal>
             </ul>
@@ -36,20 +40,20 @@
             <p>Aquí irá la información sobre la dieta.</p>
         </div>
 
-        <div id="calendarSection" class="userpage__calendar">
-            <!-- Calendar will be injected here -->
-        </div>
+        <div id="calendarSection" class="userpage__calendar"></div>
     </div>
 
-    <!-- JavaScript para el menú y las secciones -->
+    <!-- JavaScript -->
     <script>
+        function mostrarBienvenida() {
+            const nombreUsuario = "Usuario"; // Aquí puedes personalizar el nombre si lo obtienes de sesión o BD
+            const mensaje = `¡Bienvenido, ${nombreUsuario}! Prepárate para tu entrenamiento.`;
+            document.getElementById("mensajeBienvenida").innerText = mensaje;
+        }
+
         function toggleMenu() {
             let sidebar = document.getElementById("sidebar");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-            } else {
-                sidebar.style.width = "250px";
-            }
+            sidebar.style.width = (sidebar.style.width === "250px") ? "0" : "250px";
         }
 
         function toggleSection(sectionId) {
@@ -60,11 +64,11 @@
         }
 
         function loadCalendar() {
-            toggleSection('calendarSection'); // Show calendar section when the Calendar button is clicked
+            toggleSection('calendarSection');
         }
     </script>
 
-    <script src="Resources/calendar.js"></script> <!-- Include your calendar.js script -->
+    <script src="Resources/calendar.js"></script>
 
 </body>
 </html>

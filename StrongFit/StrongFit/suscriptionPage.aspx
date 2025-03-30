@@ -25,7 +25,7 @@
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCorreo" ErrorMessage="*" ForeColor="Red" />
                 </div>
                 <div class="input-group">
-                    <label for="txtContrasena">Contraseña</label>
+                    <label for="txtContrasena">Contrasena</label>
                     <asp:TextBox ID="txtContrasena" runat="server" TextMode="Password" CssClass="input-field" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContrasena" ErrorMessage="*" ForeColor="Red" />
                 </div>
