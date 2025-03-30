@@ -3,8 +3,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('../Resources/images/homeImg4.jpg') no-repeat center center/cover;
+    background: url('../Resources/images/homeImg4.jpg') no-repeat center center;
+    background-size: cover; /* 🔹 Ajusta la imagen al tamaño de la pantalla */
+    background-attachment: fixed; /* 🔹 Permite que la imagen de fondo no se desplace */
+    background-position: center; /* 🔹 Centra la imagen */
     color: white;
+}
+
+
+.body-bg-contain {
+    background-size: contain; /* 🔹 La imagen se ajustará sin recortarse */
+}
+
+
+.body-bg-custom {
+    background-size: auto 80vh; /* 🔹 Ajusta la altura al 80% de la pantalla */
 }
 
 /* Contenedor principal */

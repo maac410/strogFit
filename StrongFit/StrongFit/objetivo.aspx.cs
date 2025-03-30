@@ -31,7 +31,7 @@ namespace StrongFit
             if (Session["user_id"] == null)
             {
                 Response.Write("Session expired or user not logged in. Please log in again.");
-                Response.Redirect("login.aspx");
+                Response.Redirect("objetivo.aspx");
             }
         }
 
@@ -58,7 +58,7 @@ namespace StrongFit
                 if (userId == 0)
                 {
                     Response.Write("Error: User ID is not set in session. Please log in.");
-                    Response.Redirect("login.aspx");
+                    Response.Redirect("objetivo.aspx");
                     return;
                 }
 

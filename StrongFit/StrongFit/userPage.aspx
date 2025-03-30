@@ -11,7 +11,7 @@
         <script src="Resources/userPage.js"></script> <!-- Include your calendar.js script -->
             <script src="Resources/calendar.js"></script> <!-- Include your calendar.js script -->
 </head>
-<body>
+<body onload="mostrarBienvenida()">
 
     <!-- Botón de menú hamburguesa -->
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -26,6 +26,11 @@
 
     <!-- Contenido -->
     <div class="content">
+        <!-- Bienvenida al usuario -->
+        <p class="welcome-message">¡Bienvenido! Esperamos que tengas un gran día. 💪🔥</p>
+
+
+
         <div id="rutina" class="rutina">
             <h3>Rutina de Entrenamiento</h3>
             <ul id="exerciseList">
@@ -40,9 +45,7 @@
             <p>Aquí irá la información sobre la dieta.</p>
         </div>
 
-        <div id="calendarSection" class="userpage__calendar">
-            <!-- Calendar will be injected here -->
-        </div>
+        <div id="calendarSection" class="userpage__calendar"></div>
     </div>
 
 
