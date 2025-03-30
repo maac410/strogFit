@@ -1,69 +1,80 @@
-﻿function generateCalendar(year, monthIndex) {
-    // Ensure the calendar div exists
-    const calendarDiv = document.getElementById('calendarSection');
+﻿document.addEventListener("DOMContentLoaded", function () {
+    generateCalendar();
+});
 
-    if (!calendarDiv) {
-        console.error("Calendar container (#calendarSection) not found.");
-        return;
-    }
+// Generate the calendar dynamically
+function generateCalendar() {
+    const calendarContainer = document.getElementById("calendarSection");
+    const currentDate = new Date();
+    const month = currentDate.getMonth(); // current month (0-11)
+    const year = currentDate.getFullYear(); // current year
 
-    const firstDay = new Date(year, monthIndex, 1);
-    const lastDay = new Date(year, monthIndex + 1, 0);
-    const totalDays = lastDay.getDate();
-    const startOffset = firstDay.getDay();
-    const endOffset = 7 - lastDay.getDay();
+    const firstDayOfMonth = new Date(year, month, 1); // First day of the month
+    const lastDayOfMonth = new Date(year, month + 1, 0); // Last day of the month
+    const numberOfDays = lastDayOfMonth.getDate(); // Number of days in the month
 
-    const calendarDays = Array.from({ length: totalDays }, (_, i) => ({
-        date: new Date(year, monthIndex, i + 1),
-        isEnabled: true,
-    }));
+    const calendarTable = document.createElement("table");
+    calendarTable.classList.add("calendar-table");
 
-    const calendarDaysPrevious = Array.from({ length: startOffset }, (_, i) => ({
-        date: new Date(year, monthIndex, -i),
-        isEnabled: false,
-    }));
-
-    const calendarDaysNext = Array.from({ length: endOffset }, (_, i) => ({
-        date: new Date(year, monthIndex + 1, i + 1),
-        isEnabled: false,
-    }));
-
-    const calendarArray = [
-        ...calendarDaysPrevious.reverse(),
-        ...calendarDays,
-        ...calendarDaysNext,
-    ];
-
-    // Clear previous calendar content
-    calendarDiv.innerHTML = '';
-
-    const table = document.createElement('table');
-    const headerRow = document.createElement('tr');
-    ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'].forEach(day => {
-        const th = document.createElement('th');
-        th.innerText = day;
+    // Table header with day names
+    const headerRow = document.createElement("tr");
+    const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    daysOfWeek.forEach(day => {
+        const th = document.createElement("th");
+        th.textContent = day;
         headerRow.appendChild(th);
     });
-    table.appendChild(headerRow);
+    calendarTable.appendChild(headerRow);
 
-    let row;
-    calendarArray.forEach((dayObj, index) => {
-        if (index % 7 === 0) {
-            row = document.createElement('tr');
-            table.appendChild(row);
-        }
+    // Table body with the days of the month
+    let row = document.createElement("tr");
+    let currentDay = 1;
 
-        const td = document.createElement('td');
-        td.innerText = dayObj.date.getDate();
-        // Only add the 'disabled' class if the day is not enabled
-        if (!dayObj.isEnabled) {
-            td.classList.add('disabled');
-        }
+    // Fill empty spaces before the first day of the month
+    for (let i = 0; i < firstDayOfMonth.getDay(); i++) {
+        const td = document.createElement("td");
         row.appendChild(td);
-    });
+    }
 
-    calendarDiv.appendChild(table); // Append the table to the calendar container
+    // Add the days of the month
+    for (let i = firstDayOfMonth.getDay(); currentDay <= numberOfDays; i++) {
+        if (i === 7) {
+            // Start a new row after Saturday
+            calendarTable.appendChild(row);
+            row = document.createElement("tr");
+            i = 0;
+        }
+
+        const td = document.createElement("td");
+        td.textContent = currentDay;
+        td.classList.add("calendar-day");
+        td.dataset.date = `${year}-${month + 1}-${currentDay}`;
+
+        row.appendChild(td);
+        currentDay++;
+    }
+
+    // Add the last row if necessary
+    if (row.childElementCount > 0) {
+        calendarTable.appendChild(row);
+    }
+
+    // Append the generated calendar table to the container
+    calendarContainer.innerHTML = ""; // Clear any existing content
+    calendarContainer.appendChild(calendarTable);
 }
 
-// Call the function to generate the calendar for a specific month and year
-generateCalendar(2025, 3); // Example for April 2025
+// Highlight the days that have workouts (from the server-side data)
+function highlightEntrenamientos(entrenamientosDates) {
+    if (Array.isArray(entrenamientosDates)) {
+        const allCalendarDays = document.querySelectorAll(".calendar-day");
+
+        allCalendarDays.forEach(function (dayElement) {
+            const dayDate = dayElement.dataset.date;
+
+            if (entrenamientosDates.includes(dayDate)) {
+                dayElement.classList.add("highlighted");
+            }
+        });
+    }
+}

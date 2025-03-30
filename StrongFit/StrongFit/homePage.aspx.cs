@@ -29,8 +29,8 @@ namespace StrongFit
             {
                 try
                 {
-                    // Modify the SQL query to also get the role
-                    string sql = "SELECT contrasena, rol FROM usuarios WHERE nombre = @Usuario AND contrasena = @Contra";
+                    // Modify the SQL query to also get the role and user ID
+                    string sql = "SELECT usuario_id, contrasena, rol FROM usuarios WHERE nombre = @Usuario AND contrasena = @Contra";
 
                     // Open the connection
                     conexion.Open();
@@ -48,17 +48,19 @@ namespace StrongFit
                     // Check if any rows are returned (user exists and password matches)
                     if (lector.HasRows)
                     {
-                        // Read the data (password and role)
+                        // Read the data (user ID, password, and role)
                         lector.Read();
+                        int userId = Convert.ToInt32(lector["usuario_id"]); // Get the user ID
                         string rol = lector["rol"].ToString(); // Get the role
 
-                        // Set session variable for the logged-in user
+                        // Set session variables for the logged-in user
                         Session["usuario"] = Usuario;
+                        Session["userId"] = userId; // Store the user ID in the session
 
                         // Redirect based on the user's role
                         if (rol == "Usuario")
                         {
-                            // Redirect to userPage.aspx for other roles
+                            // Redirect to userPage.aspx for regular users
                             Response.Redirect("userPage.aspx", false);
                         }
                         else
