@@ -8,6 +8,13 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="main" runat="server">
+    <script type="text/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                window.location.reload();
+            }
+        };
+    </script>
     <h1 class="page-title">Listado de Dietas</h1>
     <h2>
         <asp:HyperLink ID="hlRegistroDieta" runat="server" NavigateUrl="registroRecetas.aspx" Text="Registrar Dieta" CssClass="register-link" />

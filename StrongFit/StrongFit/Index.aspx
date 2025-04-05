@@ -7,6 +7,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <meta name="description" content="Bienvenido a StrongFit, tu plataforma para mejorar tu salud con planes de nutrición y entrenamiento personalizados.">
     <link rel="stylesheet" href='<%= ResolveUrl("~/Resources/Master.css") %>' />
+
+<script type="text/javascript">
+    window.onpageshow = function (event) {
+        if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+            window.location.reload();
+        }
+    };
+</script>
+
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="main" runat="server">
@@ -45,6 +54,14 @@
                            CssClass="explore-button" aria-label="Editar Ejercicios">
                 Editar Ejercicios
             </asp:HyperLink>
+
+            <!-- Botón Perfil -->
+            <asp:HyperLink ID="hlPerfil" runat="server" NavigateUrl="userPage.aspx" 
+                           CssClass="explore-button" aria-label="Perfil">
+                Perfil
+            </asp:HyperLink>
+
         </div>
     </div>
 </asp:Content>
+

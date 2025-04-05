@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="Resources/calendar.css" />
     <script src="Resources/userPage.js"></script>
     <script src="Resources/calendar.js"></script>
+
+    <!-- ⚠️ Script para evitar que el navegador muestre caché al usar el botón "atrás" -->
+    <script type="text/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                window.location.reload();
+            }
+        };
+    </script>
 </head>
 <body onload="mostrarBienvenida()">
 
@@ -18,7 +27,8 @@
         <button onclick="loadRutina()">Rutina</button>
         <button onclick="loadDieta()">Dieta</button>
         <button onclick="loadCalendar()">Calendario</button>
-        <button onclick="window.location.href='homePage.aspx'">Cerrar sesión</button>
+        <button onclick="window.location.href='Logout.aspx'">Cerrar sesión</button>
+
     </div>
 
     <div class="content">

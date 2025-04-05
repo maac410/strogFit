@@ -53,21 +53,22 @@ namespace StrongFit
                         // Store user data in session
                         Session["usuario"] = Usuario;
                         Session["userId"] = userId;
-                        Session["sessionId"] = Session.SessionID; // Store the session ID
+                        Session["sessionId"] = Session.SessionID;
 
                         // Redirect user based on role
                         if (rol == "Usuario")
                         {
-                            Response.Redirect("userPage.aspx", false);
+                            Response.Redirect("Index.aspx", false);
                         }
                         else
                         {
-                            Response.Redirect("Index.aspx", false);
+                            // Puedes cambiar esto según el rol
+                            Response.Redirect("Index.aspx", false); // ejemplo
                         }
                     }
                     else
                     {
-                        lblEstado.Text = "¡El usuario no está registrado en la BD!";
+                        lblEstado.Text = "¡El usuario no está registrado!";
                     }
                 }
                 catch (Exception ex)

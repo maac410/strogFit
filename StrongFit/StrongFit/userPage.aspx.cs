@@ -10,11 +10,16 @@ namespace StrongFit
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Evitar que la página se almacene en caché
+            Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
+            Response.Cache.SetNoStore();
+
+            // Validar sesión activa
             if (Session["userId"] == null)
             {
-                Response.Write("<script>alert('Error: You must be logged in to view this page.');</script>");
-                exerciseListLiteral.Text = "<li>Error: Please log in.</li>";
-                dietaListLiteral.Text = "<li>Error: Please log in.</li>";
+                // Redirige a la página de inicio si no hay sesión
+                Response.Redirect("homePage.aspx");
                 return;
             }
 
@@ -34,11 +39,9 @@ namespace StrongFit
 
             if (!IsPostBack)
             {
-                // Clear existing content first
                 exerciseListLiteral.Text = "";
                 dietaListLiteral.Text = "";
 
-                // Load exercises - DISTINCT to prevent duplicates
                 List<Exercise> exercises = GetUserExercises(userId);
                 if (exercises.Count > 0)
                 {
@@ -63,7 +66,6 @@ namespace StrongFit
                     exerciseListLiteral.Text = "<li>No exercises found for this user.</li>";
                 }
 
-                // Load diet - fixed query
                 List<Diet> diets = GetUserDiet(userId);
                 if (diets.Count > 0)
                 {
@@ -128,7 +130,6 @@ namespace StrongFit
                 try
                 {
                     conn.Open();
-                    // Modified query to get DISTINCT exercises
                     string query = @"
                         SELECT DISTINCT e.id, e.nombre, e.series, e.repeticiones, e.descripcion, e.guia
                         FROM entrenamientos e
@@ -163,12 +164,12 @@ namespace StrongFit
             }
             return exercises;
         }
+
         protected List<Diet> GetUserDiet(int userId)
         {
             List<Diet> diets = new List<Diet>();
             string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
 
-            // First get user's preference from objetivos
             string userPreference = GetUserPreference(userId);
             if (string.IsNullOrEmpty(userPreference))
             {
@@ -176,7 +177,6 @@ namespace StrongFit
                 return diets;
             }
 
-            // Map objetivo values to match dieta table
             string dietPreference = MapPreferenceToDiet(userPreference);
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -184,14 +184,13 @@ namespace StrongFit
                 try
                 {
                     conn.Open();
-                    // Query to get both personalized diets AND general diets matching preference
                     string query = @"
                 SELECT DISTINCT d.id, d.nombre, d.calorias, d.proteinas, d.carbohidratos, 
                        d.grasas, d.ingredientes, d.descripcion, d.guia
                 FROM dieta d
                 LEFT JOIN dieta_personalizados dp ON d.id = dp.dieta_id AND dp.usuario_id = @userId
                 WHERE dp.usuario_id = @userId OR d.objetivo = @dietPreference
-                ORDER BY CASE WHEN dp.usuario_id IS NOT NULL THEN 0 ELSE 1 END"; // Personalized diets first
+                ORDER BY CASE WHEN dp.usuario_id IS NOT NULL THEN 0 ELSE 1 END";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -261,7 +260,6 @@ namespace StrongFit
 
         private string MapPreferenceToDiet(string userPreference)
         {
-            // Convert objetivos.preferencia to dieta.objetivo format
             switch (userPreference.ToLower())
             {
                 case "subir de peso":
@@ -271,9 +269,10 @@ namespace StrongFit
                 case "mantener peso":
                     return "mantener peso";
                 default:
-                    return userPreference.ToLower(); // fallback
+                    return userPreference.ToLower();
             }
         }
+
         public class Exercise
         {
             public int Id { get; set; }
