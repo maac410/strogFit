@@ -8,6 +8,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <script type="text/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                window.location.reload();
+            }
+        };
+        </script>
         <div>
         </div>
     </form>

@@ -6,6 +6,13 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="main" runat="server">
+    <script type="text/javascript">
+        window.onpageshow = function (event) {
+            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                window.location.reload();
+            }
+        };
+    </script>
     <h2><asp:Label ID="lblAccion" runat="server" Text="" /></h2>
     <table>
         <tr>

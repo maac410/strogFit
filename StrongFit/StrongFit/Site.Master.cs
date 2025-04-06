@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebApplication1_StrongFit
 {
@@ -11,7 +8,12 @@ namespace WebApplication1_StrongFit
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            // Evita que se almacene la página en caché (clave para el botón atrás)
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
+            Response.Cache.SetNoStore();
+
+            if (!IsPostBack)
             {
                 if (Session["Usuario"] == null)
                 {
@@ -22,9 +24,18 @@ namespace WebApplication1_StrongFit
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
+            Session.Clear();
             Session.Abandon();
+
+            // Elimina cookies de sesión si es necesario
+            if (Request.Cookies["ASP.NET_SessionId"] != null)
+            {
+                Response.Cookies["ASP.NET_SessionId"].Expires = DateTime.Now.AddDays(-1);
+            }
+
             Response.Redirect("~/homePage.aspx", true);
             Context.ApplicationInstance.CompleteRequest();
         }
+
     }
 }
