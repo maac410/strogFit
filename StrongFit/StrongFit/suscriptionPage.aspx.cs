@@ -37,7 +37,7 @@ namespace StrongFit
                 using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
                 {
                     // SQL command to insert the user with the plain password
-                    MySqlCommand comando = new MySqlCommand("INSERT INTO usuarios (nombre, rol, correo, contrasena) VALUES (@usuario, 'Usuario', @correo, @contrasena); SELECT LAST_INSERT_ID();", conexion);
+                    MySqlCommand comando = new MySqlCommand("INSERT INTO usuarios (nombre, rol, correo, contrasena) VALUES (@usuario, 'Usuario', @correo, MD5 (@contrasena)); SELECT LAST_INSERT_ID();", conexion);
 
                     // Add parameters to prevent SQL injection
                     comando.Parameters.AddWithValue("@usuario", usuario);
