@@ -35,7 +35,7 @@ namespace StrongFit
             {
                 try
                 {
-                    string sql = "SELECT usuario_id, contrasena, rol FROM usuarios WHERE nombre = @Usuario AND contrasena = @Contra";
+                    string sql = "SELECT usuario_id, contrasena, rol FROM usuarios WHERE nombre = @Usuario AND contrasena = MD5( @Contra)"; 
 
                     conexion.Open();
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
